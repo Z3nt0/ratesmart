@@ -13,7 +13,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     AppComponent,
     SplashScreenComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
     AdminDashboardComponent
   ],
   imports: [

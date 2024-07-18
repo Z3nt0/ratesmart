@@ -13,7 +13,7 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 150px; /* Add this line for spacing */
+    margin-bottom: 150px;/*50 pede /* Add this line for spacing */
   }
   
   .rate {
@@ -61,7 +61,13 @@
       margin-bottom: 1rem;
       margin-right: 25px;
       
-      
+      label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #5DB075;
+        margin-bottom: 0.5rem;
+        display: block;
+      }  
       
 
       input {
@@ -72,6 +78,7 @@
         font-size: 1rem;
         background-color: #E8E8E8;
         
+      
 
       }
     }
@@ -92,7 +99,6 @@
   .login-link {
     margin-top: 1rem;
     font-size: 0.9rem;
-
     a {
       color: #2e7d32;
       text-decoration: none;

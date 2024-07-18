@@ -13,7 +13,7 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 150px;/*50 pede /* Add this line for spacing */
+    margin-bottom: 50px;/*50 pede /* Add this line for spacing */
   }
   
   .rate {
@@ -86,19 +86,20 @@
     .signup-button {
       width: 100%;
       padding: 0.75rem;
-      background-color: #2e7d32;
+      background-color: #5DB075;
       color: #ffffff;
       border: none;
       border-radius: 50px;
       font-size: 1rem;
       cursor: pointer;
-      
+      margin-top: 70px;
     }
   }
 
   .login-link {
     margin-top: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: bold;
     a {
       color: #2e7d32;
       text-decoration: none;

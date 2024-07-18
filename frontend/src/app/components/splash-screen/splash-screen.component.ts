@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-splash-screen',
@@ -6,11 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./splash-screen.component.scss']
 })
 export class SplashScreenComponent {
-  onSignUp() {
-    // implement sign up logic here
-  }
+  constructor(private router: Router) {}
 
-  onLogin() {
-    // implement login logic here
+  onSignUp() {
+    console.log('Sign Up clicked');
+    this.router.navigate(['/sign-up']);
   }
+  
+  onLogin() {
+    console.log('Login clicked');
+    this.router.navigate(['/login']);
+  }
+  
 }

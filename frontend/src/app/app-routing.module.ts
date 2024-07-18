@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent }, // Add this line
+  { path: '', redirectTo: '/splash', pathMatch: 'full' },
+  { path: 'splash', component: SplashScreenComponent },
+  { path: 'sign-up', component: SignUpComponent }
 ];
 
 @NgModule({

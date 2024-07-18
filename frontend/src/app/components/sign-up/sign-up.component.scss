@@ -5,13 +5,15 @@
   justify-content: center;
   height: 100vh;
   background-color: #ffffff;
+  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
 
   .logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 150px; /* Add this line for spacing */
+    margin-bottom: 50px;/*50 pede /* Add this line for spacing */
   }
   
   .rate {
@@ -59,7 +61,13 @@
       margin-bottom: 1rem;
       margin-right: 25px;
       
-      
+      label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #5DB075;
+        margin-bottom: 0.5rem;
+        display: block;
+      }  
       
 
       input {
@@ -70,6 +78,7 @@
         font-size: 1rem;
         background-color: #E8E8E8;
         
+      
 
       }
     }
@@ -77,23 +86,24 @@
     .signup-button {
       width: 100%;
       padding: 0.75rem;
-      background-color: #2e7d32;
+      background-color: #5DB075;
       color: #ffffff;
       border: none;
       border-radius: 50px;
       font-size: 1rem;
       cursor: pointer;
-      
+      margin-top: 70px;
     }
   }
 
   .login-link {
     margin-top: 1rem;
-    font-size: 0.9rem;
-
+    font-size: 0.8rem;
+    font-weight: bold;
     a {
       color: #2e7d32;
       text-decoration: none;
+      font-weight: bold;
     }
   }
 }

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LoginComponent } from './components/login/login.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
@@ -12,6 +13,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     AppComponent,
     SplashScreenComponent,
     SignUpComponent,
+    LoginComponent
     AdminDashboardComponent
   ],
   imports: [

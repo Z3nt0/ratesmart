@@ -1,3 +1,5 @@
+// src/app/app.module.ts
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +10,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module'; // Import the Material module
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { AdminProfileComponent } from './components/admin-profile/admin-profile.
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule // Add the Material module here
   ],
   providers: [],
   bootstrap: [AppComponent]

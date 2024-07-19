@@ -11,7 +11,10 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module'; // Import the Material module
+import { MaterialModule } from './material.module';
+import { AdminAboutComponent } from './components/admin-about/admin-about.component';
+import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
+
 
 @NgModule({
   declarations: [
@@ -20,8 +23,9 @@ import { MaterialModule } from './material.module'; // Import the Material modul
     SignUpComponent,
     LoginComponent,
     AdminDashboardComponent,
-    AdminProfileComponent 
-
+    AdminProfileComponent,
+    AdminAboutComponent,
+    AdminSettingsComponent,
   ],
   imports: [
     BrowserModule,

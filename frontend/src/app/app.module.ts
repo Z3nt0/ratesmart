@@ -15,6 +15,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     SignUpComponent,
     LoginComponent,
     AdminDashboardComponent
+    AdminDashboardComponent 
   ],
   imports: [
     BrowserModule,

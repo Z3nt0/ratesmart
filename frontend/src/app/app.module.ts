@@ -7,6 +7,7 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     SplashScreenComponent,
     SignUpComponent,
     LoginComponent,
-    AdminDashboardComponent 
+    AdminDashboardComponent,
+    AdminProfileComponent 
   ],
   imports: [
     BrowserModule,

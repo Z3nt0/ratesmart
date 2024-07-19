@@ -21,6 +21,7 @@ import { MaterialModule } from './material.module'; // Import the Material modul
     LoginComponent,
     AdminDashboardComponent,
     AdminProfileComponent 
+
   ],
   imports: [
     BrowserModule,

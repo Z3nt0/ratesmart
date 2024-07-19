@@ -14,7 +14,6 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     SplashScreenComponent,
     SignUpComponent,
     LoginComponent,
-    AdminDashboardComponent
     AdminDashboardComponent 
   ],
   imports: [

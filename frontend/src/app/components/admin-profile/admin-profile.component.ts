@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-profile.component.scss']
 })
 export class AdminProfileComponent {
+  user = {
+    name: '',
+    username: '',
+    password: ''
+  };
 
+  onSubmit() {
+    console.log('User signed up with: ', this.user);
+    // Add your sign-up logic here (e.g., sending data to the server)
+  }
 }

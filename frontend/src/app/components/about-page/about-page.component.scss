@@ -1,0 +1,92 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px; /* Adjust the width as necessary */
+    margin: auto; /* Center the container */
+    height: 500px;
+    
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    width: 100%;
+    height: 80px;
+    background-color: #5DB075;
+    padding: 8px 16px; /* Reduced padding for thinner appearance */
+    color: rgb(0, 0, 0);
+    position: relative;
+}
+
+.profile-image {
+    border-radius: 50%;
+    margin-top: 20px;
+    width: 250px;
+    height: 250px;
+    border: 1px solid #5DB075;
+}
+
+p {
+    font-size: 30px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+}
+
+.line {
+    content: '';
+    position: absolute;
+    top: 170px;
+    left: 10;
+    right: 10;
+    transform-origin: 0 0;
+    transform: translateY(3px) rotate(-0.1484deg);
+    width: 150px;
+    height: 2px; /* Height of the line */
+    background-color: #B7B7B7; /* Silver color for the line */
+  }
+
+
+.menu-button {
+    color: rgb(0, 0, 0);
+    position: absolute;
+    left: 16px; /* Adjust as necessary */
+    font-size: 24px; /* Increase font size */
+    padding: 12px; /* Increase padding */
+}
+
+.menu-button mat-icon {
+    font-size: 30px; /* Increase icon size */
+    font-weight: bold;
+}
+h1 {
+    margin: 0; /* Reset margins */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 25px;
+    margin-top: 20px;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+}
+.change-password-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #5DB075; /* Set the color to black */
+    margin-bottom: 0.5rem;
+    margin-left: 170px
+}
+.save-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #5DB075;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 70px;
+  }
+

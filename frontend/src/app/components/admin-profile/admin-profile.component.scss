@@ -26,37 +26,21 @@
     height: 250px;
     border: 1px solid #5DB075;
 }
-// :host {
-//     position: relative;
-//     width: 48px;
-//     height: 48px;
-//     flex-direction: column;
-//     align-items: flex-start;
-//     overflow: hidden;
-//   }
-// .icon {
-//     position: absolute;
-//     left: 4.1667%;
-//     right: 4.1667%;
-//     top: 12.5%;
-//     bottom: 12.5%;
-//     overflow: visible;
-//   }
-//   .icon2 {
-//     width: 50%;
-//     height: 50%;
-//     object-fit: cover;
-//   }
+.profile{
+    margin-bottom: 20px;
+}
 
 p {
     font-size: 20px;
     margin-bottom: 5px;
+    margin-left: 75px;
     font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
 p.a {
     font-size: 15px;
     margin-top: 0px;
+    margin-left: 100px;
     font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
     color: #929292;
 }

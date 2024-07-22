@@ -7,6 +7,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AdminAboutComponent } from './components/admin-about/admin-about.component'; // Import AdminAboutComponent
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component'; // Import AdminSettingsComponent
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component'; // Import AdminProfileComponent
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/splash', pathMatch: 'full' },
@@ -16,7 +17,9 @@ const routes: Routes = [
   { path: 'admin-dashboard', component: AdminDashboardComponent },
   { path: 'admin-about', component: AdminAboutComponent },
   { path: 'admin-settings', component: AdminSettingsComponent },
-  { path: 'admin-profile', component: AdminProfileComponent } // Add route for AdminProfileComponent
+  { path: 'admin-profile', component: AdminProfileComponent },
+  { path: 'change-password', component: ChangePasswordComponent }
+  // Add route for AdminProfileComponent// Add route for AdminProfileComponent
 ];
 
 @NgModule({

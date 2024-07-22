@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { AdminAboutComponent } from './components/admin-about/admin-about.component';
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AdminSettingsComponent } from './components/admin-settings/admin-settin
     AdminProfileComponent,
     AdminAboutComponent,
     AdminSettingsComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,

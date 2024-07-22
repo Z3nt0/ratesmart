@@ -1,5 +1,3 @@
-// src/app/app.module.ts
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { AdminAboutComponent } from './components/admin-about/admin-about.component';
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
+import { SidenavComponent } from './components/shared/sidenav/sidenav.component'; 
 
 
 @NgModule({
@@ -26,6 +25,7 @@ import { AdminSettingsComponent } from './components/admin-settings/admin-settin
     AdminProfileComponent,
     AdminAboutComponent,
     AdminSettingsComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

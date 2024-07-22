@@ -28,12 +28,23 @@
     border: 1px solid #5DB075;
 }
 
+.content{
+    align-self: start;
+}
+
 p {
     font-size: 30px;
     margin-bottom: 5px;
     font-weight: bolder;
     font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
+
+.story-text {
+    font-size: 14px;
+    text-align: justify;
+    padding: 0 20px;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  }
 
 .line {
     content: '';
@@ -71,22 +82,38 @@ h1 {
     transform: translate(-50%, -50%); /* Center horizontally and vertically */
     font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
-.change-password-label {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #5DB075; /* Set the color to black */
-    margin-bottom: 0.5rem;
-    margin-left: 170px
-}
-.save-button {
-    width: 100%;
+
+// .save-button {
+//     width: 100%;
+//     padding: 0.75rem;
+//     background-color: #5DB075;
+//     color: #ffffff;
+//     border: none;
+//     border-radius: 50px;
+//     font-size: 1rem;
+//     cursor: pointer;
+//     margin-top: 70px;
+//   }
+
+
+  .contact-button, .privacy-button {
+    width: 80%;
     padding: 0.75rem;
     background-color: #5DB075;
-    color: #ffffff;
+    color: #fff;
     border: none;
     border-radius: 50px;
     font-size: 1rem;
     cursor: pointer;
-    margin-top: 70px;
+    margin-top: 10px;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+        'Liberation Sans', sans-serif;
   }
-
+  
+  .privacy-button {
+    background-color: #fff;
+    color: #5DB075;
+    border: 1px solid #5DB075;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+        'Liberation Sans', sans-serif;
+  }

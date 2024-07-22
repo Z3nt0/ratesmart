@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-admin-profile',
-  templateUrl: './admin-profile.component.html',
-  styleUrls: ['./admin-profile.component.scss']
+  selector: 'app-change-password',
+  templateUrl: './change-password.component.html',
+  styleUrls: ['./change-password.component.scss']
 })
-export class AdminProfileComponent {
+export class ChangePasswordComponent {
   user = {
     name: '',
     username: '',
@@ -17,3 +17,4 @@ export class AdminProfileComponent {
     // Add your sign-up logic here (e.g., sending data to the server)
   }
 }
+

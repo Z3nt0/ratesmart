@@ -7,6 +7,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatRadioModule} from '@angular/material/radio';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -14,11 +16,13 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-
 @NgModule({
   exports: [
     MatButtonModule,
     MatToolbarModule,
+    MatCardModule,
+    MatSlideToggleModule, 
+    MatRadioModule
     MatIconModule,
     MatSidenavModule,
     MatListModule,

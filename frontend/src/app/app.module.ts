@@ -11,6 +11,7 @@ import { AdminProfileComponent } from './components/admin-profile/admin-profile.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
+import { AdminFormsComponent } from './components/admin-forms/admin-forms.component';
 import { SidenavComponent } from './components/shared/sidenav/sidenav.component'; 
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
@@ -25,6 +26,7 @@ import { AboutPageComponent } from './components/about-page/about-page.component
     AdminDashboardComponent,
     AdminProfileComponent,
     AdminSettingsComponent,
+    AdminFormsComponent,
     SidenavComponent,
     ChangePasswordComponent,
     AboutPageComponent,

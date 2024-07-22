@@ -1,13 +1,14 @@
-.profile-container {
+.about-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 400px; /* Adjust the width as necessary */
     margin: auto; /* Center the container */
     height: 500px;
+    
 }
 
-.profile-header {
+.about-header {
     display: flex;
     align-items: center;
     justify-content: center; /* Center content horizontally */
@@ -26,56 +27,27 @@
     height: 250px;
     border: 1px solid #5DB075;
 }
-.profile{
-    margin-bottom: 20px;
-}
 
 p {
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 5px;
-    margin-left: 75px;
+    font-weight: bolder;
     font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
-p.a {
-    font-size: 15px;
-    margin-top: 0px;
-    margin-left: 100px;
-    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
-    color: #929292;
-}
+.line {
+    content: '';
+    position: absolute;
+    top: 170px;
+    left: 10;
+    right: 10;
+    transform-origin: 0 0;
+    transform: translateY(3px) rotate(-0.1484deg);
+    width: 150px;
+    height: 2px; /* Height of the line */
+    background-color: #B7B7B7; /* Silver color for the line */
+  }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 300px;
-    height: 10px;
-}
-
-.form-group {
-    width: 100%;
-    margin-bottom: 1rem;
-    margin-right: 25px;
-}
-
-label {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #5DB075;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-input {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #F6F6F6;
-    border-radius: 10px;
-    font-size: 1rem;
-    background-color: #E8E8E8;
-}
 
 .menu-button {
     color: rgb(0, 0, 0);
@@ -89,12 +61,12 @@ input {
     font-size: 30px; /* Increase icon size */
     font-weight: bold;
 }
-
 h1 {
     margin: 0; /* Reset margins */
     position: absolute;
     left: 50%;
     top: 50%;
+    font-size: 25px;
     margin-top: 20px;
     transform: translate(-50%, -50%); /* Center horizontally and vertically */
     font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;

@@ -22,7 +22,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatToolbarModule,
     MatCardModule,
     MatSlideToggleModule, 
-    MatRadioModule
+    MatRadioModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,

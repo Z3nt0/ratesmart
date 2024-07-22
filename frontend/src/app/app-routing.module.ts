@@ -16,9 +16,8 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
-  { path: 'admin-about', component: AdminAboutComponent },
   { path: 'admin-settings', component: AdminSettingsComponent }, 
-  { path: 'admin-forms', component: AdminFormsComponent }
+  { path: 'admin-forms', component: AdminFormsComponent },
   { path: 'admin-settings', component: AdminSettingsComponent },
   { path: 'admin-profile', component: AdminProfileComponent },
   { path: 'change-password', component: ChangePasswordComponent },

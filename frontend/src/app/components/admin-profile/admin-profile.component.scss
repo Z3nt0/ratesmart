@@ -19,16 +19,40 @@
     position: relative;
 }
 
+.profile {
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-image-container {
+    position: relative;
+    display: inline-block;
+}
+
 .profile-image {
     border-radius: 50%;
-    margin-top: 20px;
     width: 150px;
     height: 150px;
     border: 1px solid #5DB075;
 }
-.profile {
-    margin-bottom: 20px;
-    text-align: center;
+
+.camera_enhance {
+    position: absolute;
+    bottom: 480px; /* Adjust as necessary */
+    right: 680px; /* Adjust as necessary */
+    background-color: #5DB075; /* Optional: Add background color to button */
+    border-radius: 50%; /* Optional: Make the button round */
+    padding: 5px; /* Optional: Add some padding */
+    height: 35px;
+    width: 35px;
+    font-size: 24px; /* Adjust the icon size if needed */
+    color: rgb(0, 0, 0); /* Icon color */
+}
+
+.camera_enhance mat-icon {
+    font-size: 20px; /* Adjust the icon size */
+    margin-top: 1px;
 }
 
 .center-text-container {
@@ -40,13 +64,15 @@
 }
 
 p {
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 5px;
+    margin-top: 0;
+    align-items: center;
     font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
 p.a {
-    font-size: 15px;
+    font-size: 10px;
     margin-top: 0px;
     font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
     color: #929292;
@@ -125,4 +151,8 @@ h1 {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 20px;
+}
+
+.icon {
+    color: black;
 }

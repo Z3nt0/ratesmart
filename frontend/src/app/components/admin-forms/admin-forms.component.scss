@@ -5,7 +5,6 @@
   max-width: 400px; /* Adjust the width as necessary */
   margin: auto; /* Center the container */
   height: 500px;
-  
 }
 
 .forms-header {
@@ -19,53 +18,110 @@
   color: rgb(0, 0, 0);
   position: relative;
 }
-  .profile-image {
-    border-radius: 50%;
-    margin-top: 20px;
-    width: 250px;
-    height: 250px;
-    
-  }
-  
-  .menu-button {
-    color: rgb(0, 0, 0);
-    position: absolute;
-    left: 16px; /* Adjust as necessary */
-    font-size: 24px; /* Increase font size */
-    padding: 12px; /* Increase padding */
-  }
-  
-  .menu-button mat-icon {
-    font-size: 30px; /* Increase icon size */
-    font-weight: bold;
-  }
-  
-  h1 {
-    margin: 8px 0;
-    margin-top: 40px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-        'Liberation Sans', sans-serif;
-  }
 
-  .back-button-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    width: 100%; /* Ensure full width */
-    margin-top: 10px; /* Adjust as necessary */
+.profile-image {
+  border-radius: 50%;
+  margin-top: 20px;
+  width: 250px;
+  height: 250px;
+}
+
+.menu-button {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  left: 16px; /* Adjust as necessary */
+  font-size: 24px; /* Increase font size */
+  padding: 12px; /* Increase padding */
+}
+
+.menu-button mat-icon {
+  font-size: 30px; /* Increase icon size */
+  font-weight: bold;
+}
+
+h1 {
+  margin: 8px 0;
+  margin-top: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+
+.back-button-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  width: 100%; /* Ensure full width */
+  margin-top: 10px; /* Adjust as necessary */
 }
 
 .back-button {
-    color: rgb(0, 0, 0);
-    font-size: 24px; /* Increase font size */
-    margin-right: auto;
-    padding: 12px; /* Increase padding */
+  color: rgb(0, 0, 0);
+  font-size: 24px; /* Increase font size */
+  margin-right: auto;
+  padding: 12px; /* Increase padding */
 }
 
 .back-button mat-icon {
-    font-size: 30px; /* Increase icon size */
-    font-weight: bold;
-    
+  font-size: 30px; /* Increase icon size */
+  font-weight: bold;
+}
+
+.feedback-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Adjust the gap between cards as needed */
+}
+
+.feedback-card {
+  display: flex;
+  flex-direction: column;
+  width: 388px;  /* Fixed width */
+  height: 145px; /* Fixed height */
+  padding: 16px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out the elements */
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Take up remaining space */
+}
+
+.edit-button {
+  margin-left: 8px; /* Adjust the spacing between the title and the edit button */
+}
+
+.mat-menu {
+  margin-left: 0; /* Ensure no left margin */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Adjust the gap between content items as needed */
+  flex-grow: 1; /* Ensure the content area grows to fill the space */
+  justify-content: space-between; /* Align responses and analytics button properly */
+}
+
+.responses {
+  display: flex;
+  justify-content: space-between;
+}
+
+.view-analytics {
+  align-self: flex-end; /* Align the button to the end of the container */
+  display: flex;
+  align-items: center;
+}
+
+.view-analytics mat-icon {
+  margin-right: 8px; /* Adjust the spacing between the icon and the text */
 }

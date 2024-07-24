@@ -125,3 +125,17 @@ h1 {
 .view-analytics mat-icon {
   margin-right: 8px; /* Adjust the spacing between the icon and the text */
 }
+
+.new-button {
+  height: 50px;
+  width: 280px;
+  padding: 0.75rem;
+  background-color: #5DB075;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 70px;
+  margin-left: 600px;
+}

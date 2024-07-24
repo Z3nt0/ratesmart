@@ -15,6 +15,7 @@ import { AdminFormsComponent } from './components/admin-forms/admin-forms.compon
 import { SidenavComponent } from './components/shared/sidenav/sidenav.component'; 
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
+import { AdminFormCustomizeComponent } from './components/admin-forms/admin-form-customize/admin-form-customize.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { AboutPageComponent } from './components/about-page/about-page.component
     SidenavComponent,
     ChangePasswordComponent,
     AboutPageComponent,
+    AdminFormCustomizeComponent,
   ],
   imports: [
     BrowserModule,

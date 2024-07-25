@@ -68,43 +68,38 @@
     font-weight: bold;
   }
   
-  .feedback-cards-container {
+  .section-card {
+    max-width: 400px;
+    margin: 16px auto;
+    border: 1px solid #5DB075;
+  }
+  
+  .section-title-input {
+    width: 100%;
+    font-size: 1.25rem;
+    border: none;
+    outline: none;
+    padding: 8px;
+  }
+  
+  .question-container {
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Adjust the gap between cards as needed */
+    gap: 16px;
   }
   
-  .feedback-card {
+  .full-width {
+    width: 100%;
+  }
+  
+  .card-actions {
     display: flex;
-    flex-direction: column;
-    width: 388px;  /* Fixed width */
-    height: 145px; /* Fixed height */
-    padding: 16px; /* Adjust padding as needed */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    justify-content: center;
   }
   
-  .card-header {
+  .add-section-button-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Space out the elements */
+    justify-content: center;
+    margin-top: 16px;
   }
-  
-  .card-title {
-    display: flex;
-    align-items: center;
-    flex-grow: 1; /* Take up remaining space */
-  }
-  
-  .edit-button {
-    margin-left: 8px; /* Adjust the spacing between the title and the edit button */
-  }
-  
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px; /* Adjust the gap between content items as needed */
-    flex-grow: 1; /* Ensure the content area grows to fill the space */
-    justify-content: space-between; /* Align responses and analytics button properly */
-  }
-  
   

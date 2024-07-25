@@ -11,19 +11,36 @@
         <mat-icon>keyboard_arrow_left</mat-icon>
       </button>
     </div>
-    <div class="feedback-cards-container">
-        <mat-card class="feedback-card">
-          <div class="card-header">
-            <span class="card-title">Question</span>
-            <button mat-icon-button class="edit-button">
-              <mat-icon>edit</mat-icon>
-            </button>
+    <mat-card class="section-card">
+        <mat-card-header>
+          <div mat-card-avatar class="header-icon">
+            <mat-icon>edit</mat-icon>
           </div>
-          <div class="card-content">
+          <mat-card-title>
+            <input matInput placeholder="Section Title" class="section-title-input">
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="question-container">
+            <mat-form-field class="full-width">
+              <mat-label>Question</mat-label>
+              <textarea matInput></textarea>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-label>Response Type</mat-label>
+              <mat-select>
+                <mat-option value="stars">Stars</mat-option>
+                <mat-option value="text">Text</mat-option>
+                <mat-option value="multiple-choice">Multiple Choice</mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
-        </mat-card>
-    
-        <!-- Add more cards as needed -->
-    
+        </mat-card-content>
+        <mat-card-actions class="card-actions">
+          <button mat-raised-button color="primary">Add Question</button>
+        </mat-card-actions>
+      </mat-card>
+      <div class="add-section-button-container">
+        <button mat-raised-button color="primary">Add Section</button>
       </div>
-    </div>
+      

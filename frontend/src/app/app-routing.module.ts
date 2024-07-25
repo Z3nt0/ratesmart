@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'admin-profile', component: AdminProfileComponent },
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'about-page', component: AboutPageComponent },
-  { path: 'admin-form-customize', component: AdminFormCustomizeComponent }, // Add route for AdminFormCustomizeComponent,
+  { path: 'admin-form-customize', component: AdminFormCustomizeComponent }, 
     
 ];
 

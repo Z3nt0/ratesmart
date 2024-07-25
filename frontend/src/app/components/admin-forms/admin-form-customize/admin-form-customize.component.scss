@@ -1,0 +1,131 @@
+.customize-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px; /* Adjust the width as necessary */
+  margin: auto; /* Center the container */
+  height: 100vh; /* Use full viewport height */
+  padding: 0 16px;
+}
+
+.customize-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  width: 100%;
+  height: 80px;
+  background-color: #5DB075;
+  padding: 8px 16px; /* Reduced padding for thinner appearance */
+  color: rgb(0, 0, 0);
+  position: relative;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: 300px;
+  margin-top: 10px;
+  border: 1px solid #000000;
+}
+p{
+  font-size: 20px;
+}
+.menu-button {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  left: 16px; /* Adjust as necessary */
+  font-size: 24px; /* Increase font size */
+  padding: 12px; /* Increase padding */
+}
+
+.menu-button mat-icon {
+  font-size: 30px; /* Increase icon size */
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0; /* Reset margins */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 25px;
+  margin-top: 20px;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  width: 100%;
+  padding: 16px; /* Adjust padding if needed */
+  justify-content: space-between; /* Ensure back button is on the left */
+}
+
+.feedback-section {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  flex: 1; /* Take up available space */
+  text-align: center;
+}
+
+.feedback-section p {
+  margin: 0;
+}
+
+.feedback-icon {
+  margin-left: 8px; /* Adjust spacing as needed */
+}
+
+.back-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.back-button {
+  color: rgb(0, 0, 0);
+  font-size: 24px; /* Increase font size */
+  padding: 12px; /* Increase padding */
+}
+
+.back-button mat-icon {
+  font-size: 30px; /* Increase icon size */
+  font-weight: bold;
+}
+
+.section-card {
+  max-width: 400px;
+  margin: 16px auto;
+  border: 1px solid #5DB075;
+}
+
+.section-title-input {
+  width: 100%;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  padding: 8px;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.add-section-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}

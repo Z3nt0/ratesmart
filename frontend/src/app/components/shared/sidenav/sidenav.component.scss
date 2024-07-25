@@ -1,0 +1,49 @@
+.sidenav-container {
+  width: 430px;
+  height: 932px;
+}
+
+.sidenav {
+  width: 327px; // Set the width of the sidenav
+  border-top-right-radius: 12px; // Set the top-right corner radius
+}
+
+.profile-section {
+  background-color: #4caf50; // Change this to match the green color
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 327px; // Set the width of the profile section
+  height: 206px; // Set the height of the profile section
+  border-top-right-radius: 12px; // Set the top-right corner radius
+}
+
+.profile-picture {
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.profile-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+}
+
+mat-nav-list {
+  width: 327px; // Set the width of the nav list
+  height: 635px; // Set the height of the nav list
+  padding: 0;
+}
+
+mat-list-item {
+  font-size: 1em;
+  padding: 16px;
+}
+
+.logout-item {
+  margin-top: auto;
+  background-color: #4caf50; // Change this to match the green color
+  color: white;
+  text-align: center;
+}

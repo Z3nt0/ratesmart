@@ -1,0 +1,37 @@
+<div class="profile-container">
+    <header class="profile-header">
+      <button mat-icon-button class="menu-button" (click)="openSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1>Profile</h1>
+    </header>
+    
+    <div class="profile">
+    <img src="path/to/profile/LOL.jpg" alt="" class="profile-image">
+    <button mat-icon-button class="camera_enhance">
+      <mat-icon>camera_enhance</mat-icon>
+    </button>
+  </div>
+    <p>Lorem Ipsum</p>
+    <p class="a">Admin</p>
+
+  
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" placeholder="Name" [(ngModel)]="user.name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" placeholder="Username" [(ngModel)]="user.username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="pword">Password</label>
+          <input type="password" placeholder="Password" [(ngModel)]="user.password" name="password" required />
+        </div>
+        <label for="changepass" class="change-password-label">Change Password</label>
+        <button type="submit" class="save-button">Save</button>
+      </form>
+    
+  </div>
+  

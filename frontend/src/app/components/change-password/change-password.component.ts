@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-change-password',
+  templateUrl: './change-password.component.html',
+  styleUrls: ['./change-password.component.scss']
 })
-export class LoginComponent {
+export class ChangePasswordComponent {
   user = {
+    name: '',
     username: '',
     password: ''
   };
@@ -16,3 +17,4 @@ export class LoginComponent {
     // Add your sign-up logic here (e.g., sending data to the server)
   }
 }
+

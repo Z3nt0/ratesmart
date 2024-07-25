@@ -1,0 +1,117 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px; /* Adjust the width as necessary */
+  margin: auto; /* Center the container */
+  height: 100vh; /* Use full viewport height */
+  padding: 0 16px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  width: 100%;
+  height: 80px;
+  background-color: #5DB075;
+  padding: 8px 16px; /* Reduced padding for thinner appearance */
+  color: rgb(0, 0, 0);
+  position: relative;
+}
+    h1 {
+      margin: 8px 0;
+      margin-top: 40px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+          'Liberation Sans', sans-serif;
+    }
+  
+    .menu-button {
+      color: rgb(0, 0, 0);
+      position: absolute;
+      left: 16px; /* Adjust as necessary */
+      font-size: 24px; /* Increase font size */
+      padding: 12px; /* Increase padding */
+    }
+    
+    .menu-button mat-icon {
+      font-size: 30px; /* Increase icon size */
+      font-weight: bold;
+    }
+  
+    .profile-image {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin-left: 300px;
+      margin-top: 10px;
+      border: 1px solid #000000;
+    }
+  
+  
+  .feedback-summary {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 50px;
+  
+    .feedback-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      
+      h2 {
+        margin: 8px 0;
+      }
+      .circle-container {
+        display: flex;
+        flex-wrap: wrap; /* Allows circles to wrap to the next line if there's not enough space */
+        gap: 10px; /* Adjust the value to your desired spacing */
+        justify-content: center; /* Center the circles horizontally */
+      }
+      .circle {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        display: flex;
+        align-items: row;
+        justify-content: center;
+        border: 4px solid currentColor;
+        margin: 10px; /* Adjust the value to your desired spacing */
+      }
+      
+      .circle.positive {
+        color: green;
+      }
+      
+      .circle.negative {
+        color: red;
+      }
+      
+      .circle.neutral {
+        color: yellow;
+      }
+      
+      .circle.total {
+      background-color: lightgray;
+    }
+ }
+  }
+  
+  .recent-forms {
+    width: 100%;
+    margin-top: 16px;
+  
+    .form-item {
+      width: 360px;
+      height: 69px;
+      border-radius: 12px;
+      background-color: #e8eef1;
+
+    }
+  }
+  

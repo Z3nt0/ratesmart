@@ -2,18 +2,21 @@
   <mat-sidenav #sidenav [mode]="mode" class="sidenav">
     <div class="profile-section">
       <img src="path-to-profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+      <div class="profile-name"></div>
     </div>
-    <mat-nav-list>
+    <mat-nav-list class="nav-list">
       <mat-divider></mat-divider>
       <mat-list-item routerLink="/admin-dashboard" (click)="sidenav.close()">Dashboard</mat-list-item>
       <mat-list-item routerLink="/admin-forms" (click)="sidenav.close()">Forms</mat-list-item>
       <mat-list-item routerLink="/about-page" (click)="sidenav.close()">About</mat-list-item>
       <mat-list-item routerLink="/admin-settings" (click)="sidenav.close()">Settings</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item class="logout-item" (click)="logout()">Log out</mat-list-item>
     </mat-nav-list>
+    <div class="logout-section">
+      <mat-list-item class="logout-item" (click)="logout()">Log out</mat-list-item>
+    </div>
+    <div class="bottom-section"></div>
   </mat-sidenav>
-  
   <mat-sidenav-content>
     <ng-content></ng-content>
   </mat-sidenav-content>

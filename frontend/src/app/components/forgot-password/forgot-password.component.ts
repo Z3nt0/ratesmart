@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./forgot-password.component.scss']
 })
 export class ForgotPasswordComponent {
-
+  user = {
+    email: '',
+  };
+  onSubmit() {
+    console.log('User signed up with: ', this.user);
+    // Add your sign-up logic here (e.g., sending data to the server)
+  }
 }
+
+

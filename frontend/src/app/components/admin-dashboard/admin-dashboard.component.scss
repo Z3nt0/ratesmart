@@ -19,15 +19,16 @@
   color: rgb(0, 0, 0);
   position: relative;
 }
-    h1 {
-      margin: 8px 0;
-      margin-top: 40px;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-          'Liberation Sans', sans-serif;
-    }
+h1 {
+  margin: 0; /* Reset margins */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 25px;
+  margin-top: 20px;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+}
   
     .menu-button {
       color: rgb(0, 0, 0);

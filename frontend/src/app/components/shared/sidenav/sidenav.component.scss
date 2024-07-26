@@ -9,7 +9,7 @@
 }
 
 .profile-section {
-  background-color: #4caf50; // Change this to match the green color
+  background-color: #5DB075; // Change this to match the green color
   padding: 16px;
   display: flex;
   align-items: center;
@@ -21,7 +21,11 @@
 
 .profile-picture {
   border-radius: 50%;
+  width: 150px;
+  height: 150px;
   margin-bottom: 8px;
+  border: 1px solid black;
+  margin-right: 50px;
 }
 
 .profile-name {

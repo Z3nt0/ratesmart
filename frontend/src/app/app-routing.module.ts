@@ -10,7 +10,7 @@ import { AdminProfileComponent } from './components/admin-profile/admin-profile.
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { AdminFormCustomizeComponent } from './components/admin-forms/admin-form-customize/admin-form-customize.component'; // Import AdminFormCustomizeComponent
-
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/splash', pathMatch: 'full' },
@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'about-page', component: AboutPageComponent },
   { path: 'admin-form-customize', component: AdminFormCustomizeComponent }, 
+  { path: 'forgot-password', component: ForgotPasswordComponent },  
     
 ];
 

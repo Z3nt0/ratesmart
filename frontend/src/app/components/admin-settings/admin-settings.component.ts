@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
+import { SidenavService } from '../shared/sidenav/sidenav.service'; 
 
 @Component({
   selector: 'app-admin-settings',
@@ -24,5 +25,10 @@ export class AdminSettingsComponent {
     if (this.settings) {
       this.settings.theme = newTheme;
     }
+  }
+  constructor(private sidenavService: SidenavService) {}
+
+  openSidenav() {
+    this.sidenavService.toggle();
   }
 }

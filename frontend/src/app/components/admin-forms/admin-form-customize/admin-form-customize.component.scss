@@ -80,13 +80,14 @@ h1 {
 .feedback-icon {
   margin-left: 8px;
 }
+
 .more-icon-2 {
   cursor: pointer;
   margin-left: 8px;
   border: none;
   background: rgb(255, 251, 251);
-  
 }
+
 .back-button-container {
   display: flex;
   align-items: center;
@@ -145,10 +146,28 @@ h1 {
 .card-actions {
   display: flex;
   justify-content: center;
+
+  button {
+    background-color: #5DB075; // Green color for the button
+    color: white;
+
+    &:hover {
+      background-color: #45a049; // Darker green on hover
+    }
+  }
 }
 
 .add-section-button-container {
   display: flex;
   justify-content: center;
   margin-top: 16px;
+
+  button {
+    background-color: #5DB075; // Green color for the button
+    color: white;
+
+    &:hover {
+      background-color: #45a049; // Darker green on hover
+    }
+  }
 }

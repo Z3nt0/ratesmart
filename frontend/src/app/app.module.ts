@@ -17,6 +17,7 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { AdminFormCustomizeComponent } from './components/admin-forms/admin-form-customize/admin-form-customize.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AdminFormAnalyticsComponent } from './components/admin-forms/admin-form-analytics/admin-form-analytics.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     AboutPageComponent,
     AdminFormCustomizeComponent,
     ForgotPasswordComponent,
+    AdminFormAnalyticsComponent,
   ],
   imports: [
     BrowserModule,

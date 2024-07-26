@@ -24,7 +24,7 @@
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>Edit</button>
+          <button mat-menu-item routerLink="/admin-form-customize">Edit</button>
           <button mat-menu-item>Delete</button>
           <button mat-menu-item>Generate</button>
         </mat-menu>
@@ -34,7 +34,7 @@
           <span>Responses</span>
           <span class="response-count">100</span>
         </div>
-        <button mat-button class="view-analytics">
+        <button mat-button class="view-analytics" routerLink="/admin-form-analytics" >
           <mat-icon>visibility</mat-icon>
           View Analytics
         </button>

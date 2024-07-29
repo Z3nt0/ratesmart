@@ -2,19 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 400px; /* Adjust the width as necessary */
-  margin: auto; /* Center the container */
-  height: 500px;
+  max-width: 400px;
+  margin: auto;
+  height: auto; 
 }
 
 .forms-header {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center content horizontally */
+  justify-content: center;
   width: 100%;
   height: 80px;
   background-color: #5DB075;
-  padding: 8px 16px; /* Reduced padding for thinner appearance */
+  padding: 8px 16px;
   color: rgb(0, 0, 0);
   position: relative;
 }
@@ -29,13 +29,13 @@
 .menu-button {
   color: rgb(0, 0, 0);
   position: absolute;
-  left: 16px; /* Adjust as necessary */
-  font-size: 24px; /* Increase font size */
-  padding: 12px; /* Increase padding */
+  left: 16px;
+  font-size: 24px;
+  padding: 12px;
 }
 
 .menu-button mat-icon {
-  font-size: 30px; /* Increase icon size */
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -45,85 +45,102 @@ h1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
 .back-button-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  width: 100%; /* Ensure full width */
-  margin-top: 10px; /* Adjust as necessary */
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .back-button {
   color: rgb(0, 0, 0);
-  font-size: 24px; /* Increase font size */
+  font-size: 24px;
   margin-right: auto;
-  padding: 12px; /* Increase padding */
+  padding: 12px;
 }
 
 .back-button mat-icon {
-  font-size: 30px; /* Increase icon size */
+  font-size: 30px;
   font-weight: bold;
 }
 
 .feedback-cards-container {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Adjust the gap between cards as needed */
+  gap: 16px;
 }
 
 .feedback-card {
   display: flex;
   flex-direction: column;
-  width: 388px;  /* Fixed width */
-  height: 145px; /* Fixed height */
-  padding: 16px; /* Adjust padding as needed */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 388px;
+  padding: 16px;
+  box-sizing: border-box;
+  background: white; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
 .card-header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Space out the elements */
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 
-.card-title {
-  display: flex;
-  align-items: center;
-  flex-grow: 1; /* Take up remaining space */
+.feedback-title-input {
+  flex-grow: 1;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  padding: 8px;
+  text-align: left;
 }
 
-.edit-button {
-  margin-left: 8px; /* Adjust the spacing between the title and the edit button */
+.feedback-icon {
+  margin-left: 8px;
 }
 
-.mat-menu {
-  margin-left: 0; /* Ensure no left margin */
+.mat-menu-button {
+  margin-left: 8px;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Adjust the gap between content items as needed */
-  flex-grow: 1; /* Ensure the content area grows to fill the space */
-  justify-content: space-between; /* Align responses and analytics button properly */
+  gap: 8px;
 }
 
 .responses {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.responses-label {
+  margin: 0;
+  font-size: 20px;
+}
+
+.response-count {
+  margin: 0;
+  font-size: 25px;
+  font-weight: bolder;
 }
 
 .view-analytics {
-  align-self: flex-end; /* Align the button to the end of the container */
+  align-self: flex-end;
   display: flex;
   align-items: center;
+  font-size: 15px;
+  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
 .view-analytics mat-icon {
-  margin-right: 8px; /* Adjust the spacing between the icon and the text */
+  margin-right: 8px;
 }
 
 .new-button {

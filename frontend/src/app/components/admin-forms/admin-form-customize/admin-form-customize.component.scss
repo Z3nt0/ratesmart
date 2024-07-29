@@ -80,13 +80,20 @@ h1 {
 .feedback-icon {
   margin-left: 8px;
 }
-.feedback-title-input{
-    flex-grow: 1;
-    font-size: 1.25rem;
-    border: none;
-    outline: none;
-    padding: 8px;
-    
+
+.feedback-title-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;  
+}
+
+.feedback-title-input {
+  flex-grow: 1;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  padding: 8px;
+  text-align: center;  
 }
 
 .more-icon-2 {

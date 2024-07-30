@@ -14,6 +14,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { AdminFormAnalyticsComponent } from './components/admin-forms/admin-form-analytics/admin-form-analytics.component'; 
 import { ForgotPasswordAuthComponent } from './components/forgot-password/forgot-password-auth/forgot-password-auth.component';
 import { SetPasswordComponent } from './components/forgot-password/set-password/set-password.component'; 
+import { AdminFormCustomizeLogoComponent } from './components/admin-forms/admin-form-customize/admin-form-customize-logo/admin-form-customize-logo.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/splash', pathMatch: 'full' },
@@ -31,6 +33,7 @@ const routes: Routes = [
   { path: 'admin-form-analytics', component: AdminFormAnalyticsComponent },
   { path: 'forgot-password-auth', component: ForgotPasswordAuthComponent },
   { path: 'set-password', component: SetPasswordComponent } // Add the route
+  { path: 'admin-form-customize-logo', component: AdminFormCustomizeLogoComponent } // Add the route
 ];
 
 @NgModule({

@@ -1,1 +1,19 @@
-<p>admin-form-customize-logo works!</p>
+<div class="customize-container">
+  <header class="customize-header">
+    <button mat-icon-button class="menu-button" (click)="openSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Customize</h1>
+    <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
+  </header>
+
+  <div class="header-actions">
+    <div class="back-button-container">
+      <button mat-icon-button class="back-button">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+    </div>
+    <div class="feedback-section">
+      <input matInput placeholder="Feedback Title" class="feedback-title-input">
+      <mat-icon class="feedback-icon">edit</mat-icon>
+    </div>

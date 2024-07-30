@@ -19,7 +19,11 @@ import { AdminFormCustomizeComponent } from './components/admin-forms/admin-form
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AdminFormAnalyticsComponent } from './components/admin-forms/admin-form-analytics/admin-form-analytics.component';
 import { ForgotPasswordAuthComponent } from './components/forgot-password/forgot-password-auth/forgot-password-auth.component';
+<<<<<<< HEAD
+import { SetPasswordComponent } from './components/forgot-password/set-password/set-password.component';
+=======
 import { AdminFormCustomizeLogoComponent } from './components/admin-forms/admin-form-customize/admin-form-customize-logo/admin-form-customize-logo.component';
+>>>>>>> ab279a40331cffb0300b1908e0eb5fa5ad48de7f
 
 
 @NgModule({
@@ -39,7 +43,11 @@ import { AdminFormCustomizeLogoComponent } from './components/admin-forms/admin-
     ForgotPasswordComponent,
     AdminFormAnalyticsComponent,
     ForgotPasswordAuthComponent,
+<<<<<<< HEAD
+    SetPasswordComponent,
+=======
     AdminFormCustomizeLogoComponent,
+>>>>>>> ab279a40331cffb0300b1908e0eb5fa5ad48de7f
   ],
   imports: [
     BrowserModule,

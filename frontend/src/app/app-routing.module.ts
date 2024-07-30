@@ -12,7 +12,9 @@ import { AboutPageComponent } from './components/about-page/about-page.component
 import { AdminFormCustomizeComponent } from './components/admin-forms/admin-form-customize/admin-form-customize.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AdminFormAnalyticsComponent } from './components/admin-forms/admin-form-analytics/admin-form-analytics.component'; 
-import { ForgotPasswordAuthComponent } from './components/forgot-password/forgot-password-auth/forgot-password-auth.component'; // Import ForgotPasswordAuthComponent
+import { ForgotPasswordAuthComponent } from './components/forgot-password/forgot-password-auth/forgot-password-auth.component'; 
+import { AdminFormCustomizeLogoComponent } from './components/admin-forms/admin-form-customize/admin-form-customize-logo/admin-form-customize-logo.component';
+// Import ForgotPasswordAuthComponent
 
 const routes: Routes = [
   { path: '', redirectTo: '/splash', pathMatch: 'full' },
@@ -28,7 +30,8 @@ const routes: Routes = [
   { path: 'admin-form-customize', component: AdminFormCustomizeComponent }, 
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'admin-form-analytics', component: AdminFormAnalyticsComponent },
-  { path: 'forgot-password-auth', component: ForgotPasswordAuthComponent } // Add the route
+  { path: 'forgot-password-auth', component: ForgotPasswordAuthComponent } ,
+  { path: 'admin-form-customize-logo', component: AdminFormCustomizeLogoComponent } // Add the route
 ];
 
 @NgModule({

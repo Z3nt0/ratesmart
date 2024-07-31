@@ -29,7 +29,7 @@
           <label for="pword">Password</label>
           <input type="password" placeholder="Password" [(ngModel)]="user.password" name="password" required />
         </div>
-        <label for="changepass" class="change-password-label">Change Password</label>
+        <a class="change-password-label" (click)="changepass()">Change Password</a>
         <button type="submit" class="save-button">Save</button>
       </form>
     

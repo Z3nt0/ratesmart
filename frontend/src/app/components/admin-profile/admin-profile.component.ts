@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SidenavService } from '../shared/sidenav/sidenav.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-profile',
@@ -13,14 +14,18 @@ export class AdminProfileComponent {
     password: ''
   };
 
+  constructor(private sidenavService: SidenavService, private router: Router) {}
+
   onSubmit() {
     console.log('User signed up with: ', this.user);
     // Add your sign-up logic here (e.g., sending data to the server)
   }
-  constructor(private sidenavService: SidenavService) {}
-
+  
   openSidenav() {
     this.sidenavService.toggle();
   }
+  
+  changepass() {
+    this.router.navigate(['/change-password']);
+  }
 }
-

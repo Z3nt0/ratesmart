@@ -133,12 +133,14 @@ h1 {
     font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
-.change-password-label {
-    font-size: 1rem;
+.change-password-label { 
+    font-size: 15px;
     font-weight: bold;
-    color: #5DB075; /* Set the color to black */
+    color: #5DB075; 
+    cursor: pointer;
     margin-bottom: 0.5rem;
     margin-left: 170px;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
 .save-button {

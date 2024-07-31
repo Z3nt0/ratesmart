@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'admin-form-analytics', component: AdminFormAnalyticsComponent },
   { path: 'forgot-password-auth', component: ForgotPasswordAuthComponent },
-  { path: 'set-password', component: SetPasswordComponent } // Add the route
+  { path: 'set-password', component: SetPasswordComponent }, // Add the route
   { path: 'admin-form-customize-logo', component: AdminFormCustomizeLogoComponent } // Add the route
 ];
 

@@ -14,9 +14,34 @@
       </button>
     </div>
     <div class="form-section">
-      <p class="form">FORMS</p>
+      <p class="form">FORM IMAGE</p>
     </div>
-    
+  </div>
+    <div class="logo">
+      <img src="path/to/profile/LOL.jpg" alt="" class="logo-image">
+      <button mat-icon-button class="camera_enhance">
+        <mat-icon>camera_enhance</mat-icon>
+      </button>
+    </div>
+    <button type="submit" class="add">ADD</button>
+
+    <div>
+    <p class="color">FORM COLOR</p>
+    <mat-card class="color-box">
+      <mat-card-header>Color:</mat-card-header>
+      <mat-radio-group [color]="color">
+        <mat-radio-button value="option1"></mat-radio-button>
+        <mat-radio-button value="option2"></mat-radio-button>
+        <mat-radio-button value="option3"></mat-radio-button>
+        <mat-radio-button value="option4"></mat-radio-button>
+        <mat-radio-button value="option5"></mat-radio-button>
+        <mat-radio-button value="option6"></mat-radio-button>
+        <mat-radio-button value="option7"></mat-radio-button>
+      </mat-radio-group>
+    </mat-card>
+    <button type="submit" class="save">SAVE</button>
+    </div>
+
     <!-- div feedback section
     input class feedback title input -->
     <!-- <input matInput placeholder="Feedback Title" class="feedback-title-input"> -->

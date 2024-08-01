@@ -33,7 +33,8 @@ const routes: Routes = [
   { path: 'admin-form-analytics', component: AdminFormAnalyticsComponent },
   { path: 'forgot-password-auth', component: ForgotPasswordAuthComponent },
   { path: 'set-password', component: SetPasswordComponent }, // Add the route
-  { path: 'admin-form-customize-logo', component: AdminFormCustomizeLogoComponent } // Add the route
+  { path: 'admin-form-customize-logo', component: AdminFormCustomizeLogoComponent },
+  { path: 'admin-setting', component: AdminFormCustomizeLogoComponent },// Add the route
 ];
 
 @NgModule({

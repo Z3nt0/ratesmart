@@ -15,6 +15,7 @@ import { AdminFormAnalyticsComponent } from './components/admin-forms/admin-form
 import { ForgotPasswordAuthComponent } from './components/forgot-password/forgot-password-auth/forgot-password-auth.component';
 import { SetPasswordComponent } from './components/forgot-password/set-password/set-password.component'; 
 import { AdminFormCustomizeLogoComponent } from './components/admin-forms/admin-form-customize/admin-form-customize-logo/admin-form-customize-logo.component';
+import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-settings-delete/admin-settings-delete.component';
 
 
 const routes: Routes = [
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path: 'forgot-password-auth', component: ForgotPasswordAuthComponent },
   { path: 'set-password', component: SetPasswordComponent }, // Add the route
   { path: 'admin-form-customize-logo', component: AdminFormCustomizeLogoComponent },
-  { path: 'admin-setting', component: AdminFormCustomizeLogoComponent },// Add the route
+  { path: 'admin-settings-delete', component: AdminSettingsDeleteComponent },
+  
 ];
 
 @NgModule({

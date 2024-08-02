@@ -51,7 +51,8 @@ import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule, // Add the Material module here
+    MaterialModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

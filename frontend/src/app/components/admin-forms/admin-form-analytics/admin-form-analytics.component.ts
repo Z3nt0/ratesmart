@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SidenavService } from '../../shared/sidenav/sidenav.service';
 
 @Component({
   selector: 'app-admin-form-analytics',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-form-analytics.component.scss']
 })
 export class AdminFormAnalyticsComponent {
+  constructor(private sidenavService: SidenavService) {}
 
+  openSidenav() {
+    this.sidenavService.toggle();
+  }
 }

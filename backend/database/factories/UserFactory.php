@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 class UserFactory extends Factory
 {
     /**
-     * The current password being used by the factory.
+     * The Current Password
      */
     protected static ?string $password;
 

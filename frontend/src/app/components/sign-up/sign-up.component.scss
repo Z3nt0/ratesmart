@@ -5,67 +5,49 @@
   justify-content: center;
   height: 100vh;
   background-color: #ffffff;
-  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
+  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 
   .logo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 50px;/*50 pede /* Add this line for spacing */
+    margin-bottom: 50px; // Spacing between logo and form
   }
-  
+
   .rate {
     color: #2d6936;
     font-size: 70px;
     font-weight: bold;
-    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    width: 295px;
-    height: 67px;
     text-align: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: none;
+    margin-bottom: 0; // No margin bottom for rate
   }
-  
+
   .smart {
-  
     color: #fff;
     font-size: 48px;
     font-weight: bold;
-    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    width: 324px;
-    height: 120px;
     text-align: center;
-    align-items: center;
-    flex-direction: column;
-    -webkit-text-stroke: 1px #2D6936;
+    -webkit-text-stroke: 1px #2D6936; // Text stroke for smart
   }
 
   form {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     max-width: 300px;
-    
 
     .form-group {
       width: 100%;
       margin-bottom: 1rem;
-      margin-right: 25px;
-      
+
       label {
         font-size: 1rem;
         font-weight: bold;
         color: #5DB075;
         margin-bottom: 0.5rem;
         display: block;
-      }  
-      
+      }
 
       input {
         width: 100%;
@@ -74,9 +56,11 @@
         border-radius: 10px;
         font-size: 1rem;
         background-color: #E8E8E8;
-        
-      
+      }
 
+      small {
+        color: #ff0000; // Error message color
+        font-size: 0.875rem;
       }
     }
 
@@ -89,7 +73,7 @@
       border-radius: 50px;
       font-size: 1rem;
       cursor: pointer;
-      margin-top: 70px;
+      margin-top: 1rem;
     }
   }
 
@@ -97,6 +81,7 @@
     margin-top: 1rem;
     font-size: 0.8rem;
     font-weight: bold;
+
     a {
       color: #2e7d32;
       text-decoration: none;

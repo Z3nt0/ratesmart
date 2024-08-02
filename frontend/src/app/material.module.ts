@@ -40,6 +40,7 @@ import { MatOptionModule } from '@angular/material/core'; // Import MatOptionMod
     MatSnackBarModule,
     MatSelectModule,
     MatOptionModule,
+    MatIconModule
     
   ]
 })

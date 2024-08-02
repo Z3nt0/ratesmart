@@ -1,0 +1,44 @@
+<div class="settings-container">
+    <header class="settings-header">
+      <button mat-icon-button class="menu-button" (click)="openSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1>Settings</h1>
+    </header> 
+    <div>
+    <div class="lightmode-change-container">
+      <div class="lightmode-container">
+        Light Mode
+      </div>
+      <div class="change-container">
+        <mat-slide-toggle class="allow-notif"></mat-slide-toggle>
+      </div>
+    </div>
+  
+    <div class="line"></div>
+  
+    <div class="notifications-container">
+      <div class="notifications">
+        Notifications
+      </div>
+      <div class="allow-notif">
+        <mat-slide-toggle class="allow-notif"></mat-slide-toggle>
+      </div>
+    </div>
+  
+    <div class="line2"></div>
+    
+    <mat-card class="color-box">
+        <mat-card-header>Color:</mat-card-header>
+        <mat-radio-group [color]="color">
+          <mat-radio-button value="option1"></mat-radio-button>
+          <mat-radio-button value="option2"></mat-radio-button>
+          <mat-radio-button value="option3"></mat-radio-button>
+          <mat-radio-button value="option4"></mat-radio-button>
+          <mat-radio-button value="option5"></mat-radio-button>
+          <mat-radio-button value="option6"></mat-radio-button>
+          <mat-radio-button value="option7"></mat-radio-button>
+        </mat-radio-group>
+      </mat-card>
+  </div>
+  

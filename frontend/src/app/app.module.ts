@@ -20,6 +20,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { AdminFormAnalyticsComponent } from './components/admin-forms/admin-form-analytics/admin-form-analytics.component';
 import { ForgotPasswordAuthComponent } from './components/forgot-password/forgot-password-auth/forgot-password-auth.component';
 import { AdminFormCustomizeLogoComponent } from './components/admin-forms/admin-form-customize/admin-form-customize-logo/admin-form-customize-logo.component';
+import { HttpClientModule } from '@angular/common/http'; 
+import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 import { SetPasswordComponent } from './components/forgot-password/set-password/set-password.component';
 import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-settings-delete/admin-settings-delete.component';
 
@@ -52,7 +54,8 @@ import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

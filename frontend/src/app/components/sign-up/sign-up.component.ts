@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../../services/auth.service';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,24 +10,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent {
-  user = {
-    name: '',
-    username: '',
-    password: ''
-  };
+  signUpForm: FormGroup;
+  errors: any = {};
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private fb: FormBuilder, private authService: AuthService) {
+    this.signUpForm = this.fb.group({
+      name: ['', Validators.required],
+      username: ['', [Validators.required, Validators.maxLength(255)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+    });
+  }
 
   onSubmit() {
-    console.log('User signed up with: ', this.user);
-    this.http.post('http://your-laravel-api.com/api/register', this.user).subscribe(
-      (response) => {
-        console.log('User signed up with: ', response);
-        this.router.navigate(['/login']);
-      },
-      (error) => {
-        console.error('Error signing up: ', error);
+    if (this.signUpForm.invalid) {
+      return;
+    }
+
+    const user = this.signUpForm.value;
+
+    this.authService.register(user).pipe(
+      catchError(error => {
+        if (error.status === 422) {
+          this.errors = error.error.errors; // Capture validation errors
+        } else {
+          console.error('Error occurred during registration:', error);
+        }
+        return of(null);
+      })
+    ).subscribe(response => {
+      if (response) {
+        console.log('Registration successful:', response);
       }
-    );
+    });
   }
 }

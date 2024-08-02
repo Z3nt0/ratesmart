@@ -71,50 +71,35 @@ h1 {
     }
 
     mat-spinner {
-      margin-top: 8px;
-      margin-bottom: 8px;
+      margin-top: 20 px;
+      margin-bottom: 20px;
     }
   }
 
   .positive {
-    color: green;
+    color: rgb(0, 0, 0);
     background-color: #E8EEF1;
+    border-radius: 20px;
   }
 
   .negative {
-    color: red;
+    color: rgb(0, 0, 0);
     background-color: #E8EEF1;
+    border-radius: 20px;
   }
 
   .neutral {
-    color: yellow;
+    color: rgb(0, 0, 0);
     background-color: #E8EEF1;
+    border-radius: 20px;
   }
 
   .total {
     color: rgb(0, 0, 0);
     background-color: #E8EEF1;
+    border-radius: 20px;
   }
 
-  .spinner-positive .mat-progress-spinner circle,
-  .spinner-positive .mat-spinner circle {
-    stroke: green;
-  }
-
-  .spinner-negative .mat-progress-spinner circle,
-  .spinner-negative .mat-spinner circle {
-    stroke: red;
-  }
-
-  .spinner-neutral .mat-progress-spinner circle,
-  .spinner-neutral .mat-spinner circle {
-    stroke: yellow;
-  }
-
-  .spinner-total .mat-progress-spinner circle,
-  .spinner-total .mat-spinner circle {
-    stroke: gray;
-  }
 }
 
 .recent-forms {
@@ -130,4 +115,16 @@ h1 {
     background-color: #e8eef1;
     margin-bottom: 8px;
   }
+}
+:host ::ng-deep .positive-spinner circle{   
+  stroke: #0CC20C
+}
+:host ::ng-deep .negative-spinner circle{   
+  stroke: #c20c0c
+}
+:host ::ng-deep .neutral-spinner circle{   
+  stroke: #fffc52
+}
+:host ::ng-deep .total-spinner circle{   
+  stroke: #000000
 }

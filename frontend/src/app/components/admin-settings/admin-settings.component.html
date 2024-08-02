@@ -4,33 +4,45 @@
       <mat-icon>menu</mat-icon>
     </button>
     <h1>Settings</h1>
-    <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
-  </header>
-
-  <div class="lightmode-container">
-    <h3 class="lightmode">Light Mode</h3>
-    <mat-slide-toggle class="change-mode"></mat-slide-toggle>
+  </header> 
+  <div class="whole-container">
+  <div class="lightmode-change-container">
+    <div class="lightmode-container">
+      Light Mode
+    </div>
+    <div class="change-container">
+      <mat-slide-toggle class="allow-notif"></mat-slide-toggle>
+    </div>
   </div>
 
   <div class="line"></div>
 
   <div class="notifications-container">
-    <h3 class="notifications">Notifications</h3>
-    <mat-slide-toggle class="allow-notif"></mat-slide-toggle>
+    <div class="notifications">
+      Notifications
+    </div>
+    <div class="allow-notif">
+      <mat-slide-toggle class="allow-notif"></mat-slide-toggle>
+    </div>
   </div>
 
   <div class="line2"></div>
-
+  
   <mat-card class="color-box">
-    <mat-card-header>Color:</mat-card-header>
-    <mat-radio-group [color]="color">
-      <mat-radio-button value="option1"></mat-radio-button>
-      <mat-radio-button value="option2"></mat-radio-button>
-      <mat-radio-button value="option3"></mat-radio-button>
-      <mat-radio-button value="option4"></mat-radio-button>
-      <mat-radio-button value="option5"></mat-radio-button>
-      <mat-radio-button value="option6"></mat-radio-button>
-      <mat-radio-button value="option7"></mat-radio-button>
-    </mat-radio-group>
-  </mat-card>
+      <mat-card-header>Color:</mat-card-header>
+      <mat-radio-group [color]="color">
+        <mat-radio-button value="option1"></mat-radio-button>
+        <mat-radio-button value="option2"></mat-radio-button>
+        <mat-radio-button value="option3"></mat-radio-button>
+        <mat-radio-button value="option4"></mat-radio-button>
+        <mat-radio-button value="option5"></mat-radio-button>
+        <mat-radio-button value="option6"></mat-radio-button>
+        <mat-radio-button value="option7"></mat-radio-button>
+      </mat-radio-group>
+    </mat-card>
 </div>
+
+<div class="delete-container">
+  <button class="delete">Delete</button>
+</div>
+

@@ -24,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 import { SetPasswordComponent } from './components/forgot-password/set-password/set-password.component';
 import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-settings-delete/admin-settings-delete.component';
-
+import { AuthService } from '../services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
       
 
 @NgModule({
@@ -57,7 +58,7 @@ import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

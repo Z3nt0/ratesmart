@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './material.module';
+
 import { AppComponent } from './app.component';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
 import { AdminFormsComponent } from './components/admin-forms/admin-forms.component';
 import { SidenavComponent } from './components/shared/sidenav/sidenav.component'; 
@@ -20,12 +23,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { AdminFormAnalyticsComponent } from './components/admin-forms/admin-form-analytics/admin-form-analytics.component';
 import { ForgotPasswordAuthComponent } from './components/forgot-password/forgot-password-auth/forgot-password-auth.component';
 import { AdminFormCustomizeLogoComponent } from './components/admin-forms/admin-form-customize/admin-form-customize-logo/admin-form-customize-logo.component';
-import { HttpClientModule } from '@angular/common/http'; 
-import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 import { SetPasswordComponent } from './components/forgot-password/set-password/set-password.component';
 import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-settings-delete/admin-settings-delete.component';
-
-      
 
 @NgModule({
   declarations: [
@@ -51,11 +50,11 @@ import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

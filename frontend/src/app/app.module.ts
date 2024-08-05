@@ -25,6 +25,9 @@ import { ForgotPasswordAuthComponent } from './components/forgot-password/forgot
 import { AdminFormCustomizeLogoComponent } from './components/admin-forms/admin-form-customize/admin-form-customize-logo/admin-form-customize-logo.component';
 import { SetPasswordComponent } from './components/forgot-password/set-password/set-password.component';
 import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-settings-delete/admin-settings-delete.component';
+import { AuthService } from '../services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+      
 
 @NgModule({
   declarations: [
@@ -56,7 +59,7 @@ import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

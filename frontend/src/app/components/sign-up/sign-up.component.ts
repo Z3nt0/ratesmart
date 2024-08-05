@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -13,13 +14,18 @@ export class SignUpComponent {
   signUpForm: FormGroup;
   errors: any = {};
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.signUpForm = this.fb.group({
       name: ['', Validators.required],
       username: ['', [Validators.required, Validators.maxLength(255)]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(/[!@#$%^&*(),.?":{}|<>]/) // Special character validation
+      ]],
     });
   }
+
 
   onSubmit() {
     if (this.signUpForm.invalid) {
@@ -40,6 +46,7 @@ export class SignUpComponent {
     ).subscribe(response => {
       if (response) {
         console.log('Registration successful:', response);
+        this.router.navigate(['/login']); // Redirect to the login page
       }
     });
   }

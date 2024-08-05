@@ -28,8 +28,9 @@
       <label for="password">Password</label>
       <input id="password" formControlName="password" type="password" />
       <div *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid">
-        <small *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required.</small>
-        <small *ngIf="signUpForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+        <small *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required.<br></small>
+        <small *ngIf="signUpForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long.<br></small>
+        <small *ngIf="signUpForm.get('password')?.errors?.['pattern']">Password must contain at least one special character.</small>
       </div>
     </div>
   

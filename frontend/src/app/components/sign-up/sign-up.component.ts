@@ -18,9 +18,14 @@ export class SignUpComponent {
     this.signUpForm = this.fb.group({
       name: ['', Validators.required],
       username: ['', [Validators.required, Validators.maxLength(255)]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(/[!@#$%^&*(),.?":{}|<>]/) // Special character validation
+      ]],
     });
   }
+
 
   onSubmit() {
     if (this.signUpForm.invalid) {

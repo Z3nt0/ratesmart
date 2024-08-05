@@ -10,19 +10,35 @@
   <section class="feedback-summary">
     <div class="feedback-item positive">
       <h2>Positive</h2>
-      <mat-spinner class="spinner-positive"></mat-spinner>
+      <div class="spinner-container">
+        <mat-spinner class="background-spinner" mode="determinate" value="100" strokeWidth="5"></mat-spinner>
+        <mat-spinner class="positive-spinner" mode="determinate" value="80" strokeWidth="5"></mat-spinner>
+      </div>
+      <div class="percentage">80%</div>
     </div>
     <div class="feedback-item negative">
       <h2>Negative</h2>
-      <mat-spinner class="spinner-negative"></mat-spinner>
+      <div class="spinner-container">
+        <mat-spinner class="background-spinner" mode="determinate" value="100" strokeWidth="5" ></mat-spinner>
+        <mat-spinner class="negative-spinner" mode="determinate" value="70" strokeWidth="5"></mat-spinner>
+      </div>
+      <div class="percentage">70%</div>
     </div>
     <div class="feedback-item neutral">
       <h2>Neutral</h2>
-      <mat-spinner class="spinner-neutral"></mat-spinner>
+      <div class="spinner-container">
+        <mat-spinner class="background-spinner" mode="determinate" value="100" strokeWidth="5"></mat-spinner>
+        <mat-spinner class="neutral-spinner" mode="determinate" value="30" strokeWidth="5"></mat-spinner>
+      </div>
+      <div class="percentage">30%</div>
     </div>
     <div class="feedback-item total">
       <h2>Feedbacks</h2>
-      <mat-spinner class="spinner-total"></mat-spinner>
+      <div class="spinner-container">
+        <mat-spinner class="background-spinner" mode="determinate" value="100" strokeWidth="5"></mat-spinner>
+        <mat-spinner class="total-spinner" mode="determinate" value="50" strokeWidth="5"></mat-spinner>
+      </div>
+      <div class="percentage">50%</div>
     </div>
   </section>
 

@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { SidenavService } from '../shared/sidenav/sidenav.service'; 
+import { MatDialog } from '@angular/material/dialog';
+import { AdminSettingsDeleteComponent } from './admin-settings-delete/admin-settings-delete.component'; // Adjust the path as needed
+import { SidenavService } from '../shared/sidenav/sidenav.service';
 
 @Component({
   selector: 'app-admin-settings',
@@ -15,6 +17,12 @@ export class AdminSettingsComponent {
     theme: 'light'
   };
 
+  constructor(private sidenavService: SidenavService, public dialog: MatDialog) {}
+
+  openSidenav() {
+    this.sidenavService.toggle();
+  }
+
   toggleNotifications() {
     if (this.settings) {
       this.settings.notificationsEnabled = !this.settings.notificationsEnabled;
@@ -26,9 +34,18 @@ export class AdminSettingsComponent {
       this.settings.theme = newTheme;
     }
   }
-  constructor(private sidenavService: SidenavService) {}
 
-  openSidenav() {
-    this.sidenavService.toggle();
+  openDeleteDialog(): void {
+    const dialogRef = this.dialog.open(AdminSettingsDeleteComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Handle account deletion
+        console.log('Account deleted');
+      } else {
+        // Handle cancellation
+        console.log('Deletion cancelled');
+      }
+    });
   }
 }

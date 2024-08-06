@@ -9,18 +9,17 @@ import { SidenavService } from './sidenav.service';
 })
 export class SidenavComponent implements AfterViewInit {
   @ViewChild('sidenav') sidenav!: MatSidenav;
-  mode: MatDrawerMode = 'over'; // Default mode value
+  mode: MatDrawerMode = 'over'; 
 
   constructor(private sidenavService: SidenavService) {}
 
   ngAfterViewInit() {
-    // Make sure the sidenav reference is available before setting it
     if (this.sidenav) {
       this.sidenavService.setSidenav(this.sidenav);
     }
   }
 
   logout() {
-    // Perform logout logic here
+    // Perform logout logic 
   }
 }

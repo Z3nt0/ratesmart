@@ -28,49 +28,52 @@
     </div>
   </div>
 
-  <div *ngIf="showStepper" class="stepper-container">
-    <mat-horizontal-stepper [linear]="isLinear">
-      <mat-step *ngFor="let section of sections; let i = index">
-        <ng-template matStepLabel>{{ section.title }}</ng-template>
-        <div>
-          <mat-card>
-            <mat-card-header>
-              <div class="title-with-icons">
-                <mat-icon class="edit-icon">edit</mat-icon>
-                <mat-card-title>
-                  <input matInput placeholder="Section Title" [(ngModel)]="section.title" class="section-title-input">
-                </mat-card-title>
-              </div>
-            </mat-card-header>
-            <mat-card-content>
-              <div *ngFor="let question of section.questions; let j = index">
-                <mat-form-field class="full-width">
-                  <mat-label>Question</mat-label>
-                  <textarea matInput [(ngModel)]="question.questionText"></textarea>
-                </mat-form-field>
-                <mat-form-field class="full-width">
-                  <mat-label>Response Type</mat-label>
-                  <mat-select [(ngModel)]="question.responseType">
-                    <mat-option value="stars">Stars</mat-option>
-                    <mat-option value="numeric rating scale">Number Rating Scale</mat-option>
-                    <mat-option value="text">Text</mat-option>
-                    <mat-option value="Checkboxes">Checkboxes</mat-option>
-                    <mat-option value="dropdown">Dropdown</mat-option>
-                    <mat-option value="numeric input">Numeric Input</mat-option>
-                    <mat-option value="multiple-choice">Multiple Choice</mat-option>
-                    <mat-option value="emoji">Emoji/Emoticon</mat-option>
-                    <mat-option value="chips">Chips</mat-option>
-                  </mat-select>
-                </mat-form-field>
-                <div class="add-questions">
-                  <button mat-raised-button  (click)="addQuestion(i)">Add Question</button>
-                </div>
-              </div>
-            </mat-card-content>
-          </mat-card>
+  <div class="stepper-container">
+    <div class="scrollable-stepper">
+      <mat-horizontal-stepper [linear]="isLinear" (selectionChange)="onStepChange($event)">
+        <mat-step *ngFor="let section of sections; let i = index">
+          <ng-template matStepLabel>{{ section.title }}</ng-template>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <mat-card *ngIf="sections[selectedStep]">
+      <mat-card-header>
+        <div class="title-with-icons">
+          <mat-icon class="edit-icon">edit</mat-icon>
+          <mat-card-title>
+            <input matInput placeholder="Section Title" [(ngModel)]="sections[selectedStep].title" class="section-title-input">
+          </mat-card-title>
         </div>
-      </mat-step>
-    </mat-horizontal-stepper>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngFor="let question of sections[selectedStep].questions; let j = index">
+          <mat-form-field class="full-width">
+            <mat-label>Question</mat-label>
+            <textarea matInput [(ngModel)]="question.questionText"></textarea>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Response Type</mat-label>
+            <mat-select [(ngModel)]="question.responseType">
+              <mat-option value="stars">Stars</mat-option>
+              <mat-option value="numeric rating scale">Number Rating Scale</mat-option>
+              <mat-option value="text">Text</mat-option>
+              <mat-option value="Checkboxes">Checkboxes</mat-option>
+              <mat-option value="dropdown">Dropdown</mat-option>
+              <mat-option value="numeric input">Numeric Input</mat-option>
+              <mat-option value="multiple-choice">Multiple Choice</mat-option>
+              <mat-option value="emoji">Emoji/Emoticon</mat-option>
+              <mat-option value="chips">Chips</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="add-questions">
+            <button mat-raised-button (click)="addQuestion(selectedStep)">Add Question</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
   </div>
 
   <div class="add-section-button-container">

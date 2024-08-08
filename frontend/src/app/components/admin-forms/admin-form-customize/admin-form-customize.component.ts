@@ -14,12 +14,15 @@ export class AdminFormCustomizeComponent implements OnInit {
   showStepper = true;
   sections: { title: string; questions: { questionText: string; responseType: string }[] }[] = [
     {
-      title: 'Section 1',
+      title: 'Start',
       questions: [
-        { questionText: '', responseType: ' ' },
+        { questionText: '', responseType: '' }
       ]
     }
   ];
+
+  sectionFormGroups: FormGroup[] = [];
+  selectedStep: number = 0;
 
   constructor(private sidenavService: SidenavService, private _formBuilder: FormBuilder) {}
 
@@ -31,8 +34,7 @@ export class AdminFormCustomizeComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
 
-    // Show the stepper if there are sections
-    this.showStepper = this.sections.length > 0;
+    this.updateFormGroups();
   }
 
   openSidenav() {
@@ -41,10 +43,10 @@ export class AdminFormCustomizeComponent implements OnInit {
 
   addSection() {
     this.sections.push({
-      title: `Section ${this.sections.length + 1}`,
+      title: `Step #${this.sections.length + 1}`,
       questions: [{ questionText: '', responseType: '' }]
     });
-    this.showStepper = true;
+    this.updateFormGroups();
   }
 
   addQuestion(sectionIndex: number) {
@@ -52,5 +54,16 @@ export class AdminFormCustomizeComponent implements OnInit {
       questionText: '',
       responseType: ''
     });
+  }
+
+  onStepChange(event: any) {
+    this.selectedStep = event.selectedIndex;
+  }
+
+  private updateFormGroups() {
+    this.sectionFormGroups = this.sections.map(() => this._formBuilder.group({
+      title: ['', Validators.required],
+      questions: this._formBuilder.array([])
+    }));
   }
 }

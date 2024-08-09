@@ -1,39 +1,54 @@
-
 <div class="dashboard-container">
-    <header class="dashboard-header">
-      <button mat-icon-button class="menu-button" (click)="openSidenav()">
-        <mat-icon>menu</mat-icon>
+  <header class="dashboard-header">
+    <button mat-icon-button class="menu-button" (click)="openSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Dashboard</h1>
+    <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
+  </header>
+
+  <section class="feedback-summary">
+    <div class="feedback-item positive">
+      <h2>Positive</h2>
+      <div class="spinner-container">
+        <mat-spinner class="background-spinner" mode="determinate" value="100" strokeWidth="5"></mat-spinner>
+        <mat-spinner class="positive-spinner" mode="determinate" value="80" strokeWidth="5"></mat-spinner>
+      </div>
+      <div class="percentage">80%</div>
+    </div>
+    <div class="feedback-item negative">
+      <h2>Negative</h2>
+      <div class="spinner-container">
+        <mat-spinner class="background-spinner" mode="determinate" value="100" strokeWidth="5" ></mat-spinner>
+        <mat-spinner class="negative-spinner" mode="determinate" value="70" strokeWidth="5"></mat-spinner>
+      </div>
+      <div class="percentage">70%</div>
+    </div>
+    <div class="feedback-item neutral">
+      <h2>Neutral</h2>
+      <div class="spinner-container">
+        <mat-spinner class="background-spinner" mode="determinate" value="100" strokeWidth="5"></mat-spinner>
+        <mat-spinner class="neutral-spinner" mode="determinate" value="30" strokeWidth="5"></mat-spinner>
+      </div>
+      <div class="percentage">30%</div>
+    </div>
+    <div class="feedback-item total">
+      <h2>Feedbacks</h2>
+      <div class="spinner-container">
+        <mat-spinner class="background-spinner" mode="determinate" value="100" strokeWidth="5"></mat-spinner>
+        <mat-spinner class="total-spinner" mode="determinate" value="50" strokeWidth="5"></mat-spinner>
+      </div>
+      <div class="percentage">50%</div>
+    </div>
+  </section>
+
+  <section class="recent-forms">
+    <h2>Recent Forms</h2>
+    <div class="form-item" *ngFor="let form of recentForms">
+      <span>{{ form.title }}</span>
+      <button mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
       </button>
-      <h1>Dashboard</h1>
-      <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
-    </header>
-  
-    <section class="feedback-summary">
-      <div class="feedback-item positive">
-        <h2>Positive</h2>
-        <div class="circle"></div>
-      </div>
-      <div class="feedback-item negative">
-        <h2>Negative</h2>
-        <div class="circle"></div>
-      </div>
-        <div class="feedback-item neutral">
-          <h2>Neutral</h2>
-          <div class="circle"></div>
-        </div>
-        <div class="feedback-item total">
-          <h2>Feedbacks</h2>
-          <div class="circle">100</div>
-        </div>
-    </section>
-  
-    <section class="recent-forms">
-      <h2>Recent Forms</h2>
-      <div class="form-item" *ngFor="let form of recentForms">
-        <span>{{ form.title }}</span>
-        <button mat-icon-button>
-          <mat-icon>more_vert</mat-icon>
-        </button>
-      </div>
-    </section>
-  </div>
+    </div>
+  </section>
+</div>

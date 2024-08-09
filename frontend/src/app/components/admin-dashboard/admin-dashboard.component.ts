@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SidenavService } from '../shared/sidenav/sidenav.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-admin-dashboard',

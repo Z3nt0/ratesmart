@@ -4,24 +4,30 @@
 }
 
 .sidenav {
-  width: 327px; // Set the width of the sidenav
-  border-top-right-radius: 12px; // Set the top-right corner radius
+  width: 327px; 
+  border-top-right-radius: 12px; 
+  border-bottom-right-radius: 12px; 
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-section {
-  background-color: #4caf50; // Change this to match the green color
+  background-color: #5DB075; 
   padding: 16px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 327px; // Set the width of the profile section
-  height: 206px; // Set the height of the profile section
-  border-top-right-radius: 12px; // Set the top-right corner radius
+  height: 206px; 
+  border-top-right-radius: 12px; 
 }
 
 .profile-picture {
   border-radius: 50%;
+  width: 150px;
+  height: 150px;
   margin-bottom: 8px;
+  border: 1px solid black;
+  margin-right: 50px;
 }
 
 .profile-name {
@@ -31,9 +37,9 @@
 }
 
 mat-nav-list {
-  width: 327px; // Set the width of the nav list
-  height: 635px; // Set the height of the nav list
-  padding: 0;
+  flex-grow: 1; 
+  padding-top: 0;
+  padding-bottom: 364px;
 }
 
 mat-list-item {
@@ -41,9 +47,19 @@ mat-list-item {
   padding: 16px;
 }
 
+.logout-section {
+  width: 100%; 
+  padding: 0;
+  padding-top: 10px;
+}
+
 .logout-item {
-  margin-top: auto;
-  background-color: #4caf50; // Change this to match the green color
-  color: white;
-  text-align: center;
+  text-align: left;
+}
+
+.bottom-section {
+  display: flex;
+  background-color: #5DB075; 
+  border-bottom-right-radius: 12px; 
+  height: 75px; 
 }

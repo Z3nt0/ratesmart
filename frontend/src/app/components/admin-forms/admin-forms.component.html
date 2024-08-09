@@ -16,25 +16,23 @@
   <div class="feedback-cards-container">
     <mat-card class="feedback-card">
       <div class="card-header">
-        <span class="card-title">Title of FB Form</span>
-        <button mat-icon-button class="edit-button">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-icon-button [matMenuTriggerFor]="menu" class="mat-menu">
+        <input matInput placeholder="Feedback Title" class="feedback-title-input">
+        <mat-icon class="feedback-icon">edit</mat-icon>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="mat-menu-button">
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>Edit</button>
+          <button mat-menu-item routerLink="/admin-form-customize">Edit</button>
           <button mat-menu-item>Delete</button>
           <button mat-menu-item>Generate</button>
         </mat-menu>
       </div>
       <div class="card-content">
         <div class="responses">
-          <span>Responses</span>
+          <span class="responses-label">Responses</span>
           <span class="response-count">100</span>
         </div>
-        <button mat-button class="view-analytics">
+        <button mat-button class="view-analytics" routerLink="/admin-form-analytics">
           <mat-icon>visibility</mat-icon>
           View Analytics
         </button>

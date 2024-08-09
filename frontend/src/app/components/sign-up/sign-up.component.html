@@ -1,26 +1,43 @@
 <div class="signup-container">
-
   <div class="logo">
     <span class="rate">RATE</span>
     <span class="smart">SMART</span>
   </div>
-  
-  <form (ngSubmit)="onSubmit()">
+
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <!-- Name Field -->
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" placeholder="Name" [(ngModel)]="user.name" name="name" required />
+      <input id="name" formControlName="name" type="text" />
+      <div *ngIf="signUpForm.get('name')?.touched && signUpForm.get('name')?.invalid">
+        <small *ngIf="signUpForm.get('name')?.errors?.['required']">Name is required.</small>
+      </div>
     </div>
+  
+    <!-- Username Field -->
     <div class="form-group">
       <label for="username">Username</label>
-      <input type="text" placeholder="Username" [(ngModel)]="user.username" name="username" required />
+      <input id="username" formControlName="username" type="text" />
+      <div *ngIf="signUpForm.get('username')?.touched && signUpForm.get('username')?.invalid">
+        <small *ngIf="signUpForm.get('username')?.errors?.['required']">Username is required.</small>
+      </div>
     </div>
+  
+    <!-- Password Field -->
     <div class="form-group">
-      <label for="pword">Password</label>
-      <input type="password" placeholder="Password" [(ngModel)]="user.password" name="password" required />
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password" />
+      <div *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid">
+        <small *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required.<br></small>
+        <small *ngIf="signUpForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long.<br></small>
+        <small *ngIf="signUpForm.get('password')?.errors?.['pattern']">Password must contain at least one special character.</small>
+      </div>
     </div>
-    <button type="submit" class="signup-button">Sign Up</button>
+  
+    <button class="signup-button" type="submit">Sign Up</button>
   </form>
+
   <p class="login-link">
-    Already have an account? <a routerLink="/login">Login</a>
+    Already have an Account? <a routerLink="/login">Login</a>
   </p>
 </div>

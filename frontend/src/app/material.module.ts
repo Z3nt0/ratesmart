@@ -17,6 +17,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select'; // Import MatSelectModule
 import { MatOptionModule } from '@angular/material/core'; // Import MatOptionModule
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 @NgModule({
   exports: [
@@ -38,7 +40,9 @@ import { MatOptionModule } from '@angular/material/core'; // Import MatOptionMod
     MatDialogModule,
     MatSnackBarModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
     
   ]
 })

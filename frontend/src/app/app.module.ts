@@ -26,6 +26,8 @@ import { SetPasswordComponent } from './components/forgot-password/set-password/
 import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-settings-delete/admin-settings-delete.component';
 import { AuthService } from '../services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
       
 
 @NgModule({
@@ -58,7 +60,7 @@ import { AuthGuard } from './guards/auth.guard';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService,{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, AuthGuard, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

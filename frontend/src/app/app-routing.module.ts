@@ -16,27 +16,26 @@ import { ForgotPasswordAuthComponent } from './components/forgot-password/forgot
 import { SetPasswordComponent } from './components/forgot-password/set-password/set-password.component'; 
 import { AdminFormCustomizeLogoComponent } from './components/admin-forms/admin-form-customize/admin-form-customize-logo/admin-form-customize-logo.component';
 import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-settings-delete/admin-settings-delete.component';
-
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/splash', pathMatch: 'full' },
   { path: 'splash', component: SplashScreenComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin-dashboard', component: AdminDashboardComponent },
-  { path: 'admin-settings', component: AdminSettingsComponent }, 
-  { path: 'admin-forms', component: AdminFormsComponent },
-  { path: 'admin-profile', component: AdminProfileComponent },
-  { path: 'change-password', component: ChangePasswordComponent },
+  { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'admin-settings', component: AdminSettingsComponent, canActivate: [AuthGuard] }, 
+  { path: 'admin-forms', component: AdminFormsComponent, canActivate: [AuthGuard] },
+  { path: 'admin-profile', component: AdminProfileComponent, canActivate: [AuthGuard] },
+  { path: 'change-password', component: ChangePasswordComponent, canActivate: [AuthGuard] },
   { path: 'about-page', component: AboutPageComponent },
-  { path: 'admin-form-customize', component: AdminFormCustomizeComponent }, 
+  { path: 'admin-form-customize', component: AdminFormCustomizeComponent, canActivate: [AuthGuard] }, 
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'admin-form-analytics', component: AdminFormAnalyticsComponent },
+  { path: 'admin-form-analytics', component: AdminFormAnalyticsComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password-auth', component: ForgotPasswordAuthComponent },
-  { path: 'set-password', component: SetPasswordComponent }, // Add the route
-  { path: 'admin-form-customize-logo', component: AdminFormCustomizeLogoComponent },
-  { path: 'admin-settings-delete', component: AdminSettingsDeleteComponent },
-  
+  { path: 'set-password', component: SetPasswordComponent },
+  { path: 'admin-form-customize-logo', component: AdminFormCustomizeLogoComponent, canActivate: [AuthGuard] },
+  { path: 'admin-settings-delete', component: AdminSettingsDeleteComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

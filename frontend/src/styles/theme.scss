@@ -33,7 +33,6 @@ $dark-theme: mat.define-dark-theme((
 
 // Include theme styles
 @include mat.all-component-colors($light-theme);
-@include mat.all-component-colors($dark-theme);
 
 // Global Styles
 html, body { height: 100%; }

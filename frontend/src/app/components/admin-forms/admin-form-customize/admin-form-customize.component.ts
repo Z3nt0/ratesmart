@@ -11,18 +11,15 @@ export class AdminFormCustomizeComponent implements OnInit {
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   isLinear = false;
-  showStepper = true;
   sections: { title: string; questions: { questionText: string; responseType: string }[] }[] = [
     {
-      title: 'Start',
-      questions: [
-        { questionText: '', responseType: '' }
-      ]
+      title: 'Edit Title',
+      questions: [{ questionText: '', responseType: '' }]
     }
   ];
 
-  sectionFormGroups: FormGroup[] = [];
   selectedStep: number = 0;
+  visibleStepRange: { start: number; end: number } = { start: 0, end: 4 };
 
   constructor(private sidenavService: SidenavService, private _formBuilder: FormBuilder) {}
 
@@ -33,8 +30,6 @@ export class AdminFormCustomizeComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
-
-    this.updateFormGroups();
   }
 
   openSidenav() {
@@ -43,10 +38,11 @@ export class AdminFormCustomizeComponent implements OnInit {
 
   addSection() {
     this.sections.push({
-      title: `Step #${this.sections.length + 1}`,
+      title: 'Edit Title',
       questions: [{ questionText: '', responseType: '' }]
     });
-    this.updateFormGroups();
+    this.updateVisibleSteps();
+    this.selectedStep = this.sections.length - 1; // Move to the newly added section
   }
 
   addQuestion(sectionIndex: number) {
@@ -56,14 +52,94 @@ export class AdminFormCustomizeComponent implements OnInit {
     });
   }
 
-  onStepChange(event: any) {
-    this.selectedStep = event.selectedIndex;
+  deleteSection(sectionIndex: number) {
+    if (sectionIndex >= 0 && sectionIndex < this.sections.length) {
+      this.sections.splice(sectionIndex, 1);
+      if (this.selectedStep >= this.sections.length) {
+        this.selectedStep = this.sections.length - 1;
+      }
+    }
   }
 
-  private updateFormGroups() {
-    this.sectionFormGroups = this.sections.map(() => this._formBuilder.group({
-      title: ['', Validators.required],
-      questions: this._formBuilder.array([])
-    }));
+  deleteQuestion(sectionIndex: number, questionIndex: number) {
+    if (sectionIndex >= 0 && sectionIndex < this.sections.length) {
+      this.sections[sectionIndex].questions.splice(questionIndex, 1);
+      // Ensure that selectedStep remains valid
+      if (this.sections[sectionIndex].questions.length === 0 && sectionIndex === this.selectedStep) {
+        this.selectedStep = Math.max(0, sectionIndex - 1);
+      }
+    }
+  }
+
+  prevStep() {
+    if (this.selectedStep > 0) {
+      this.selectedStep--;
+    }
+  }
+
+  nextStep() {
+    if (this.selectedStep < this.sections.length - 1) {
+      this.selectedStep++;
+    }
+  }
+
+  goToStep(step: number) {
+    if (step >= 0 && step < this.sections.length) {
+      this.selectedStep = step;
+    }
+  }
+
+  getVisibleSteps(): number[] {
+    const stepCount = this.sections.length;
+    const maxVisibleSteps = 5;
+
+    let startIndex: number;
+    let endIndex: number;
+
+    if (stepCount <= maxVisibleSteps) {
+      startIndex = 0;
+      endIndex = stepCount - 1;
+    } else {
+      const midPoint = Math.floor(maxVisibleSteps / 2);
+      if (this.selectedStep <= midPoint) {
+        startIndex = 0;
+        endIndex = maxVisibleSteps - 1;
+      } else if (this.selectedStep >= stepCount - midPoint - 1) {
+        startIndex = stepCount - maxVisibleSteps;
+        endIndex = stepCount - 1;
+      } else {
+        startIndex = this.selectedStep - midPoint;
+        endIndex = this.selectedStep + midPoint;
+      }
+    }
+
+    return Array.from({ length: endIndex - startIndex + 1 }, (_, index) => startIndex + index);
+  }
+
+  private updateVisibleSteps() {
+    const stepCount = this.sections.length;
+    const maxVisibleSteps = 5;
+
+    if (stepCount <= maxVisibleSteps) {
+      this.visibleStepRange.start = 0;
+      this.visibleStepRange.end = stepCount - 1;
+    } else {
+      const midPoint = Math.floor(maxVisibleSteps / 2);
+      if (this.selectedStep <= midPoint) {
+        this.visibleStepRange.start = 0;
+        this.visibleStepRange.end = maxVisibleSteps - 1;
+      } else if (this.selectedStep >= stepCount - midPoint - 1) {
+        this.visibleStepRange.start = stepCount - maxVisibleSteps;
+        this.visibleStepRange.end = stepCount - 1;
+      } else {
+        this.visibleStepRange.start = this.selectedStep - midPoint;
+        this.visibleStepRange.end = this.selectedStep + midPoint;
+      }
+    }
+  }
+
+  saveSection() {
+    // Implement your save logic here
+    console.log('Section saved:', this.sections[this.selectedStep]);
   }
 }

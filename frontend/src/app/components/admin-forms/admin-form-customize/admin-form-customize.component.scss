@@ -99,19 +99,16 @@ h1 {
   font-size: 24px;
   padding: 12px;
 }
-.section-card {
-  max-width: 80%;
-  margin: 16px auto;
-  border: 1px solid #5DB075;
-}
 
 .title-with-icons {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 
   .section-title-input {
     flex-grow: 1;
+    text-align: left;
     font-size: 1.25rem;
     border: none;
     outline: none;
@@ -122,25 +119,17 @@ h1 {
   
   .edit-icon {
     margin-right: 8px;
-    width: 100%;
-  }
-
-  .more-icon {
-    cursor: pointer;
-    margin-left: 8px;
+    width: 24px;
   }
 }
-.question-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+
+.card-container {
+  width: 100%;
 }
 
 .full-width {
   width: 100%;
 }
-
-
 
 .add-questions {
   display: flex;
@@ -176,20 +165,72 @@ h1 {
   width: 100%;
 }
 
-.scrollable-stepper {
-  overflow-x: auto;
-  padding-bottom: 16px;
-}
-.mat-horizontal-stepper {
+.stepper-nav {
   display: flex;
-  flex-wrap: nowrap;
-}
-
-.mat-step {
-  min-width: 180px;
-  flex-shrink: 0; 
-}
-
-.card-container {
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+}
+
+.step-indicator {
+  display: flex;
+}
+
+.step-indicator button {
+  width: 0px;
+  height: 32px;
+  border-radius: 10%;
+  background-color: #f0f0f0;
+  color: rgb(79, 79, 79);
+}
+
+.step-indicator button:disabled {
+  background-color: #45a049;
+  cursor: not-allowed;
+  color: white;
+}
+
+.card-actions-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px; 
+
+  .delete-section-button {
+    background-color: #e53935; 
+    color: white; 
+    font-size: 16px;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+    border-radius: 50px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #c62828; 
+    }
+  }
+
+  .save-button {
+    background-color: #4caf50; 
+    color: white; 
+    font-size: 16px;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+    border-radius: 50px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #388e3c; 
+    }
+  }
+}
+
+.delete-question-button{
+  margin-left: 90%;
 }

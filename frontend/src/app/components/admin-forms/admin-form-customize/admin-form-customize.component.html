@@ -17,7 +17,6 @@
       <input matInput placeholder="Feedback Title" class="feedback-title-input">
       <mat-icon class="feedback-icon">edit</mat-icon>
     </div>
-
     <div class="more-icon2 container">
       <button mat-icon-button [matMenuTriggerFor]="menu" class="mat-menu-button">
         <mat-icon>more_vert</mat-icon>
@@ -29,12 +28,22 @@
   </div>
 
   <div class="stepper-container">
-    <div class="scrollable-stepper">
-      <mat-horizontal-stepper [linear]="isLinear" (selectionChange)="onStepChange($event)">
-        <mat-step *ngFor="let section of sections; let i = index">
-          <ng-template matStepLabel>{{ section.title }}</ng-template>
-        </mat-step>
-      </mat-horizontal-stepper>
+    <div class="stepper-nav">
+      <button mat-icon-button (click)="prevStep()" [disabled]="selectedStep === 0">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+
+      <div class="step-indicator">
+        <ng-container *ngFor="let step of getVisibleSteps(); let i = index">
+          <button mat-button (click)="goToStep(step)" [disabled]="selectedStep === step">
+            {{ step + 1 }}
+          </button>
+        </ng-container>
+      </div>
+
+      <button mat-icon-button (click)="nextStep()" [disabled]="selectedStep === sections.length - 1">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
     </div>
   </div>
 
@@ -43,13 +52,14 @@
       <mat-card-header>
         <div class="title-with-icons">
           <mat-icon class="edit-icon">edit</mat-icon>
-          <mat-card-title>
-            <input matInput placeholder="Section Title" [(ngModel)]="sections[selectedStep].title" class="section-title-input">
-          </mat-card-title>
+          <input matInput placeholder="Section Title" [(ngModel)]="sections[selectedStep].title" class="section-title-input">
         </div>
       </mat-card-header>
       <mat-card-content>
-        <div *ngFor="let question of sections[selectedStep].questions; let j = index">
+        <div *ngFor="let question of sections[selectedStep].questions; let j = index" class="question-container">
+          <button mat-icon-button (click)="deleteQuestion(selectedStep, j)" class="delete-question-button">
+            <mat-icon>delete</mat-icon>
+          </button>
           <mat-form-field class="full-width">
             <mat-label>Question</mat-label>
             <textarea matInput [(ngModel)]="question.questionText"></textarea>
@@ -68,9 +78,9 @@
               <mat-option value="chips">Chips</mat-option>
             </mat-select>
           </mat-form-field>
-          <div class="add-questions">
-            <button mat-raised-button (click)="addQuestion(selectedStep)">Add Question</button>
-          </div>
+        </div>
+        <div class="add-questions">
+          <button mat-raised-button (click)="addQuestion(selectedStep)">Add Question</button>
         </div>
       </mat-card-content>
     </mat-card>
@@ -79,4 +89,10 @@
   <div class="add-section-button-container">
     <button mat-raised-button (click)="addSection()">Add Section</button>
   </div>
+  <mat-card-actions>
+    <div class="card-actions-container">
+      <button mat-raised-button (click)="deleteSection(selectedStep)" class="delete-section-button">Delete</button>
+      <button mat-raised-button color="primary" (click)="saveSection()" class="save-button">Save</button>
+    </div>
+  </mat-card-actions>
 </div>

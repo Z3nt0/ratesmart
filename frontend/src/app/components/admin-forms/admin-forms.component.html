@@ -1,3 +1,4 @@
+<div [ngClass]="settings.theme === 'dark' ? 'dark-theme' : 'light-theme'">
 <div class="forms-container">
   <header class="forms-header">
     <button mat-icon-button class="menu-button" (click)="openSidenav()">
@@ -42,6 +43,8 @@
     <!-- Add more cards as needed -->
 
   </div>
+  <button type="submit" class="new-button">New</button>
 </div>
 
-<button type="submit" class="new-button">New</button>
+
+</div>

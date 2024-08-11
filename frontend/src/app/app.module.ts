@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
-import { HttpClientModule } from '@angular/common/http'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +15,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
 import { AdminFormsComponent } from './components/admin-forms/admin-forms.component';
-import { SidenavComponent } from './components/shared/sidenav/sidenav.component'; 
+import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { AdminFormCustomizeComponent } from './components/admin-forms/admin-form-customize/admin-form-customize.component';
@@ -27,8 +27,9 @@ import { SetPasswordComponent } from './components/forgot-password/set-password/
 import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-settings-delete/admin-settings-delete.component';
 import { AuthService } from '../services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
-      
+import { UserStartComponent } from './components/user-start/user-start.component';
 
+// Do not declare EndUserComponent here
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,8 @@ import { AuthGuard } from './guards/auth.guard';
     AdminFormCustomizeLogoComponent,
     SetPasswordComponent,
     AdminSettingsDeleteComponent,
+    UserStartComponent,
+    // Remove EndUserComponent from here
   ],
   imports: [
     BrowserModule,

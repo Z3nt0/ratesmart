@@ -22,6 +22,7 @@ import { ForgotPasswordAuthComponent } from './components/forgot-password/forgot
 import { AdminFormCustomizeLogoComponent } from './components/admin-forms/admin-form-customize/admin-form-customize-logo/admin-form-customize-logo.component';
 import { HttpClientModule } from '@angular/common/http'; 
 import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
+import { ReactiveFormsModule } from '@angular/forms'; 
 import { SetPasswordComponent } from './components/forgot-password/set-password/set-password.component';
 import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-settings-delete/admin-settings-delete.component';
 import { AuthService } from '../services/auth.service';

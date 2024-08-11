@@ -45,13 +45,15 @@
       <mat-card class="rating-card">
         <mat-card-content>
           <h2>Rating</h2>
-          <div class="stars">
-            <mat-icon>star</mat-icon>
-            <mat-icon>star</mat-icon>
-            <mat-icon>star</mat-icon>
-            <mat-icon>star</mat-icon>
-            <mat-icon>star</mat-icon>
-          </div>
+            <div class="star-rating">
+              <ng-container *ngFor="let star of stars; let i = index">
+                <mat-icon
+                  [ngClass]="{'active': isStarActive(i)}"
+                  (click)="setRating(i + 1)">
+                  star
+                </mat-icon>
+              </ng-container>
+            </div>
         </mat-card-content>
       </mat-card>
     </div>

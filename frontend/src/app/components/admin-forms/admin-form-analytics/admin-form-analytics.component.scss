@@ -174,17 +174,23 @@
     }
   }
 
-  .stars {
-    display: flex;
-    justify-content: center;
-  
-    mat-icon {
-      color: gold;
-      font-size: 36px;
-      margin: 0 5px; 
-    }
-  }
+  .star-rating {
 
+    display: flex;
+    font-size: 40px;
+    color: #ddd;
+    
+    mat-icon {
+      margin-right: 8px;
+      font-size: inherit;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    
+    .active {
+      color: #ffc107; // Material yellow-500
+    }
+  }  
   .suggestion-chart {
     p {
       margin: 8px 0;

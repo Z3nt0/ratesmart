@@ -1,0 +1,71 @@
+@import "../../node_modules/@angular/material/theming";
+
+// Define palettes for light and dark themes
+$light-primary: mat-palette($mat-blue-grey);
+$light-accent: mat-palette($mat-amber, A200, A100, A400);
+$light-warn: mat-palette($mat-deep-orange);
+
+$dark-primary: mat-palette($mat-cyan);
+$dark-accent: mat-palette($mat-pink, A200, A100, A400);
+$dark-warn: mat-palette($mat-lime);
+
+// Create themes
+$light-theme: mat-light-theme((
+  color: (
+    primary: $light-primary,
+    accent: $light-accent,
+    warn: $light-warn,
+  )
+));
+
+$dark-theme: mat-dark-theme((
+  color: (
+    primary: $dark-primary,
+    accent: $dark-accent,
+    warn: $dark-warn,
+  )
+));
+
+// Include core styles once
+@include mat-core();
+
+// Include theme styles
+@include angular-material-theme($light-theme);
+
+// Theme-specific styles
+html, body { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Light theme styles
+.light-theme {
+  background-color: #ffffff; /* Light background color */
+  color: #000000; /* Dark text color */
+
+  .mat-sidenav {
+    background-color: #f5f5f5; /* Light sidenav background */
+    color: #000000; /* Dark sidenav text color */
+    
+   .mdc-list-item__primary-text {
+      color: #000000!important;
+    } 
+    
+  }
+}
+
+// Dark theme styles
+.dark-theme {
+  background-color: #333333; /* Dark sidenav background */
+  color: #f5f5f5;
+
+  .mat-sidenav {
+    background-color: #333333; /* Dark sidenav background */
+    
+    .mdc-list-item__primary-text {
+      color: #ffffff !important;
+    } 
+  } 
+
+}

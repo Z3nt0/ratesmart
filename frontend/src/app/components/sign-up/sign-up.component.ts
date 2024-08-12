@@ -21,11 +21,14 @@ export class SignUpComponent {
       password: ['', [
         Validators.required,
         Validators.minLength(8),
-        Validators.pattern(/[!@#$%^&*(),.?":{}|<>]/) // Special character validation
+        Validators.pattern(/[!@#$%^&*(),.?":{}|<>]/) 
       ]],
     });
   }
 
+  hideRequired(): boolean {
+    return true; 
+  }
 
   onSubmit() {
     if (this.signUpForm.invalid) {

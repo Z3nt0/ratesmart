@@ -29,6 +29,8 @@ import { AuthService } from '../services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { UserStartComponent } from './components/user-start/user-start.component';
 import { RateSatisfactoryComponent } from './components/end-user/rate-satisfactory/rate-satisfactory.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 
 // Do not declare EndUserComponent here
 @NgModule({
@@ -53,7 +55,6 @@ import { RateSatisfactoryComponent } from './components/end-user/rate-satisfacto
     AdminSettingsDeleteComponent,
     UserStartComponent,
     RateSatisfactoryComponent,
-    // Remove EndUserComponent from here
   ],
   imports: [
     BrowserModule,
@@ -64,7 +65,7 @@ import { RateSatisfactoryComponent } from './components/end-user/rate-satisfacto
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService,{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, AuthGuard, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

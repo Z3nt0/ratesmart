@@ -84,4 +84,22 @@ class AuthController extends Controller
             'user' => $user
         ]);
     }
+    public function logout(Request $request)
+    {
+        // Get the currently authenticated user
+        $user = Auth::user();
+
+        if ($user) {
+            // Revoke all tokens the user has issued
+            $user->tokens()->delete();
+
+            return response()->json([
+                'message' => 'Logout successful'
+            ], 200);
+        }
+
+        return response()->json([
+            'message' => 'No authenticated user found'
+        ], 401);
+    }
 }

@@ -36,6 +36,7 @@
     align-items: center;
     width: 100%;
     max-width: 300px;
+    margin: 0 auto;
 
     .form-group {
       width: 100%;
@@ -49,14 +50,6 @@
         display: block;
       }
 
-      input {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #F6F6F6;
-        border-radius: 10px;
-        font-size: 1rem;
-        background-color: #E8E8E8;
-      }
 
       small {
         color: #ff0000; // Error message color

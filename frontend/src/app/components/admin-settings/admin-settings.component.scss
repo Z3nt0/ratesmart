@@ -1,3 +1,4 @@
+
 .settings-container {
   display: flex;
   flex-direction: column;
@@ -20,6 +21,17 @@
   position: relative;
 }
 
+.settings {
+  flex: 1 1 auto;
+  margin: 8px 0;
+  margin-top: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+}
+
 .menu-button {
   color: rgb(0, 0, 0);
   font-size: 24px; 
@@ -29,16 +41,6 @@
 .menu-button mat-icon {
   font-size: 30px; 
   font-weight: bold;
-}
-
-h1 {
-  margin: 8px 0;
-  margin-top: 40px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
 }
 
 .whole-container{
@@ -130,4 +132,118 @@ h1 {
   color: #ffffff;
   border: 2px solid #d9534f; /* Border color matching the background */
 
+}
+
+::ng-deep .mat-mdc-radio-button {
+  // Default color properties for radio buttons
+  --mdc-radio-unselected-focus-icon-color: #040201;
+  --mdc-radio-unselected-hover-icon-color: #040201;
+  --mdc-radio-unselected-icon-color: #040201;
+  --mdc-radio-unselected-pressed-icon-color: #040201;
+
+  --mdc-radio-selected-focus-icon-color: #33FF57;
+  --mdc-radio-selected-hover-icon-color: #33FF57;
+  --mdc-radio-selected-icon-color: #33FF57;
+  --mdc-radio-selected-pressed-icon-color: #33FF57;
+
+  --mat-mdc-radio-ripple-color: rgba(0, 0, 0, 0.1);
+  --mat-mdc-radio-checked-ripple-color: rgba(0, 0, 0, 0.1);
+
+  &:nth-of-type(1) {
+    --mdc-radio-unselected-focus-icon-color: #FF5733; // Focus color
+    --mdc-radio-unselected-hover-icon-color: #FF5733; // Hover color
+    --mdc-radio-unselected-icon-color: #FF5733; // Default color
+    --mdc-radio-unselected-pressed-icon-color: #FF5733; // Pressed color
+
+    --mdc-radio-selected-focus-icon-color: #FF0000; // Focus color
+    --mdc-radio-selected-hover-icon-color: #FF0000; // Hover color
+    --mdc-radio-selected-icon-color: #FF0000; // Selected color
+    --mdc-radio-selected-pressed-icon-color: #FF0000; // Pressed color
+
+    --mat-mdc-radio-ripple-color: rgba(255, 0, 0, 0.2);
+    --mat-mdc-radio-checked-ripple-color: rgba(255, 0, 0, 0.2);
+  }
+
+  &:nth-of-type(2) {
+    --mdc-radio-unselected-focus-icon-color: #33FF57;
+    --mdc-radio-unselected-hover-icon-color: #33FF57;
+    --mdc-radio-unselected-icon-color: #33FF57;
+    --mdc-radio-unselected-pressed-icon-color: #33FF57;
+
+    --mdc-radio-selected-focus-icon-color: #00FF00;
+    --mdc-radio-selected-hover-icon-color: #00FF00;
+    --mdc-radio-selected-icon-color: #00FF00;
+    --mdc-radio-selected-pressed-icon-color: #00FF00;
+
+    --mat-mdc-radio-ripple-color: rgba(0, 255, 0, 0.2);
+    --mat-mdc-radio-checked-ripple-color: rgba(0, 255, 0, 0.2);
+  }
+
+  &:nth-of-type(3) {
+    --mdc-radio-unselected-focus-icon-color: #3357FF;
+    --mdc-radio-unselected-hover-icon-color: #3357FF;
+    --mdc-radio-unselected-icon-color: #3357FF;
+    --mdc-radio-unselected-pressed-icon-color: #3357FF;
+
+    --mdc-radio-selected-focus-icon-color: #0000FF;
+    --mdc-radio-selected-hover-icon-color: #0000FF;
+    --mdc-radio-selected-icon-color: #0000FF;
+    --mdc-radio-selected-pressed-icon-color: #0000FF;
+
+    --mat-mdc-radio-ripple-color: rgba(0, 0, 255, 0.2);
+    --mat-mdc-radio-checked-ripple-color: rgba(0, 0, 255, 0.2);
+  }
+
+  &:nth-of-type(4) {
+    --mdc-radio-unselected-focus-icon-color: #FFB833;
+    --mdc-radio-unselected-hover-icon-color: #FFB833;
+    --mdc-radio-unselected-icon-color: #FFB833;
+    --mdc-radio-unselected-pressed-icon-color: #FFB833;
+    --mdc-radio-selected-focus-icon-color: #FFA500;
+    --mdc-radio-selected-hover-icon-color: #FFA500;
+    --mdc-radio-selected-icon-color: #FFA500;
+    --mdc-radio-selected-pressed-icon-color: #FFA500;
+    --mat-mdc-radio-ripple-color: rgba(255, 165, 0, 0.2);
+    --mat-mdc-radio-checked-ripple-color: rgba(255, 165, 0, 0.2);
+  }
+
+  &:nth-of-type(5) {
+    --mdc-radio-unselected-focus-icon-color: #D9534F;
+    --mdc-radio-unselected-hover-icon-color: #D9534F;
+    --mdc-radio-unselected-icon-color: #D9534F;
+    --mdc-radio-unselected-pressed-icon-color: #D9534F;
+
+    --mdc-radio-selected-focus-icon-color: #C8102E;
+    --mdc-radio-selected-hover-icon-color: #C8102E;
+    --mdc-radio-selected-icon-color: #C8102E;
+    --mdc-radio-selected-pressed-icon-color: #C8102E;
+    --mat-mdc-radio-ripple-color: rgba(200, 16, 46, 0.2);
+    --mat-mdc-radio-checked-ripple-color: rgba(200, 16, 46, 0.2);
+  }
+
+  &:nth-of-type(6) {
+    --mdc-radio-unselected-focus-icon-color: #6A1B9A;
+    --mdc-radio-unselected-hover-icon-color: #6A1B9A;
+    --mdc-radio-unselected-icon-color: #6A1B9A;
+    --mdc-radio-unselected-pressed-icon-color: #6A1B9A;
+    --mdc-radio-selected-focus-icon-color: #8E24AA;
+    --mdc-radio-selected-hover-icon-color: #8E24AA;
+    --mdc-radio-selected-icon-color: #8E24AA;
+    --mdc-radio-selected-pressed-icon-color: #8E24AA;
+    --mat-mdc-radio-ripple-color: rgba(142, 36, 170, 0.2);
+    --mat-mdc-radio-checked-ripple-color: rgba(142, 36, 170, 0.2);
+  }
+
+  &:nth-of-type(7) {
+    --mdc-radio-unselected-focus-icon-color: #00BCD4;
+    --mdc-radio-unselected-hover-icon-color: #00BCD4;
+    --mdc-radio-unselected-icon-color: #00BCD4;
+    --mdc-radio-unselected-pressed-icon-color: #00BCD4;
+    --mdc-radio-selected-focus-icon-color: #00ACC1;
+    --mdc-radio-selected-hover-icon-color: #00ACC1;
+    --mdc-radio-selected-icon-color: #00ACC1;
+    --mdc-radio-selected-pressed-icon-color: #00ACC1;
+    --mat-mdc-radio-ripple-color: rgba(0, 172, 193, 0.2);
+    --mat-mdc-radio-checked-ripple-color: rgba(0, 172, 193, 0.2);
+  }
 }

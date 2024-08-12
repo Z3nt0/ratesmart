@@ -64,8 +64,22 @@ body {
     background-color: #333333; /* Dark sidenav background */
     
     .mdc-list-item__primary-text {
-      color: #ffffff !important;
+      color: #ffffff!important;
     } 
   } 
 
 }
+
+// Import the color palettes
+$red-palette: mat-palette($mat-red);
+$green-palette: mat-palette($mat-green);
+$blue-palette: mat-palette($mat-blue);
+$yellow-palette: mat-palette($mat-yellow);
+$cyan-palette: mat-palette($mat-cyan);
+$magenta-palette: mat-palette($mat-pink); 
+$orange-palette: mat-palette($mat-orange);
+$chartreuse-palette: mat-palette($mat-light-green);
+$spring-green-palette: mat-palette($mat-teal);
+$azure-palette: mat-palette($mat-blue); 
+$violet-palette: mat-palette($mat-deep-purple);
+$rose-palette: mat-palette($mat-pink); 

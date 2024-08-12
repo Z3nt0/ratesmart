@@ -28,6 +28,7 @@ import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-
 import { AuthService } from '../services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { UserStartComponent } from './components/user-start/user-start.component';
+import { RateSatisfactoryComponent } from './components/end-user/rate-satisfactory/rate-satisfactory.component';
 
 // Do not declare EndUserComponent here
 @NgModule({
@@ -51,6 +52,7 @@ import { UserStartComponent } from './components/user-start/user-start.component
     SetPasswordComponent,
     AdminSettingsDeleteComponent,
     UserStartComponent,
+    RateSatisfactoryComponent,
     // Remove EndUserComponent from here
   ],
   imports: [

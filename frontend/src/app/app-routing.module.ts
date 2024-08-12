@@ -18,6 +18,7 @@ import { AdminFormCustomizeLogoComponent } from './components/admin-forms/admin-
 import { AdminSettingsDeleteComponent } from './components/admin-settings/admin-settings-delete/admin-settings-delete.component';
 import { UserStartComponent } from './components/user-start/user-start.component';
 import { EndUserComponent } from './components/end-user/end-user.component';
+import { RateSatisfactoryComponent } from './components/end-user/rate-satisfactory/rate-satisfactory.component';
 
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
   { path: 'admin-form-customize-logo', component: AdminFormCustomizeLogoComponent },
   { path: 'admin-settings-delete', component: AdminSettingsDeleteComponent },
   { path: 'user-start', component: UserStartComponent},
-  { path: 'end-user', component: EndUserComponent}
+  { path: 'end-user', component: EndUserComponent},
+  { path: 'rate-satisfactory', component: RateSatisfactoryComponent}
 ];
 
 @NgModule({

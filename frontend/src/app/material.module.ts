@@ -7,32 +7,33 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatSelectModule } from '@angular/material/select'; // Import MatSelectModule
-import { MatOptionModule } from '@angular/material/core'; // Import MatOptionModule
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { MatStepperModule } from '@angular/material/stepper';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core'; // Ensure this is imported for stepper
 
 @NgModule({
   exports: [
     MatButtonModule,
     MatToolbarModule,
-    MatCardModule,
-    MatSlideToggleModule, 
-    MatRadioModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
+    MatSlideToggleModule,
+    MatRadioModule,
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
@@ -41,9 +42,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSnackBarModule,
     MatSelectModule,
     MatOptionModule,
-    MatIconModule,
     MatProgressSpinnerModule,
-    
+    MatStepperModule, // Add MatStepperModule for stepper
   ]
 })
 export class MaterialModule { }

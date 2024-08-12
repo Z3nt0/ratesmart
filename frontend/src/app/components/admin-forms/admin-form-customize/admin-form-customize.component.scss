@@ -29,10 +29,6 @@
   border: 1px solid #000000;
 }
 
-p {
-  font-size: 20px;
-}
-
 .menu-button {
   color: rgb(0, 0, 0);
   position: absolute;
@@ -73,18 +69,8 @@ h1 {
   text-align: center;
 }
 
-.feedback-section p {
-  margin: 0;
-}
-
 .feedback-icon {
   margin-left: 8px;
-}
-
-.feedback-title-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;  
 }
 
 .feedback-title-input {
@@ -96,7 +82,7 @@ h1 {
   text-align: center;  
 }
 
-.more-icon-2 {
+.more-icon2 {
   cursor: pointer;
   margin-left: 8px;
   border: none;
@@ -114,60 +100,48 @@ h1 {
   padding: 12px;
 }
 
-.back-button mat-icon {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.section-card {
-  max-width: 400px;
-  margin: 16px auto;
-  border: 1px solid #5DB075;
-}
-
 .title-with-icons {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 
   .section-title-input {
     flex-grow: 1;
+    text-align: left;
     font-size: 1.25rem;
     border: none;
     outline: none;
+    color: gray;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
     padding: 8px;
   }
-
+  
   .edit-icon {
     margin-right: 8px;
-  }
-
-  .more-icon {
-    cursor: pointer;
-    margin-left: 8px;
+    width: 24px;
   }
 }
 
-.question-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.card-container {
+  width: 100%;
 }
 
 .full-width {
   width: 100%;
 }
 
-.card-actions {
+.add-questions {
   display: flex;
   justify-content: center;
+  margin-bottom: 16px;
 
   button {
-    background-color: #5DB075; // Green color for the button
+    background-color: #5DB075; 
     color: white;
 
     &:hover {
-      background-color: #45a049; // Darker green on hover
+      background-color: #45a049; 
     }
   }
 }
@@ -178,11 +152,85 @@ h1 {
   margin-top: 16px;
 
   button {
-    background-color: #5DB075; // Green color for the button
+    background-color: #5DB075; 
     color: white;
 
     &:hover {
-      background-color: #45a049; // Darker green on hover
+      background-color: #45a049; 
     }
   }
+}
+
+.stepper-container {
+  width: 100%;
+}
+
+.stepper-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.step-indicator {
+  display: flex;
+}
+
+.step-indicator button {
+  width: 0px;
+  height: 32px;
+  border-radius: 10%;
+  background-color: #f0f0f0;
+  color: rgb(79, 79, 79);
+}
+
+.step-indicator button:disabled {
+  background-color: #45a049;
+  cursor: not-allowed;
+  color: white;
+}
+
+.card-actions-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px; 
+
+  .delete-section-button {
+    background-color: #e53935; 
+    color: white; 
+    font-size: 16px;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+    border-radius: 50px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #c62828; 
+    }
+  }
+
+  .save-button {
+    background-color: #4caf50; 
+    color: white; 
+    font-size: 16px;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+    border-radius: 50px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #388e3c; 
+    }
+  }
+}
+
+.delete-question-button{
+  margin-left: 90%;
 }

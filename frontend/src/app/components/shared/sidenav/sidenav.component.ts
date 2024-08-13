@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, OnInit,} from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { MatSidenav, MatDrawerMode } from '@angular/material/sidenav';
 import { SidenavService } from './sidenav.service';
 import { AuthService } from '../../../../services/auth.service';
@@ -22,12 +22,11 @@ export class SidenavComponent implements AfterViewInit, OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Initialize the theme property
     this.theme = this.themeService.getTheme();
+    // Optionally, set up other initialization logic here
   }
 
   ngAfterViewInit() {
-    // Make sure the sidenav reference is available before setting it
     if (this.sidenav) {
       this.sidenavService.setSidenav(this.sidenav);
     }

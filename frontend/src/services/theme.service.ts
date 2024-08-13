@@ -5,13 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class ThemeService {
   private activeTheme: string = 'light';
-  private color: string = 'default'; // Property to store selected color
+  private colorPalette: string = 'default'; // Property to store selected color palette
 
   constructor() {
     this.activeTheme = localStorage.getItem('theme') || 'light';
-    this.color = localStorage.getItem('color') || 'default';
+    this.colorPalette = localStorage.getItem('colorPalette') || 'default';
     this.applyTheme(this.activeTheme);
-    this.applyColor(this.color);
+    this.applyColorPalette(this.colorPalette);
   }
 
   setTheme(theme: string) {
@@ -24,14 +24,14 @@ export class ThemeService {
     return this.activeTheme;
   }
 
-  setColor(color: string) {
-    this.color = color;
-    localStorage.setItem('color', color);
-    this.applyColor(color);
+  setColorPalette(colorPalette: string) {
+    this.colorPalette = colorPalette;
+    localStorage.setItem('colorPalette', colorPalette);
+    this.applyColorPalette(colorPalette);
   }
 
-  getColor(): string {
-    return this.color;
+  getColorPalette(): string {
+    return this.colorPalette;
   }
 
   private applyTheme(theme: string) {
@@ -39,10 +39,17 @@ export class ThemeService {
     document.body.classList.add(`${theme}-theme`);
   }
 
-  private applyColor(color: string) {
-    document.body.classList.remove('color-option1', 'color-option2', 'color-option3', 'color-option4', 'color-option5', 'color-option6', 'color-option7');
-    if (color) {
-      document.body.classList.add(`color-${color}`);
+  private applyColorPalette(colorPalette: string) {
+    const palettes = [
+      'red-palette', 'green-palette', 'blue-palette', 
+      'yellow-palette', 'cyan-palette', 'magenta-palette', 
+      'orange-palette'
+    ];
+    
+    palettes.forEach(palette => document.body.classList.remove(palette));
+    
+    if (colorPalette !== 'default') {
+      document.body.classList.add(`${colorPalette}-palette`);
     }
   }
 }

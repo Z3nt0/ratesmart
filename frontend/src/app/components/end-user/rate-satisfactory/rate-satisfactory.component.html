@@ -1,0 +1,46 @@
+<div class="start-container">
+    <header class="start-header">
+        <h1>Rate Smart Logo</h1>
+    </header>
+
+    <p>Title</p>
+    <hr>
+    <div >
+        <h2>Rating</h2>
+          <div class="star-rating">
+            <ng-container *ngFor="let star of stars; let i = index">
+              <mat-icon
+                [ngClass]="{'active': isStarActive(i)}"
+                (click)="setRating(i + 1)">
+                star
+              </mat-icon>
+            </ng-container>
+          </div>
+          
+    </div>
+    <hr class="div">
+
+    <div class="improve-container">
+        <p class="improve-text">What to improve?</p>
+        <mat-chip-listbox aria-label="Fish selection" (selectionChange)="onSelectionChange($event)" multiple>
+            <mat-chip-option *ngFor="let chip of chips" [value]="chip">{{ chip }}</mat-chip-option>
+        </mat-chip-listbox>
+    </div>
+    <hr class="div">
+
+    <div class="comment-container">
+        <p class="thoughts">Let us know your thoughts</p>
+        <mat-form-field class="example-full-width">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+          </mat-form-field>
+    </div>
+    <hr class="div">
+
+    <div class="checkbox-group">
+        <mat-checkbox *ngFor="let option of options" (change)="onOptionChange(option, $event)">
+            {{ option }}
+        </mat-checkbox>
+    </div>
+    <button mat-raised-button class="next-button">Next</button>
+</div>

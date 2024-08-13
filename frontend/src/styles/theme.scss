@@ -1,18 +1,25 @@
-@use '@angular/material' as mat;
+@import "../../node_modules/@angular/material/theming";
 
-// Define palettes for light and dark themes
-$light-primary: mat.define-palette(mat.$blue-grey-palette);
-$light-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
-$light-warn: mat.define-palette(mat.$deep-orange-palette);
+// Define custom color palettes
+$red-palette: mat-palette($mat-red);
+$green-palette: mat-palette($mat-green);
+$blue-palette: mat-palette($mat-blue);
+$yellow-palette: mat-palette($mat-yellow);
+$cyan-palette: mat-palette($mat-cyan);
+$magenta-palette: mat-palette($mat-pink);
+$orange-palette: mat-palette($mat-orange);
 
-// Dark Theme Colors
-$dark-primary: mat.define-palette(mat.$cyan-palette);
-$dark-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-$dark-warn: mat.define-palette(mat.$lime-palette);
+// Define base palettes for light and dark themes
+$light-primary: mat-palette($mat-blue-grey);
+$light-accent: mat-palette($mat-pink, A200, A100, A400);
+$light-warn: mat-palette($mat-deep-orange);
 
+$dark-primary: mat-palette($mat-cyan);
+$dark-accent: mat-palette($mat-pink, A200, A100, A400);
+$dark-warn: mat-palette($mat-lime);
 
-// Create themes
-$light-theme: mat.define-light-theme((
+// Create light and dark themes
+$light-theme: mat-light-theme((
   color: (
     primary: $light-primary,
     accent: $light-accent,
@@ -20,7 +27,7 @@ $light-theme: mat.define-light-theme((
   )
 ));
 
-$dark-theme: mat.define-dark-theme((
+$dark-theme: mat-dark-theme((
   color: (
     primary: $dark-primary,
     accent: $dark-accent,
@@ -29,25 +36,107 @@ $dark-theme: mat.define-dark-theme((
 ));
 
 // Include core styles once
-@include mat.core();
+@include mat-core();
 
 // Include theme styles
-@include mat.all-component-colors($light-theme);
+@include angular-material-theme($light-theme);
 
-// Global Styles
+// Theme-specific styles
 html, body { height: 100%; }
 body { 
-  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-  
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-// Theme-specific styles (if needed)
+// Light theme styles
 .light-theme {
-  background-color: #ffffff; // Light background color
-  color: #000000; // Dark text color
+  background-color: #ffffff; /* Light background color */
+  color: #000000; /* Dark text color */
+
+  .mat-sidenav {
+    background-color: #f5f5f5; /* Light sidenav background */
+    color: #000000; /* Dark sidenav text color */
+    
+    .mdc-list-item__primary-text {
+      color: #000000!important;
+    } 
+  }
 }
 
+// Dark theme styles
 .dark-theme {
-  background-color: #121212; // Dark background color
-  color: #e0e0e0; // Light text color
+  background-color: #333333; /* Dark background color */
+  color: #f5f5f5;
+
+  .mat-sidenav {
+    background-color: #333333; /* Dark sidenav background */
+    
+    .mdc-list-item__primary-text {
+      color: #ffffff!important;
+    } 
+  }
+}
+
+// Radio button color palettes
+.red-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($red-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($red-palette);
+  }
+}
+
+.green-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($green-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($green-palette);
+  }
+}
+
+.blue-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($blue-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($blue-palette);
+  }
+}
+
+.yellow-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($yellow-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($yellow-palette);
+  }
+}
+
+.cyan-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($cyan-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($cyan-palette);
+  }
+}
+
+.magenta-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($magenta-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($magenta-palette);
+  }
+}
+
+.orange-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($orange-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($orange-palette);
+  }
 }

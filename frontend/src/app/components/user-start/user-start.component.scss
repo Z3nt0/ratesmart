@@ -1,0 +1,49 @@
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    height: 100vh; 
+    text-align: center;
+    gap: 200px;
+}
+
+.welcome-text {
+    color: #5DB075;
+    font-weight: bolder;
+    font-size: 2rem; 
+}
+
+.logo-container {
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0; 
+}
+
+.logo {
+    max-width: 100%; 
+    max-height: 100%;
+    display: block; 
+}
+
+.start-button-container {
+    margin-top: 20px; 
+}
+
+.start-button {
+    height: 50px;
+    width: 280px;
+    padding: 0.75rem;
+    background-color: #5DB075;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+}

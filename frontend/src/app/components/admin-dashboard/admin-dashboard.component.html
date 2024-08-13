@@ -1,3 +1,4 @@
+<div [ngClass]="settings.theme === 'dark' ? 'dark-theme' : 'light-theme'">
 <div class="dashboard-container">
   <header class="dashboard-header">
     <button mat-icon-button class="menu-button" (click)="openSidenav()">
@@ -51,4 +52,5 @@
       </button>
     </div>
   </section>
+</div>
 </div>

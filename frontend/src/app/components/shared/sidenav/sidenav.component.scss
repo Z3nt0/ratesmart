@@ -51,10 +51,18 @@ mat-list-item {
   width: 100%; 
   padding: 0;
   padding-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .logout-item {
   text-align: left;
+  cursor: pointer; /* Adds the pointer cursor */
+  
+}
+
+.logout-item:hover {
+  cursor: pointer; /* Ensures pointer is shown on hover */
+  background-color: #21242210; /* Changes background color on hover */
 }
 
 .bottom-section {

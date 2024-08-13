@@ -18,12 +18,15 @@ export class AdminSettingsComponent {
     theme: 'light'
   };
 
+  themeText: string = 'Light Mode'; // Initial value
+
   constructor(
     private sidenavService: SidenavService,
     public dialog: MatDialog,
     private themeService: ThemeService
   ) {
     this.settings.theme = this.themeService.getTheme();
+    this.themeText = this.settings.theme === 'dark' ? 'Dark Mode' : 'Light Mode';
   }
 
   openSidenav() {
@@ -40,11 +43,22 @@ export class AdminSettingsComponent {
     const newTheme = event.checked ? 'dark' : 'light';
     this.settings.theme = newTheme;
     this.themeService.setTheme(newTheme);
+    this.themeText = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
   }
 
   onColorChange(event: any) {
-    const newColor = event.value; // Get the selected color value
-    this.themeService.setColor(newColor);
+    const newColor = event.value;
+    this.themeService.setColorPalette(newColor);
+
+    // Update the radio button selection based on the current color palette
+    const radioButtons = document.querySelectorAll('mat-radio-button');
+    radioButtons.forEach((button: any) => {
+      if (button.value === newColor) {
+        button.checked = true;
+      } else {
+        button.checked = false;
+      }
+    });
   }
 
   openDeleteDialog(): void {

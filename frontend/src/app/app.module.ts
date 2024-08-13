@@ -31,6 +31,7 @@ import { UserStartComponent } from './components/user-start/user-start.component
 import { RateSatisfactoryComponent } from './components/end-user/rate-satisfactory/rate-satisfactory.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 // Do not declare EndUserComponent here
 @NgModule({
@@ -64,6 +65,7 @@ import { AuthInterceptor } from './auth.interceptor';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    MatCheckboxModule,
   ],
   providers: [AuthService,{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, AuthGuard, ],
   bootstrap: [AppComponent]

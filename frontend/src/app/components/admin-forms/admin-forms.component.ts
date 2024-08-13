@@ -21,7 +21,7 @@ export class AdminFormsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Get the current theme from the ThemeService
+    
     this.settings.theme = this.themeService.getTheme();
   }
 

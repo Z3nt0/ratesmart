@@ -66,7 +66,7 @@
           </mat-form-field>
           <mat-form-field class="full-width">
             <mat-label>Response Type</mat-label>
-            <mat-select [(ngModel)]="question.responseType">
+            <mat-select [(ngModel)]="question.responseType" (selectionChange)="onResponseTypeChange($event.value, j)">
               <mat-option value="stars">Stars</mat-option>
               <mat-option value="numeric rating scale">Number Rating Scale</mat-option>
               <mat-option value="text">Text</mat-option>
@@ -78,6 +78,21 @@
               <mat-option value="chips">Chips</mat-option>
             </mat-select>
           </mat-form-field>
+          <!-- Conditionally display scales horizontally -->
+          <div *ngIf="['stars', 'numeric rating scale', 'emoji'].includes(question.responseType)" class="scale-container">
+            <mat-form-field class="scale-field">
+              <mat-label>Min Scale</mat-label>
+              <mat-select [(ngModel)]="question.minScale">
+                <mat-option *ngFor="let scale of scaleOptions" [value]="scale">{{ scale }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="scale-field">
+              <mat-label>Max Scale</mat-label>
+              <mat-select [(ngModel)]="question.maxScale">
+                <mat-option *ngFor="let scale of scaleOptions" [value]="scale">{{ scale }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
         </div>
         <div class="add-questions">
           <button mat-raised-button (click)="addQuestion(selectedStep)">Add Question</button>
@@ -89,6 +104,7 @@
   <div class="add-section-button-container">
     <button mat-raised-button (click)="addSection()">Add Section</button>
   </div>
+
   <mat-card-actions>
     <div class="card-actions-container">
       <button mat-raised-button (click)="deleteSection(selectedStep)" class="delete-section-button">Delete</button>

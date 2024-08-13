@@ -73,6 +73,7 @@ hr {
 .improve-text {
   font-size: 20px;
   margin-bottom: 10px;
+  font-weight: bold;
   font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
@@ -106,9 +107,8 @@ hr {
 }
 
 .next-button {
-  background-color: #5DB075 !important; 
-  margin-top: auto;
-  color: white !important; 
+  background-color: #5DB075 !important;
+  color: white !important;
   font-size: 16px;
   font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
   border-radius: 50px;
@@ -117,14 +117,15 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #5DB075 ;
+  border: 1px solid #5DB075;
   transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    background-color: #4caf50 !important; 
-    color: white !important; 
+    background-color: #4caf50 !important;
+    color: white !important;
   }
 }
+
 
 .comment-container {
   width: 100%;
@@ -144,3 +145,80 @@ hr {
 .checkbox{
   border-radius: 50%;
 }
+.numeric-container{
+  width: 100%;
+}
+.dropdown-container{
+  width: 100%;
+}
+.star-rating {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%;
+  
+  p.thoughts {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center; 
+    color: black;
+  }
+  
+  .stars-container {
+    display: flex; 
+    font-size: 40px;
+    color: #ddd;
+    
+    mat-icon {
+      margin-right: 8px;
+      font-size: inherit;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    
+    .active {
+      color: #ffc107; 
+    }
+  }
+}
+
+.number-scale {
+  width: 100%;
+  text-align: center;
+  
+  .thoughts {
+    margin-bottom: 10px;
+  }
+  
+  .scale-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .circle {
+    width: 40px; 
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #ddd; 
+    color: #333; 
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #ccc; 
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+      background-color: #ccc; 
+      color: #000; 
+      cursor: pointer;
+    }
+  }
+}
+

@@ -12,7 +12,12 @@ export class RateSatisfactoryComponent {
   selectedOptions: string[] = []; 
   rating: number = 0;
   maxRating: number = 5;
-
+  numericValue: number | null = null;
+  isInvalidNumber: boolean = false;
+  selectedDropdownValue: string | null = null;
+  dropdownOptions: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+  
+  numbers: number[] = Array.from({ length: 5 }, (_, i) => i + 1); // Numbers from 1 to 10
 
   setRating(value: number) {
     this.rating = value;
@@ -43,5 +48,10 @@ export class RateSatisfactoryComponent {
       this.selectedOptions = this.selectedOptions.filter(item => item !== option);
     }
     console.log('Selected options:', this.selectedOptions);
+  }
+
+  validateNumber(event: any) {
+    const value = event.target.value;
+    this.isInvalidNumber = isNaN(value) || value < 0;
   }
 }

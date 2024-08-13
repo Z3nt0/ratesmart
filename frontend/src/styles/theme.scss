@@ -1,15 +1,24 @@
 @import "../../node_modules/@angular/material/theming";
 
-// Define palettes for light and dark themes
+// Define custom color palettes
+$red-palette: mat-palette($mat-red);
+$green-palette: mat-palette($mat-green);
+$blue-palette: mat-palette($mat-blue);
+$yellow-palette: mat-palette($mat-yellow);
+$cyan-palette: mat-palette($mat-cyan);
+$magenta-palette: mat-palette($mat-pink);
+$orange-palette: mat-palette($mat-orange);
+
+// Define base palettes for light and dark themes
 $light-primary: mat-palette($mat-blue-grey);
-$light-accent: mat-palette($mat-amber, A200, A100, A400);
+$light-accent: mat-palette($mat-pink, A200, A100, A400);
 $light-warn: mat-palette($mat-deep-orange);
 
 $dark-primary: mat-palette($mat-cyan);
 $dark-accent: mat-palette($mat-pink, A200, A100, A400);
 $dark-warn: mat-palette($mat-lime);
 
-// Create themes
+// Create light and dark themes
 $light-theme: mat-light-theme((
   color: (
     primary: $light-primary,
@@ -35,7 +44,7 @@ $dark-theme: mat-dark-theme((
 // Theme-specific styles
 html, body { height: 100%; }
 body { 
-  margin: 0; 
+  margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -48,16 +57,15 @@ body {
     background-color: #f5f5f5; /* Light sidenav background */
     color: #000000; /* Dark sidenav text color */
     
-   .mdc-list-item__primary-text {
+    .mdc-list-item__primary-text {
       color: #000000!important;
     } 
-    
   }
 }
 
 // Dark theme styles
 .dark-theme {
-  background-color: #333333; /* Dark sidenav background */
+  background-color: #333333; /* Dark background color */
   color: #f5f5f5;
 
   .mat-sidenav {
@@ -66,20 +74,69 @@ body {
     .mdc-list-item__primary-text {
       color: #ffffff!important;
     } 
-  } 
-
+  }
 }
 
-// Import the color palettes
-$red-palette: mat-palette($mat-red);
-$green-palette: mat-palette($mat-green);
-$blue-palette: mat-palette($mat-blue);
-$yellow-palette: mat-palette($mat-yellow);
-$cyan-palette: mat-palette($mat-cyan);
-$magenta-palette: mat-palette($mat-pink); 
-$orange-palette: mat-palette($mat-orange);
-$chartreuse-palette: mat-palette($mat-light-green);
-$spring-green-palette: mat-palette($mat-teal);
-$azure-palette: mat-palette($mat-blue); 
-$violet-palette: mat-palette($mat-deep-purple);
-$rose-palette: mat-palette($mat-pink); 
+// Radio button color palettes
+.red-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($red-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($red-palette);
+  }
+}
+
+.green-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($green-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($green-palette);
+  }
+}
+
+.blue-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($blue-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($blue-palette);
+  }
+}
+
+.yellow-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($yellow-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($yellow-palette);
+  }
+}
+
+.cyan-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($cyan-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($cyan-palette);
+  }
+}
+
+.magenta-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($magenta-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($magenta-palette);
+  }
+}
+
+.orange-palette {
+  .mat-radio-outer-circle {
+    border-color: mat-color($orange-palette);
+  }
+  .mat-radio-inner-circle {
+    background-color: mat-color($orange-palette);
+  }
+}

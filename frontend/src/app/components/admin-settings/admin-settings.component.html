@@ -6,14 +6,18 @@
     <h1>Settings</h1>
   </header> 
   <div class="whole-container">
-  <div class="lightmode-change-container">
-    <div class="lightmode-container">
-      Light Mode
+    <div class="lightmode-change-container">
+      <div class="lightmode-container">
+        Light Mode
+      </div>
+      <div class="change-container">
+        <mat-slide-toggle 
+          class="light-mode"
+          [checked]="settings.theme === 'dark'"
+          (change)="changeTheme($event)">
+        </mat-slide-toggle>
+      </div>
     </div>
-    <div class="change-container">
-      <mat-slide-toggle class="allow-notif"></mat-slide-toggle>
-    </div>
-  </div>
 
   <div class="line"></div>
 

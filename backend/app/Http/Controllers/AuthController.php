@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
 class AuthController extends Controller
@@ -17,16 +18,16 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users',
             'password' => [
-            'required',
-            'string',
-            'min:8', 
-            'regex:/[!@#$%^&*(),.?":{}|<>]/', 
-        ],
-    ]);
-
+                'required',
+                'string',
+                'min:8',
+                'regex:/[!@#$%^&*(),.?":{}|<>]/',
+            ],
+        ]);
 
         // Check if validation fails
         if ($validator->fails()) {
+            Log::warning('Registration validation failed', ['errors' => $validator->errors()]);
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
@@ -45,7 +46,8 @@ class AuthController extends Controller
             ], 201);
 
         } catch (\Exception $e) {
-            // Return a server error response if something goes wrong
+            // Log the error message and return a server error response
+            Log::error('Error during registration', ['exception' => $e->getMessage()]);
             return response()->json([
                 'message' => 'An error occurred during registration',
                 'error' => $e->getMessage()
@@ -55,26 +57,41 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        // Log the incoming request data (for debugging purposes)
+        Log::info('Login attempt', ['username' => $request->username]);
+
         // Validate the incoming request data
         $validator = Validator::make($request->all(), [
             'username' => 'required|string',
             'password' => 'required|string',
         ]);
 
-        // Check if validation fails
         if ($validator->fails()) {
+            Log::warning('Login validation failed', ['errors' => $validator->errors()]); 
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        // Attempt to authenticate the user
-        if (!Auth::attempt($request->only('username', 'password'))) {
+        // Attempt to authenticate the user (case-insensitive)
+        if (!Auth::attempt(['username' => $request->username, 'password' => $request->password], false)) { 
+            Log::warning('Authentication failed', ['username' => $request->username]);
             return response()->json(['message' => 'Invalid credentials'], 401);
         }
 
         $user = Auth::user();
 
+        if (!$user) {
+            Log::error('User not found after successful authentication'); 
+            return response()->json(['message' => 'User not found'], 404); 
+        }
+
         // Create a token for the user
-        $token = $user->createToken('auth_token')->plainTextToken;
+        try {
+            $token = $user->createToken('auth_token')->plainTextToken;
+            Log::info('Token created successfully', ['username' => $request->username, 'token' => $token]);
+        } catch (\Exception $e) {
+            Log::error('Error creating token', ['exception' => $e->getMessage(), 'trace' => $e->getTraceAsString()]);
+            return response()->json(['message' => 'Failed to create token'], 500);
+        }
 
         // Return a success response with the token
         return response()->json([
@@ -84,10 +101,11 @@ class AuthController extends Controller
             'user' => $user
         ]);
     }
+
     public function logout(Request $request)
     {
         // Get the currently authenticated user
-        $user = Auth::user();
+        $user = $request->user();
 
         if ($user) {
             // Revoke all tokens the user has issued

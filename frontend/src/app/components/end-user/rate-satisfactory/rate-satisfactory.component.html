@@ -5,13 +5,14 @@
 
   <p>Title</p>
   <hr>
+  
   <div class="star-rating">
     <p class="thoughts">Rating</p>
     <div class="stars-container">
       <ng-container *ngFor="let star of stars; let i = index">
         <mat-icon
           [ngClass]="{'active': isStarActive(i)}"
-          (click)="setRating(i + 1)">
+          (click)="setRating(i + 1)" class="star">
           star
         </mat-icon>
       </ng-container>
@@ -20,9 +21,9 @@
   <hr class="div">
 
   <div class="improve-container">
-    <p class="improve-text">What to improve?(CHIPS)</p>
+    <p class="thoughts">What to improve?(CHIPS)</p>
     <mat-chip-listbox aria-label="Fish selection" (selectionChange)="onSelectionChange($event)" multiple>
-      <mat-chip-option *ngFor="let chip of chips" [value]="chip">{{ chip }}</mat-chip-option>
+      <mat-chip-option *ngFor="let chip of chips" [value]="chip" class="chips">{{ chip }}</mat-chip-option>
     </mat-chip-listbox>
   </div>
   <hr class="div">
@@ -31,7 +32,7 @@
     <p class="thoughts">Let us know your thoughts(text)</p>
     <mat-form-field class="example-full-width">
       <mat-label>Leave a comment</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      <textarea matInput placeholder=""></textarea>
     </mat-form-field>
   </div>
   <hr class="div">
@@ -44,26 +45,33 @@
   </div>
   <hr class="div">
 
-  <div>
+  <div class="radio-group-container">
     <p class="thoughts">Multiple Choice</p>
     <mat-radio-group aria-label="Select an option">
       <mat-radio-button value="1">Option 1</mat-radio-button>
       <mat-radio-button value="2">Option 2</mat-radio-button>
-      <mat-radio-button value="1">Option 1</mat-radio-button>
-      <mat-radio-button value="2">Option 2</mat-radio-button>
+      <mat-radio-button value="3">Option 3</mat-radio-button>
+      <mat-radio-button value="4">Option 4</mat-radio-button>
     </mat-radio-group>
   </div>
+  
   <hr class="div">
 
   <div class="numeric-container">
     <p class="thoughts">Numeric</p>
     <mat-form-field class="example-full-width">
       <mat-label>Enter a number</mat-label>
-      <input matInput type="number" [(ngModel)]="numericValue" placeholder="Enter a number"
-        (input)="validateNumber($event)" />
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="numericValue"
+        placeholder="Enter a number"
+        (input)="onInputChange($event)"
+      />
       <mat-error *ngIf="isInvalidNumber">Please enter a valid number.</mat-error>
     </mat-form-field>
   </div>
+  
   <hr class="div">
 
   <div class="dropdown-container">
@@ -82,9 +90,18 @@
   <div class="number-scale">
     <p class="thoughts">Number Rating Scale</p>
     <div class="scale-container">
-      <div class="circle" *ngFor="let number of numbers">{{ number }}</div>
+      <div
+        *ngFor="let number of numbers"
+        class="circle"
+        [ngClass]="getCircleClass(number)"
+        (click)="selectNumber(number)">
+        {{ number }}
+      </div>
     </div>
   </div>
+  
+  
+  
   <hr class="div">
 
   <!-- <button mat-raised-button class="next-button">Next</button> -->

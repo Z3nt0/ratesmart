@@ -59,7 +59,7 @@ hr {
   }
   
   .active {
-    color: #ffc107; // Material yellow-500
+    color: #ffc107; 
   }
 }  
 
@@ -70,18 +70,11 @@ hr {
   align-items: center;
 }
 
-.improve-text {
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
-}
-
 .mat-chip-listbox {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px; /* Space between chips */
+  gap: 8px; 
 }
 
 .mat-chip-option.mat-chip-selected {
@@ -100,7 +93,9 @@ hr {
 
 .mat-chip-option:hover {
   background: #f0f0f0;
+  color: #5DB075;
 }
+
 
 .div {
   width: 100%;
@@ -133,9 +128,9 @@ hr {
 
 .thoughts {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 18px;
-  font-weight: bolder;
+  font-weight: bold;
   font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
@@ -151,6 +146,25 @@ hr {
 .dropdown-container{
   width: 100%;
 }
+.radio-group-container {
+  display: flex;
+  flex-direction: column; 
+  width: 100%;
+}
+
+.mat-radio-group {
+  display: flex;
+  flex-direction: column; 
+  gap: 8px; 
+}
+
+.mat-radio-button {
+  display: flex;
+  align-items: center; 
+  font-size: 16px;
+  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+}
+
 .star-rating {
   display: flex;
   flex-direction: column; 
@@ -182,42 +196,69 @@ hr {
     }
   }
 }
+.star{
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
 
 .number-scale {
   width: 100%;
-  text-align: center;
-  
-  .thoughts {
-    margin-bottom: 10px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   .scale-container {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
+    gap: 25px;
   }
 
   .circle {
-    width: 40px; 
-    height: 40px; 
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: #ddd; 
-    color: #333; 
+    background-color: #ddd;
+    color: #333;
     font-size: 16px;
     font-weight: bold;
-    border: 1px solid #ccc; 
+    border: 1px solid #ccc;
     transition: background-color 0.2s, color 0.2s;
 
     &:hover {
-      background-color: #ccc; 
-      color: #000; 
       cursor: pointer;
+    }
+
+    &.selected-1 {
+      background-color: red;
+      border-color: red;
+      color: #ffffff;
+    }
+
+    &.selected-2 {
+      background-color: orange;
+      border-color: orange;
+      color: #ffffff;
+    }
+
+    &.selected-3 {
+      background-color: yellow;
+      border-color: yellow;
+      color: #ffffff;
+    }
+
+    &.selected-4 {
+      background-color: lightgreen;
+      border-color: lightgreen;
+      color: #ffffff;
+    }
+
+    &.selected-5 {
+      background-color: green;
+      border-color: green;
+      color: #ffffff;
     }
   }
 }

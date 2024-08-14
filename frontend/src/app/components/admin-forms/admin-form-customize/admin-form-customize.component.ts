@@ -11,7 +11,7 @@ export class AdminFormCustomizeComponent implements OnInit {
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   isLinear = false;
-  sections: { title: string; questions: { questionText: string; responseType: string }[] }[] = [
+  sections: { title: string; questions: { questionText: string; responseType: string; minScale?: number; maxScale?: number }[] }[] = [
     {
       title: 'Edit Title',
       questions: [{ questionText: '', responseType: '' }]
@@ -20,6 +20,7 @@ export class AdminFormCustomizeComponent implements OnInit {
 
   selectedStep: number = 0;
   visibleStepRange: { start: number; end: number } = { start: 0, end: 4 };
+  scaleOptions = [1, 2, 3, 4, 5]; // Define scale options for dropdown
 
   constructor(private sidenavService: SidenavService, private _formBuilder: FormBuilder) {}
 
@@ -58,6 +59,7 @@ export class AdminFormCustomizeComponent implements OnInit {
       if (this.selectedStep >= this.sections.length) {
         this.selectedStep = this.sections.length - 1;
       }
+      this.updateVisibleSteps();
     }
   }
 
@@ -74,18 +76,21 @@ export class AdminFormCustomizeComponent implements OnInit {
   prevStep() {
     if (this.selectedStep > 0) {
       this.selectedStep--;
+      this.updateVisibleSteps();
     }
   }
 
   nextStep() {
     if (this.selectedStep < this.sections.length - 1) {
       this.selectedStep++;
+      this.updateVisibleSteps();
     }
   }
 
   goToStep(step: number) {
     if (step >= 0 && step < this.sections.length) {
       this.selectedStep = step;
+      this.updateVisibleSteps();
     }
   }
 
@@ -97,23 +102,31 @@ export class AdminFormCustomizeComponent implements OnInit {
     let endIndex: number;
 
     if (stepCount <= maxVisibleSteps) {
+      // Show all steps if there are fewer than or equal to 5 steps
       startIndex = 0;
       endIndex = stepCount - 1;
     } else {
+      // Calculate visible steps around the selected step
       const midPoint = Math.floor(maxVisibleSteps / 2);
       if (this.selectedStep <= midPoint) {
+        // Show steps starting from the beginning
         startIndex = 0;
         endIndex = maxVisibleSteps - 1;
       } else if (this.selectedStep >= stepCount - midPoint - 1) {
+        // Show steps ending at the last step
         startIndex = stepCount - maxVisibleSteps;
         endIndex = stepCount - 1;
       } else {
+        // Show steps centered around the selected step
         startIndex = this.selectedStep - midPoint;
         endIndex = this.selectedStep + midPoint;
       }
     }
 
-    return Array.from({ length: endIndex - startIndex + 1 }, (_, index) => startIndex + index);
+    // Ensure endIndex does not exceed stepCount - 1
+    endIndex = Math.min(endIndex, stepCount - 1);
+
+    return Array.from({ length: endIndex - startIndex + 1 }, (_, i) => startIndex + i);
   }
 
   private updateVisibleSteps() {
@@ -135,6 +148,17 @@ export class AdminFormCustomizeComponent implements OnInit {
         this.visibleStepRange.start = this.selectedStep - midPoint;
         this.visibleStepRange.end = this.selectedStep + midPoint;
       }
+    }
+
+    // Ensure endIndex does not exceed stepCount - 1
+    this.visibleStepRange.end = Math.min(this.visibleStepRange.end, stepCount - 1);
+  }
+
+  onResponseTypeChange(responseType: string, questionIndex: number) {
+    // Reset scale values when response type changes
+    if (responseType !== 'stars') {
+      this.sections[this.selectedStep].questions[questionIndex].minScale = undefined;
+      this.sections[this.selectedStep].questions[questionIndex].maxScale = undefined;
     }
   }
 

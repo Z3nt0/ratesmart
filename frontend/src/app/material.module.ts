@@ -20,7 +20,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core'; // Ensure this is imported for stepper
+import {MatNativeDateModule} from '@angular/material/core'; 
+import {MatChipsModule} from '@angular/material/chips';// Ensure this is imported for stepper
 
 @NgModule({
   exports: [
@@ -43,7 +44,8 @@ import {MatNativeDateModule} from '@angular/material/core'; // Ensure this is im
     MatSelectModule,
     MatOptionModule,
     MatProgressSpinnerModule,
-    MatStepperModule, // Add MatStepperModule for stepper
+    MatStepperModule, 
+    MatChipsModule// Add MatStepperModule for stepper
   ]
 })
 export class MaterialModule { }

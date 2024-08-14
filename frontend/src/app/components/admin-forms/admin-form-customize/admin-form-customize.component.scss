@@ -122,6 +122,15 @@ h1 {
     width: 24px;
   }
 }
+.scale-container {
+  display: flex;
+  gap: 16px; /* Adjust spacing between scales as needed */
+}
+
+.scale-field {
+  flex: 1;
+}
+
 
 .card-container {
   width: 100%;

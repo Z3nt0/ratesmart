@@ -43,7 +43,7 @@ export class AdminSettingsComponent {
     const newTheme = event.checked ? 'dark' : 'light';
     this.settings.theme = newTheme;
     this.themeService.setTheme(newTheme);
-    this.themeText = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    this.themeText = newTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
   }
 
   onColorChange(event: any) {

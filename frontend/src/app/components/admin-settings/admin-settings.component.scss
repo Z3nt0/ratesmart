@@ -147,3 +147,10 @@
   border: 2px solid #d9534f; /* Border color matching the background */
 
 }
+
+::ng-deep .mat-slide-toggle{
+  height: 27px !important;
+  width: 46px !important;
+  border-radius: 36px !important;
+
+}

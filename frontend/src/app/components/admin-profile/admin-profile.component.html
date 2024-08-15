@@ -1,10 +1,11 @@
-<div class="profile-container">
-    <header class="profile-header">
+<div [ngClass]="[settings.theme === 'dark' ? 'dark-theme' : 'light-theme', color + '-palette']">
+  <div class="settings-container">
+    <mat-toolbar class="settings-header" color="primary">
       <button mat-icon-button class="menu-button" (click)="openSidenav()">
         <mat-icon>menu</mat-icon>
       </button>
-      <h1>Profile</h1>
-    </header>
+      <span class="settings">Profile</span>
+    </mat-toolbar>
     
     <div class="profile">
     <img src="path/to/profile/LOL.jpg" alt="" class="profile-image">

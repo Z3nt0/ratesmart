@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SidenavService } from '../../shared/sidenav/sidenav.service';
+import { ThemeService } from '../../../../services/theme.service'; // Ensure correct path
 
 @Component({
   selector: 'app-admin-form-customize',
@@ -20,9 +21,19 @@ export class AdminFormCustomizeComponent implements OnInit {
 
   selectedStep: number = 0;
   visibleStepRange: { start: number; end: number } = { start: 0, end: 4 };
-  scaleOptions = [1, 2, 3, 4, 5]; // Define scale options for dropdown
+  scaleOptions = [1, 2, 3, 4, 5]; 
 
-  constructor(private sidenavService: SidenavService, private _formBuilder: FormBuilder) {}
+  
+  settings = {
+    theme: 'default-theme'
+  };
+  color: string = 'default'; 
+
+  constructor(
+    private sidenavService: SidenavService,
+    private _formBuilder: FormBuilder,
+    private themeService: ThemeService 
+  ) {}
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
@@ -31,6 +42,11 @@ export class AdminFormCustomizeComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+
+    
+    this.settings.theme = this.themeService.getTheme();
+ 
+    this.color = 'primary';
   }
 
   openSidenav() {
@@ -43,7 +59,7 @@ export class AdminFormCustomizeComponent implements OnInit {
       questions: [{ questionText: '', responseType: '' }]
     });
     this.updateVisibleSteps();
-    this.selectedStep = this.sections.length - 1; // Move to the newly added section
+    this.selectedStep = this.sections.length - 1; 
   }
 
   addQuestion(sectionIndex: number) {
@@ -66,7 +82,7 @@ export class AdminFormCustomizeComponent implements OnInit {
   deleteQuestion(sectionIndex: number, questionIndex: number) {
     if (sectionIndex >= 0 && sectionIndex < this.sections.length) {
       this.sections[sectionIndex].questions.splice(questionIndex, 1);
-      // Ensure that selectedStep remains valid
+      
       if (this.sections[sectionIndex].questions.length === 0 && sectionIndex === this.selectedStep) {
         this.selectedStep = Math.max(0, sectionIndex - 1);
       }
@@ -102,28 +118,28 @@ export class AdminFormCustomizeComponent implements OnInit {
     let endIndex: number;
 
     if (stepCount <= maxVisibleSteps) {
-      // Show all steps if there are fewer than or equal to 5 steps
+     
       startIndex = 0;
       endIndex = stepCount - 1;
     } else {
-      // Calculate visible steps around the selected step
+      
       const midPoint = Math.floor(maxVisibleSteps / 2);
       if (this.selectedStep <= midPoint) {
-        // Show steps starting from the beginning
+        
         startIndex = 0;
         endIndex = maxVisibleSteps - 1;
       } else if (this.selectedStep >= stepCount - midPoint - 1) {
-        // Show steps ending at the last step
+        
         startIndex = stepCount - maxVisibleSteps;
         endIndex = stepCount - 1;
       } else {
-        // Show steps centered around the selected step
+        
         startIndex = this.selectedStep - midPoint;
         endIndex = this.selectedStep + midPoint;
       }
     }
 
-    // Ensure endIndex does not exceed stepCount - 1
+    
     endIndex = Math.min(endIndex, stepCount - 1);
 
     return Array.from({ length: endIndex - startIndex + 1 }, (_, i) => startIndex + i);
@@ -150,12 +166,12 @@ export class AdminFormCustomizeComponent implements OnInit {
       }
     }
 
-    // Ensure endIndex does not exceed stepCount - 1
+    
     this.visibleStepRange.end = Math.min(this.visibleStepRange.end, stepCount - 1);
   }
 
   onResponseTypeChange(responseType: string, questionIndex: number) {
-    // Reset scale values when response type changes
+    
     if (responseType !== 'stars') {
       this.sections[this.selectedStep].questions[questionIndex].minScale = undefined;
       this.sections[this.selectedStep].questions[questionIndex].maxScale = undefined;
@@ -163,7 +179,7 @@ export class AdminFormCustomizeComponent implements OnInit {
   }
 
   saveSection() {
-    // Implement your save logic here
+    
     console.log('Section saved:', this.sections[this.selectedStep]);
   }
 }

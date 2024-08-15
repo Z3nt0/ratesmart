@@ -19,14 +19,16 @@ export class AdminDashboardComponent implements OnInit {
     theme: 'light'
   };
 
+  color: string = 'default'; 
+
   constructor(
     private sidenavService: SidenavService,
-    private themeService: ThemeService
-  ) {}
+    private themeService: ThemeService) {}
 
   ngOnInit(): void {
-    // Get the current theme from the ThemeService
+    
     this.settings.theme = this.themeService.getTheme();
+    
   }
 
   openSidenav() {

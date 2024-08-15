@@ -1,7 +1,11 @@
-<div class="start-container">
-    <header class="start-header">
-        <h1>Rate Smart Logo</h1>
-    </header>
+<div [ngClass]="[settings.theme === 'dark' ? 'dark-theme' : 'light-theme', color + '-palette']">
+    <div class="settings-container">
+      <mat-toolbar class="settings-header" color="primary">
+        <button mat-icon-button class="menu-button" (click)="openSidenav()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="settings">Rate Smart Logo</span>
+      </mat-toolbar>
 
     <p>Name of Section</p>
 <hr>

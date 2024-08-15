@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SidenavService } from '../../../shared/sidenav/sidenav.service';
-import { ThemePalette } from '@angular/material/core'; // Import ThemePalette
+import { ThemePalette } from '@angular/material/core'; 
+import { ThemeService } from '../../../../../services/theme.service'; // Import ThemePalette
 
 @Component({
   selector: 'app-admin-form-customize-logo',
@@ -8,14 +9,24 @@ import { ThemePalette } from '@angular/material/core'; // Import ThemePalette
   styleUrls: ['./admin-form-customize-logo.component.scss']
 })
 export class AdminFormCustomizeLogoComponent {
-  color: ThemePalette; // Use ThemePalette type
+  
+  settings: any = {
+    theme: 'light'
+  };
 
-  constructor(private sidenavService: SidenavService) {
-    // Set a default value for color
-    this.color = 'primary'; // This can be 'primary', 'accent', or 'warn'
+  color: ThemePalette = 'primary'; // Use a valid ThemePalette value
+
+  constructor(
+    private sidenavService: SidenavService,
+    private themeService: ThemeService) {}
+
+  ngOnInit(): void {
+    
+    this.settings.theme = this.themeService.getTheme();
+    
   }
 
   openSidenav() {
-    this.sidenavService.toggle(); // Ensure SidenavService has a `toggle` method
+    this.sidenavService.toggle();
   }
 }

@@ -1,23 +1,45 @@
-.profile-container {
+
+.settings-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 400px; /* Adjust the width as necessary */
-    margin: auto; /* Center the container */
-    height: 500px;
-}
-
-.profile-header {
+    max-width: 400px;
+    margin: auto;
+    height: 100vh;
+    padding: 0 16px;
+    padding-top: 100px; 
+    box-sizing: border-box;
+  
+  }
+  
+  .settings-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center content horizontally */
-    width: 100%;
+    justify-content: center;
+    width: 22.40%;
     height: 80px;
     background-color: #5DB075;
-    padding: 8px 16px; /* Reduced padding for thinner appearance */
+    padding: 8px 16px;
     color: rgb(0, 0, 0);
-    position: relative;
-}
+    z-index: 1000; 
+  }
+  
+  .settings {
+    flex: 1 1 auto;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 8px 0;
+    margin-top: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+        'Liberation Sans', sans-serif;
+  }
 
 .profile {
     margin-bottom: 20px;

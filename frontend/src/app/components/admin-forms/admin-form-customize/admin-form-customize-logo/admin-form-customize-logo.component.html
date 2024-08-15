@@ -1,11 +1,12 @@
-<div class="customize-container">
-  <header class="customize-header">
-    <button mat-icon-button class="menu-button" (click)="openSidenav()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <h1>Customize</h1>
-    <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
-  </header>
+<div [ngClass]="[settings.theme === 'dark' ? 'dark-theme' : 'light-theme', color + '-palette']">
+  <div class="settings-container">
+    <mat-toolbar class="settings-header" color="primary">
+      <button mat-icon-button class="menu-button" (click)="openSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="settings">Customize</span>
+      <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
+    </mat-toolbar>
 
   <div class="header-actions">
     <div class="back-button-container">

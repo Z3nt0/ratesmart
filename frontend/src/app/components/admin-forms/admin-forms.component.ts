@@ -8,10 +8,11 @@ import { ThemeService } from '../../../services/theme.service';
   styleUrls: ['./admin-forms.component.scss']
 })
 export class AdminFormsComponent implements OnInit {
-
   settings: any = {
     theme: 'light'
   };
+
+  color: string = 'default'; // Default color or palette
 
   feedbackCards: { title: string, responses: number }[] = []; // Start with an empty array
 
@@ -21,8 +22,10 @@ export class AdminFormsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    
+    // Get the current theme from the ThemeService
     this.settings.theme = this.themeService.getTheme();
+    // Initialize the color property if needed
+    this.color = this.getColorForTheme(this.settings.theme);
   }
 
   openSidenav() {
@@ -38,5 +41,10 @@ export class AdminFormsComponent implements OnInit {
     if (index > -1) {
       this.feedbackCards.splice(index, 1);
     }
+  }
+
+  private getColorForTheme(theme: string): string {
+    // Return a color or palette based on the theme
+    return theme === 'dark' ? 'dark-palette' : 'light-palette';
   }
 }

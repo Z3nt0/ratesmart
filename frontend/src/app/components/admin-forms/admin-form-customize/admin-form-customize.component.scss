@@ -46,7 +46,7 @@
   width: 50px;
   height: 50px;
   margin-top: 10px;
-  margin-left: 340px;
+  margin-left: 80%;
   border: 1px solid #000000;
 }
 .menu-button {
@@ -82,12 +82,12 @@ h1 {
 }
 
 .feedback-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  text-align: center;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+  }
 
 .feedback-icon {
   margin-left: 8px;
@@ -203,11 +203,12 @@ h1 {
 
 .step-indicator {
   display: flex;
+  
 }
 
 .step-indicator button {
-  width: 0px;
-  height: 32px;
+  
+  line-height: 32px;
   border-radius: 10%;
   background-color: #f0f0f0;
   color: rgb(79, 79, 79);
@@ -262,4 +263,74 @@ h1 {
 
 .delete-question-button{
   margin-left: 90%;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center; /* Centering items horizontally */
+  gap: 16px; /* Adjust spacing between header actions if needed */
+}
+
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .settings-header {
+      width: 100%;
+  }
+
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .settings-header {
+      width: 100%;
+      padding: 0;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .settings-header {
+      width: 100%;
+      padding: 0;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .settings-header {
+      width: 100%;
+      padding: 0;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1920px) {
+  .settings-header {
+      width: 100%;
+      padding: 0;
+  }
+  .settings{
+    text-align: center;
+    margin-left: 8%;
+  }
+
+  p {
+      text-align: center;
+  }
+
+  .content {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+  }
+
+  .image-container {
+      flex: 0 0 auto;
+  }
+
+  .story-text {
+      font-size: 20px;
+      max-width: 60%;
+      text-align: left;
+  }
 }

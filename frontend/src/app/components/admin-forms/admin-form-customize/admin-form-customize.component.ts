@@ -20,10 +20,9 @@ export class AdminFormCustomizeComponent implements OnInit {
   ];
 
   selectedStep: number = 0;
-  visibleStepRange: { start: number; end: number } = { start: 0, end: 4 };
+  visibleStepRange: { start: number; end: number } = { start: 0, end: 3 };
   scaleOptions = [1, 2, 3, 4, 5]; 
 
-  
   settings = {
     theme: 'default-theme'
   };
@@ -43,10 +42,9 @@ export class AdminFormCustomizeComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
 
-    
     this.settings.theme = this.themeService.getTheme();
- 
     this.color = 'primary';
+    this.updateVisibleSteps(); // Initialize visible steps on component load
   }
 
   openSidenav() {
@@ -112,66 +110,46 @@ export class AdminFormCustomizeComponent implements OnInit {
 
   getVisibleSteps(): number[] {
     const stepCount = this.sections.length;
-    const maxVisibleSteps = 5;
+    const maxVisibleSteps = 4; // Displaying up to 4 steps
 
     let startIndex: number;
     let endIndex: number;
 
     if (stepCount <= maxVisibleSteps) {
-     
       startIndex = 0;
       endIndex = stepCount - 1;
     } else {
-      
-      const midPoint = Math.floor(maxVisibleSteps / 2);
-      if (this.selectedStep <= midPoint) {
-        
-        startIndex = 0;
-        endIndex = maxVisibleSteps - 1;
-      } else if (this.selectedStep >= stepCount - midPoint - 1) {
-        
-        startIndex = stepCount - maxVisibleSteps;
+      startIndex = Math.max(this.selectedStep - Math.floor(maxVisibleSteps / 2), 0);
+      endIndex = startIndex + maxVisibleSteps - 1;
+
+      if (endIndex >= stepCount) {
         endIndex = stepCount - 1;
-      } else {
-        
-        startIndex = this.selectedStep - midPoint;
-        endIndex = this.selectedStep + midPoint;
+        startIndex = Math.max(endIndex - maxVisibleSteps + 1, 0);
       }
     }
-
-    
-    endIndex = Math.min(endIndex, stepCount - 1);
 
     return Array.from({ length: endIndex - startIndex + 1 }, (_, i) => startIndex + i);
   }
 
   private updateVisibleSteps() {
     const stepCount = this.sections.length;
-    const maxVisibleSteps = 5;
+    const maxVisibleSteps = 4; // Displaying up to 4 steps
 
     if (stepCount <= maxVisibleSteps) {
       this.visibleStepRange.start = 0;
       this.visibleStepRange.end = stepCount - 1;
     } else {
-      const midPoint = Math.floor(maxVisibleSteps / 2);
-      if (this.selectedStep <= midPoint) {
-        this.visibleStepRange.start = 0;
-        this.visibleStepRange.end = maxVisibleSteps - 1;
-      } else if (this.selectedStep >= stepCount - midPoint - 1) {
-        this.visibleStepRange.start = stepCount - maxVisibleSteps;
+      this.visibleStepRange.start = Math.max(this.selectedStep - Math.floor(maxVisibleSteps / 2), 0);
+      this.visibleStepRange.end = this.visibleStepRange.start + maxVisibleSteps - 1;
+
+      if (this.visibleStepRange.end >= stepCount) {
         this.visibleStepRange.end = stepCount - 1;
-      } else {
-        this.visibleStepRange.start = this.selectedStep - midPoint;
-        this.visibleStepRange.end = this.selectedStep + midPoint;
+        this.visibleStepRange.start = Math.max(this.visibleStepRange.end - maxVisibleSteps + 1, 0);
       }
     }
-
-    
-    this.visibleStepRange.end = Math.min(this.visibleStepRange.end, stepCount - 1);
   }
 
   onResponseTypeChange(responseType: string, questionIndex: number) {
-    
     if (responseType !== 'stars') {
       this.sections[this.selectedStep].questions[questionIndex].minScale = undefined;
       this.sections[this.selectedStep].questions[questionIndex].maxScale = undefined;
@@ -179,7 +157,6 @@ export class AdminFormCustomizeComponent implements OnInit {
   }
 
   saveSection() {
-    
     console.log('Section saved:', this.sections[this.selectedStep]);
   }
 }

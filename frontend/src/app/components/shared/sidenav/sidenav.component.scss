@@ -1,6 +1,6 @@
 .sidenav-container {
   width: 430px;
-  height: 932px;
+  height: 930px;
 }
 
 .sidenav {
@@ -69,4 +69,115 @@ mat-list-item {
   background-color: #5DB075; 
   border-bottom-right-radius: 12px; 
   height: 75px; 
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Mobile Devices */
+  .sidenav-container {
+    width: 100%;
+  }
+  p{
+      text-align: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Ipads */
+  .sidenav-container {
+    width: 100%;
+  }
+  p{
+      text-align: center;
+  }
+  .sidenav{
+    width: 400px; 
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Small screens, laptops */
+  .sidenav-container {
+    width: 100%;
+  }
+  .settings{
+      text-align: center;
+  }
+  .sidenav{
+    width: 500px; 
+  }
+}
+  
+@media (min-width: 1025px) and (max-width: 1920px) {
+  .sidenav-container {
+    width: 100%;
+    height: 932px;
+  }
+
+  .sidenav {
+    width: 327px; 
+    border-top-right-radius: 12px; 
+    border-bottom-right-radius: 12px; 
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-section {
+    background-color: #5DB075; 
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 206px; 
+    border-top-right-radius: 12px; 
+  }
+
+  .profile-picture {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    margin-right: 20px;
+  }
+
+  .profile-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+  }
+
+  mat-nav-list {
+    flex-grow: 1; 
+    padding-top: 0;
+    padding-bottom: 364px;
+  }
+
+  mat-list-item {
+    font-size: 1em;
+    padding: 16px;
+  }
+
+  .logout-section {
+    width: 100%; 
+    padding: 0;
+    padding-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .logout-item {
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .logout-item:hover {
+    cursor: pointer;
+    background-color: #21242210;
+  }
+
+  .bottom-section {
+    display: flex;
+    background-color: #5DB075; 
+    border-bottom-right-radius: 12px; 
+    height: 75px; 
+  }
 }

@@ -46,10 +46,9 @@
   width: 50px;
   height: 50px;
   margin-top: 10px;
-  margin-left: 340px;
+  margin-left: 80%;
   border: 1px solid #000000;
 }
-
 h1 {
   margin: 0;
   position: absolute;
@@ -99,6 +98,7 @@ h1 {
       position: relative;
       width: 80px;
       height: 80px;
+
 
       mat-spinner {
         position: absolute;
@@ -158,3 +158,151 @@ h1 {
 :host ::ng-deep .total-spinner circle{   
   stroke: #000000
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .settings-header {
+      width: 100%;
+  }
+  .settings {
+      text-align: center;
+  }
+  .story-text {
+      font-size: 18px;
+  }
+
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .settings-header {
+      width: 100%;
+      padding: 0;
+  }
+  p {
+      text-align: center;
+  }
+  .story-text {
+      font-size: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .settings-header {
+      width: 100%;
+      padding: 0;
+  }
+  p {
+      text-align: center;
+  }
+  .story-text {
+      font-size: 20px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .settings-header {
+    width: 100%;
+    padding: 0;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .image-container {
+    flex: 0 0 auto;
+  }
+
+  .feedback-summary {
+    width: 300%;
+  }
+
+  .recent-forms {
+    width: 100%;
+   
+    flex-direction: row;
+    margin-top: 16px;
+    gap: 16px; 
+  }
+
+  .recent-forms h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #e8eef1;
+    margin-bottom: 8px;
+    flex: 0 0 auto; 
+    width: 200px; 
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1920px) {
+  .settings-header {
+    width: 100%;
+    padding: 0;
+  }
+
+  .settings{
+    text-align: center;
+    margin-left: 8%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .image-container {
+    flex: 0 0 auto;
+  }
+
+  .feedback-summary {
+    width: 300%;
+  }
+
+  .recent-forms {
+    width: 100%;
+   
+    flex-direction: row;
+    margin-top: 16px;
+    gap: 16px; 
+  }
+
+  .recent-forms h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #e8eef1;
+    margin-bottom: 8px;
+    flex: 0 0 auto; 
+    width: 350px; 
+  }
+}
+
+

@@ -1,12 +1,12 @@
-<div [ngClass]="settings.theme === 'dark' ? 'dark-theme' : 'light-theme'">
-<div class="dashboard-container">
-  <header class="dashboard-header">
-    <button mat-icon-button class="menu-button" (click)="openSidenav()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <h1>Dashboard</h1>
-    <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
-  </header>
+<div [ngClass]="[settings.theme === 'dark' ? 'dark-theme' : 'light-theme', color + '-palette']">
+  <div class="settings-container">
+    <mat-toolbar class="settings-header" color="primary">
+      <button mat-icon-button class="menu-button" (click)="openSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="settings">Dashboard</span>
+      <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
+    </mat-toolbar>
 
   <section class="feedback-summary">
     <div class="feedback-item positive">

@@ -1,4 +1,4 @@
-.customize-container {
+.settings-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,26 +6,44 @@
   margin: auto;
   height: 100vh;
   padding: 0 16px;
+  padding-top: 100px; 
+  box-sizing: border-box;
 }
 
-.customize-header {
+.settings-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 22.40%;
   height: 80px;
   background-color: #5DB075;
   padding: 8px 16px;
   color: rgb(0, 0, 0);
-  position: relative;
+  z-index: 1000; 
+}
+
+.settings {
+  flex: 1 1 auto;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 8px 0;
+  margin-top: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
 .profile-image {
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  margin-left: 300px;
   margin-top: 10px;
+  margin-left: 80%;
   border: 1px solid #000000;
 }
 
@@ -58,7 +76,8 @@ h1 {
   align-items: center;
   width: 100%;
   padding: 16px;
-  justify-content: space-between;
+  justify-content: space-between; /* Centering items horizontally */
+  gap: 16px; /* Adjust spacing between header actions if needed */
 }
 
 .feedback-section {
@@ -79,7 +98,7 @@ h1 {
   border: none;
   outline: none;
   padding: 8px;
-  text-align: center;  
+  text-align: center; 
 }
 
 .more-icon2 {
@@ -124,7 +143,7 @@ h1 {
 }
 
 .card-container {
-  width: 100%;
+  width: 90%;
 }
 
 .full-width {
@@ -173,12 +192,11 @@ h1 {
 }
 
 .step-indicator {
-  display: flex;
+  display: flex;  
 }
 
-.step-indicator button {
-  width: 0px;
-  height: 32px;
+.step-indicator button {  
+  line-height: 32px;
   border-radius: 10%;
   background-color: #f0f0f0;
   color: rgb(79, 79, 79);
@@ -235,18 +253,18 @@ h1 {
   margin-left: 90%;
 }
 
-.star-rating-container {
-  display: flex;
-  gap: 16px; 
-}
-.star-rating-container.active {
-  display: flex;
-}
-.numeric-rating-scale-container {
-  display: flex;
-  gap: 16px; 
+/* Media Queries for Responsiveness */
+@media (min-width: 320px) and (max-width: 480px) {
+  .settings-header {
+    width: 100%;
+  }
 }
 
-.numeric-rating-scale-container.active {
-  display: flex; 
+@media (min-width: 481px) and (max-width: 768px) {
+  .settings-header {
+    width: 100%;
+    padding: 0;
+  }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {

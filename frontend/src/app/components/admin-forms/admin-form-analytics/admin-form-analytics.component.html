@@ -1,50 +1,51 @@
-<div class="analytics-container">
-  <header class="analytics-header">
-    <button mat-icon-button class="menu-button" (click)="openSidenav()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <h1>Analytics</h1>
-    <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
-  </header>
-
-  <div class="header-actions">
-    <div class="back-button-container">
-      <button mat-icon-button class="back-button">
-        <mat-icon>keyboard_arrow_left</mat-icon>
+<div [ngClass]="[settings.theme === 'dark' ? 'dark-theme' : 'light-theme', color + '-palette']">
+  <div class="settings-container">
+    <mat-toolbar class="settings-header" color="primary">
+      <button mat-icon-button class="menu-button" (click)="openSidenav()">
+        <mat-icon>menu</mat-icon>
       </button>
-    </div>
-    <div class="feedback-section">
-      <input matInput placeholder="Form Title" class="feedback-title-input">
-      <mat-icon class="feedback-icon">edit</mat-icon>
+      <span class="settings">Analytics</span>
+      <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
+    </mat-toolbar>
+
+    <div class="header-actions">
+      <div class="back-button-container">
+        <button mat-icon-button class="back-button">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+      </div>
+      <div class="feedback-section">
+        <input matInput placeholder="Form Title" class="feedback-title-input">
+        <mat-icon class="feedback-icon">edit</mat-icon>
+      </div>
+
+      <div class="more-icon2 container">
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="mat-menu-button">
+          <mat-icon>local_printshop</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/admin-form-customize-logo">Print</button>
+        </mat-menu>
+      </div>
     </div>
 
-    <div class="more-icon2 container">
-      <button mat-icon-button [matMenuTriggerFor]="menu" class="mat-menu-button">
-        <mat-icon>local_printshop</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/admin-form-customize-logo">Print</button>
-      </mat-menu>
-    </div>
-  </div>
-
-  <div class="anal-container">
-    <mat-card class="responses-card">
-      <mat-card-content>
-        <div class="responses-content">
-          <div class="respo">
-            <h2>Responses</h2>
+    <div class="anal-container">
+      <mat-card class="responses-card">
+        <mat-card-content>
+          <div class="responses-content">
+            <div class="respo">
+              <h2>Responses</h2>
+            </div>
+            <div class="response-count">
+              <p>100</p> 
+            </div>
           </div>
-          <div class="response-count">
-            <p>100</p>
-          </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
+        </mat-card-content>
+      </mat-card>
 
-    <mat-card class="rating-card">
-      <mat-card-content>
-        <h2>Rating</h2>
+      <mat-card class="rating-card">
+        <mat-card-content>
+          <h2>Rating</h2>
           <div class="star-rating">
             <ng-container *ngFor="let star of stars; let i = index">
               <mat-icon
@@ -54,7 +55,8 @@
               </mat-icon>
             </ng-container>
           </div>
-      </mat-card-content>
-    </mat-card>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div>

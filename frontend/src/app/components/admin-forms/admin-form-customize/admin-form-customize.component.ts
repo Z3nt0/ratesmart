@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { SidenavService } from '../../shared/sidenav/sidenav.service';
+import { ThemeService } from '../../../../services/theme.service'; 
 
 @Component({
   selector: 'app-admin-form-customize',
@@ -49,13 +50,22 @@ export class AdminFormCustomizeComponent implements OnInit {
   ];
 
   selectedStep: number = 0;
-  visibleStepRange: { start: number; end: number } = { start: 0, end: 4 };
+  visibleStepRange: { start: number; end: number } = { start: 0, end: 4 }; 
   starOptions: number[] = [1, 2, 3, 4, 5];
   ratingOptions: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   newOption: string = '';
   chipInput = new FormControl('');
 
-  constructor(private sidenavService: SidenavService, private _formBuilder: FormBuilder) {}
+  settings = {
+    theme: 'default-theme'
+  };
+  color: string = 'default'; 
+
+  constructor(
+    private sidenavService: SidenavService,
+    private _formBuilder: FormBuilder,
+    private themeService: ThemeService 
+  ) {}
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
@@ -64,6 +74,10 @@ export class AdminFormCustomizeComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+
+    this.settings.theme = this.themeService.getTheme();
+    this.color = 'primary';
+    this.updateVisibleSteps(); 
   }
 
   openSidenav() {
@@ -121,6 +135,7 @@ export class AdminFormCustomizeComponent implements OnInit {
   deleteQuestion(sectionIndex: number, questionIndex: number) {
     if (sectionIndex >= 0 && sectionIndex < this.sections.length) {
       this.sections[sectionIndex].questions.splice(questionIndex, 1);
+
       if (this.sections[sectionIndex].questions.length === 0 && sectionIndex === this.selectedStep) {
         this.selectedStep = Math.max(0, sectionIndex - 1);
       }
@@ -174,7 +189,7 @@ export class AdminFormCustomizeComponent implements OnInit {
 
   getVisibleSteps(): number[] {
     const stepCount = this.sections.length;
-    const maxVisibleSteps = 5;
+    const maxVisibleSteps = 4; 
 
     let startIndex: number;
     let endIndex: number;
@@ -201,22 +216,18 @@ export class AdminFormCustomizeComponent implements OnInit {
 
   private updateVisibleSteps() {
     const stepCount = this.sections.length;
-    const maxVisibleSteps = 5;
+    const maxVisibleSteps = 4; 
 
     if (stepCount <= maxVisibleSteps) {
       this.visibleStepRange.start = 0;
       this.visibleStepRange.end = stepCount - 1;
     } else {
-      const midPoint = Math.floor(maxVisibleSteps / 2);
-      if (this.selectedStep <= midPoint) {
-        this.visibleStepRange.start = 0;
-        this.visibleStepRange.end = maxVisibleSteps - 1;
-      } else if (this.selectedStep >= stepCount - midPoint - 1) {
-        this.visibleStepRange.start = stepCount - maxVisibleSteps;
+      this.visibleStepRange.start = Math.max(this.selectedStep - Math.floor(maxVisibleSteps / 2), 0);
+      this.visibleStepRange.end = this.visibleStepRange.start + maxVisibleSteps - 1;
+
+      if (this.visibleStepRange.end >= stepCount) {
         this.visibleStepRange.end = stepCount - 1;
-      } else {
-        this.visibleStepRange.start = this.selectedStep - midPoint;
-        this.visibleStepRange.end = this.selectedStep + midPoint;
+        this.visibleStepRange.start = Math.max(this.visibleStepRange.end - maxVisibleSteps + 1, 0);
       }
     }
   }
@@ -237,21 +248,4 @@ export class AdminFormCustomizeComponent implements OnInit {
     }
   }
 
-  addOption(sectionIndex: number, questionIndex: number) {
-    const question = this.sections[sectionIndex].questions[questionIndex];
-    if (!question.dropdownOptions) {
-      question.dropdownOptions = [];
-    }
-    if (this.newOption) {
-      question.dropdownOptions.push(this.newOption.trim());
-      this.newOption = '';
-    }
-  }
-
-  deleteOption(sectionIndex: number, questionIndex: number, optionIndex: number) {
-    const question = this.sections[sectionIndex].questions[questionIndex];
-    if (question.dropdownOptions && question.dropdownOptions.length > optionIndex) {
-      question.dropdownOptions.splice(optionIndex, 1);
-    }
-  }
-}
+  addOption(section

@@ -1,12 +1,13 @@
-<div [ngClass]="settings.theme === 'dark' ? 'dark-theme' : 'light-theme'">
-  <div class="forms-container">
-    <header class="forms-header">
+<div [ngClass]="[settings.theme === 'dark' ? 'dark-theme' : 'light-theme', color + '-palette']">
+  <div class="settings-container">
+    <mat-toolbar class="settings-header" color="primary">
       <button mat-icon-button class="menu-button" (click)="openSidenav()">
         <mat-icon>menu</mat-icon>
       </button>
-      <h1>Forms</h1>
+      <span class="settings">Forms</span>
       <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
-    </header>
+    </mat-toolbar>
+
     <div class="back-button-container">
       <button mat-icon-button class="back-button">
         <mat-icon>keyboard_arrow_left</mat-icon>

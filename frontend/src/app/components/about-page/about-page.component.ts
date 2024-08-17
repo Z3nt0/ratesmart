@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SidenavService } from '../shared/sidenav/sidenav.service'; 
 import { ThemeService } from '../../../services/theme.service';
+
 @Component({
   selector: 'app-about-page',
   templateUrl: './about-page.component.html',
@@ -12,14 +13,17 @@ export class AboutPageComponent {
     theme: 'light'
   };
 
+  color: string = 'default'; // Add this line to define the color property
+
   constructor(
     private sidenavService: SidenavService,
     private themeService: ThemeService) {}
 
-    ngOnInit(): void {
-      // Get the current theme from the ThemeService
-      this.settings.theme = this.themeService.getTheme();
-    }
+  ngOnInit(): void {
+    // Get the current theme from the ThemeService
+    this.settings.theme = this.themeService.getTheme();
+    // You can set the color property here if needed
+  }
 
   openSidenav() {
     this.sidenavService.toggle();

@@ -4,7 +4,7 @@ import { ThemeService } from '../../../services/theme.service';
 import { HttpClient } from '@angular/common/http';
 
 interface Form {
-  formid: number; 
+  formid: number;
   formtitle: string;
   responses: number;
   // ... other properties from your Laravel response
@@ -16,12 +16,12 @@ interface Form {
   styleUrls: ['./admin-forms.component.scss']
 })
 export class AdminFormsComponent implements OnInit {
-
   settings: any = {
     theme: 'light'
   };
 
-  feedbackCards: Form[] = [];
+  color: string = 'default'; 
+  feedbackCards: Form[] = []; 
 
   constructor(
     private sidenavService: SidenavService,
@@ -31,6 +31,7 @@ export class AdminFormsComponent implements OnInit {
 
   ngOnInit(): void {
     this.settings.theme = this.themeService.getTheme();
+    this.color = this.getColorForTheme(this.settings.theme); 
     this.fetchForms(); 
   }
 
@@ -40,9 +41,9 @@ export class AdminFormsComponent implements OnInit {
 
   addNewFeedbackCard() {
     this.feedbackCards.push({
-      formid: 0, 
-      formtitle: '', 
-      responses: 0 
+      formid: 0,
+      formtitle: '',
+      responses: 0
     });
   }
 
@@ -50,12 +51,12 @@ export class AdminFormsComponent implements OnInit {
     const form = this.feedbackCards[index];
 
     if (form.formid === 0) {
-      this.http.post<Form>('/api/forms', { formtitle: form.formtitle }) // Use form.formtitle
+      this.http.post<Form>('/api/forms', { formtitle: form.formtitle }) 
         .subscribe((response) => {
           this.feedbackCards[index] = response; 
         });
     } else {
-      this.http.put(`/api/forms/${form.formid}`, { formtitle: form.formtitle }) // Use form.formtitle
+      this.http.put(`/api/forms/${form.formid}`, { formtitle: form.formtitle }) 
         .subscribe();
     }
   }
@@ -70,6 +71,10 @@ export class AdminFormsComponent implements OnInit {
           .subscribe();
       }
     }
+  }
+
+  private getColorForTheme(theme: string): string {
+    return theme === 'dark' ? 'dark-palette' : 'light-palette';
   }
 
   private fetchForms() {

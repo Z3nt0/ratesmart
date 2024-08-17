@@ -1,18 +1,20 @@
-<div [ngClass]="settings.theme === 'dark' ? 'dark-theme' : 'light-theme'">
-  <div class="about-container">
-    <header class="about-header">
+<div [ngClass]="[settings.theme === 'dark' ? 'dark-theme' : 'light-theme', color + '-palette']">
+  <div class="settings-container">
+    <mat-toolbar class="settings-header" color="primary">
       <button mat-icon-button class="menu-button" (click)="openSidenav()">
         <mat-icon>menu</mat-icon>
       </button>
-      <h1>About Us</h1>
+      <span class="settings">About Page</span>
       <img src="path/to/profile/image.jpg" alt="Profile" class="profile-image">
-    </header>
+    </mat-toolbar>
+
     <p>Our Story</p>
     <div class="line"></div>
 
     <div class="image-container">
       <img src="/frontend/src/assets/lol.png" alt="Ratesmart Logo" class="logo-image">
     </div>
+    <div class="text">
     <p class="story-text">
       <span class="highlight">RATESMART</span> was born out of a desire to make 
       feedback collection more efficient and insightful.
@@ -21,7 +23,7 @@
       tool that not only simplifies the feedback process but also 
       delivers actionable insights.
     </p>
-
+  </div>
   <div class="button">
   <button class="contact-button">Contact Support</button>
   <button class="privacy-button">Privacy Policy</button>

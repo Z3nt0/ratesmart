@@ -3,26 +3,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 400px; 
-  margin: auto; 
-  height: 100vh; 
+  max-width: 400px;
+  margin: auto;
+  height: 100vh;
   padding: 0 16px;
+  padding-top: 100px; 
+  box-sizing: border-box;
+
 }
 
 .settings-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between; 
-  width: 100%;
+  justify-content: center;
+  width: 22.40%;
   height: 80px;
   background-color: #5DB075;
-  padding: 8px 16px; 
+  padding: 8px 16px;
   color: rgb(0, 0, 0);
-  position: relative;
+  z-index: 1000; 
 }
 
 .settings {
   flex: 1 1 auto;
+  font-size: 25px;
+  font-weight: bold;
   margin: 8px 0;
   margin-top: 40px;
   position: absolute;
@@ -34,13 +43,18 @@
 
 .menu-button {
   color: rgb(0, 0, 0);
-  font-size: 24px; 
-  padding: 12px; 
+  background-color: transparent !important;
+  position: absolute;
+  left: 16px;
+  font-size: 24px;
+  padding: 12px;
+  border: none;
 }
 
 .menu-button mat-icon {
-  font-size: 30px; 
+  font-size: 30px;
   font-weight: bold;
+  
 }
 
 .whole-container{
@@ -139,4 +153,86 @@
   width: 46px !important;
   border-radius: 36px !important;
 
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .settings-header {
+      width: 100%;
+  }
+  .settings {
+      text-align: center;
+  }
+  .story-text {
+      font-size: 18px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .settings-header {
+      width: 100%;
+      padding: 0;
+  }
+  p {
+      text-align: center;
+  }
+  .story-text {
+      font-size: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .settings-header {
+      width: 100%;
+      padding: 0;
+  }
+  p {
+      text-align: center;
+  }
+  .story-text {
+      font-size: 20px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .settings-header {
+      width: 100%;
+      padding: 0;
+  }
+  p {
+      text-align: center;
+  }
+  .story-text {
+      font-size: 20px;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1920px) {
+  .settings-header {
+      width: 100%;
+      padding: 0;
+  }
+
+  .settings{
+    text-align: center;
+    margin-left: 8%;
+  }
+
+  .content {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+  }
+
+  .image-container {
+      flex: 0 0 auto;
+  }
+
+  .story-text {
+      font-size: 20px;
+      max-width: 60%;
+      text-align: left;
+  }
 }

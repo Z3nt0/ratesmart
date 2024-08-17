@@ -14,11 +14,16 @@
       </button>
     </div>
 
-    <!-- Place your feedback cards here -->
     <div class="feedback-cards-container">
-      <mat-card *ngFor="let card of feedbackCards" class="feedback-card">
+      <mat-card *ngFor="let card of feedbackCards; let i = index" class="feedback-card">
         <div class="card-header">
-          <input matInput placeholder="Feedback Title" [(ngModel)]="card.title" class="feedback-title-input">
+          <input 
+            matInput 
+            placeholder="Feedback Title" 
+            [(ngModel)]="card.formtitle"   
+            (ngModelChange)="saveForm(i)" 
+            class="feedback-title-input" 
+          />
           <mat-icon class="feedback-icon">edit</mat-icon>
           <button mat-icon-button [matMenuTriggerFor]="menu" class="mat-menu-button">
             <mat-icon>more_vert</mat-icon>
@@ -41,6 +46,6 @@
         </div>
       </mat-card>
     </div>
-    <button type="button" class="new-button" (click)="addFeedbackCard()">New</button>
+    <button type="button" class="new-button" (click)="addNewFeedbackCard()">New</button>
   </div>
 </div>

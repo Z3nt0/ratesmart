@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { SidenavService } from '../shared/sidenav/sidenav.service'; 
+import { SidenavService } from '../shared/sidenav/sidenav.service';
 import { ThemeService } from '../../../services/theme.service';
+import { HttpClient } from '@angular/common/http';
+
+interface Form {
+  formid: number;
+  formtitle: string;
+  responses: number;
+  // ... other properties from your Laravel response
+}
 
 @Component({
   selector: 'app-admin-forms',
@@ -12,50 +20,72 @@ export class AdminFormsComponent implements OnInit {
     theme: 'light'
   };
 
-  color: string = 'default'; // Default color or palette
-
-  feedbackCards: { title: string, responses: number }[] = []; // Start with an empty array
+  color: string = 'default'; 
+  feedbackCards: Form[] = []; 
 
   constructor(
     private sidenavService: SidenavService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
-    // Get the current theme from the ThemeService
     this.settings.theme = this.themeService.getTheme();
-    // Initialize the color property if needed
-    this.color = this.getColorForTheme(this.settings.theme);
-
-    // Ensure there's at least one feedback card
-    this.ensureDefaultFeedbackCard();
+    this.color = this.getColorForTheme(this.settings.theme); 
+    this.fetchForms(); 
   }
 
   openSidenav() {
     this.sidenavService.toggle();
   }
 
-  addFeedbackCard() {
-    this.feedbackCards.push({ title: 'New Feedback Title', responses: 0 });
+  addNewFeedbackCard() {
+    this.feedbackCards.push({
+      formid: 0,
+      formtitle: '',
+      responses: 0
+    });
   }
 
-  removeFeedbackCard(card: { title: string, responses: number }) {
+  saveForm(index: number) {
+    const form = this.feedbackCards[index];
+
+    if (form.formid === 0) {
+      this.http.post<Form>('/api/forms', { formtitle: form.formtitle }) 
+        .subscribe((response) => {
+          this.feedbackCards[index] = response; 
+        });
+    } else {
+      this.http.put(`/api/forms/${form.formid}`, { formtitle: form.formtitle }) 
+        .subscribe();
+    }
+  }
+
+  removeFeedbackCard(card: Form) {
     const index = this.feedbackCards.indexOf(card);
     if (index > -1) {
       this.feedbackCards.splice(index, 1);
+
+      if (card.formid !== 0) {
+        this.http.delete(`/api/forms/${card.formid}`)
+          .subscribe();
+      }
     }
-    // Ensure there's at least one feedback card after removal
-    this.ensureDefaultFeedbackCard();
   }
 
   private getColorForTheme(theme: string): string {
-    // Return a color or palette based on the theme
     return theme === 'dark' ? 'dark-palette' : 'light-palette';
   }
 
-  private ensureDefaultFeedbackCard() {
-    if (this.feedbackCards.length === 0) {
-      this.feedbackCards.push({ title: 'Default Feedback Title', responses: 0 });
-    }
+  private fetchForms() {
+    this.http.get<Form[]>('/api/forms', { responseType: 'json' })
+      .subscribe(
+        (forms) => {
+          this.feedbackCards = forms;
+        },
+        (error) => {
+          console.error('Error fetching forms:', error);
+        }
+      );
   }
 }

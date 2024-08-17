@@ -3,22 +3,27 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;
+
+    protected $primaryKey = 'user_id';
+    protected $keyType = 'string';
+    public $incrementing = false; // Important for UUIDs
 
     protected $fillable = [
-        'name', 
-        'username', 
+        'name',
+        'username',
         'password',
     ];
 
     protected $hidden = [
-        'password', 
+        'password',
         'remember_token',
     ];
 
@@ -31,9 +36,7 @@ class User extends Authenticatable
         parent::boot();
 
         static::creating(function ($model) {
-            $model->uuid = (string) Str::uuid();
+            $model->user_id = (string) Str::uuid();  // This will generate a UUID for the 'user_id' field
         });
     }
-
-    
 }

@@ -26,22 +26,69 @@ const routes: Routes = [
   { path: 'splash', component: SplashScreenComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin-dashboard', component: AdminDashboardComponent},
-  { path: 'admin-settings', component: AdminSettingsComponent}, 
-  { path: 'admin-forms', component: AdminFormsComponent},
-  { path: 'admin-profile', component: AdminProfileComponent},
-  { path: 'change-password', component: ChangePasswordComponent},
-  { path: 'about-page', component: AboutPageComponent },
-  { path: 'admin-form-customize', component: AdminFormCustomizeComponent}, 
-  { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'admin-form-analytics', component: AdminFormAnalyticsComponent},
+  { path: 'forgot-password', component: ForgotPasswordComponent   
+ },
   { path: 'forgot-password-auth', component: ForgotPasswordAuthComponent },
-  { path: 'user-start', component: UserStartComponent},
-  { path: 'end-user', component: EndUserComponent},
-  { path: 'rate-satisfactory', component: RateSatisfactoryComponent},
-  { path: 'set-password', component: SetPasswordComponent },
-  { path: 'admin-form-customize-logo', component: AdminFormCustomizeLogoComponent },
-  { path: 'admin-settings-delete', component: AdminSettingsDeleteComponent }
+  { path: 'user-start', component: UserStartComponent}, // Assuming this is also public
+  { path: 'end-user', component: EndUserComponent}, // Assuming this is also public
+  { path: 'rate-satisfactory', component: RateSatisfactoryComponent}, // Assuming this is also public
+
+  // Protected routes (require authentication)
+  { 
+    path: 'admin-dashboard', 
+    component: AdminDashboardComponent,
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'admin-settings', 
+    component: AdminSettingsComponent,
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'admin-forms', 
+    component: AdminFormsComponent,
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'admin-profile', 
+    component: AdminProfileComponent,
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'change-password', 
+    component: ChangePasswordComponent,
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'admin-form-customize', 
+    component: AdminFormCustomizeComponent,
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'admin-form-analytics', 
+    component: AdminFormAnalyticsComponent,
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'admin-form-customize-logo', 
+    component: AdminFormCustomizeLogoComponent,
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'admin-settings-delete', 
+    component: AdminSettingsDeleteComponent,
+    canActivate: [AuthGuard] 
+  },
+  {
+    path: 'about-page', 
+    component: AboutPageComponent,
+    canActivate: [AuthGuard] 
+  },
+  {
+    path: 'set-password', 
+    component: SetPasswordComponent,
+    canActivate: [AuthGuard] 
+  }
 ];
 
 @NgModule({

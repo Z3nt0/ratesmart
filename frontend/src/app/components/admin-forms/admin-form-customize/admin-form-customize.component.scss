@@ -1,4 +1,3 @@
-
 .settings-container {
   display: flex;
   flex-direction: column;
@@ -9,7 +8,6 @@
   padding: 0 16px;
   padding-top: 100px; 
   box-sizing: border-box;
-
 }
 
 .settings-header {
@@ -37,8 +35,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
+  font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
 .profile-image {
@@ -49,6 +46,7 @@
   margin-left: 80%;
   border: 1px solid #000000;
 }
+
 .menu-button {
   color: rgb(0, 0, 0);
   position: absolute;
@@ -78,16 +76,17 @@ h1 {
   align-items: center;
   width: 100%;
   padding: 16px;
-  justify-content: space-between;
+  justify-content: space-between; /* Centering items horizontally */
+  gap: 16px; /* Adjust spacing between header actions if needed */
 }
 
 .feedback-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    text-align: center;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+}
 
 .feedback-icon {
   margin-left: 8px;
@@ -99,7 +98,7 @@ h1 {
   border: none;
   outline: none;
   padding: 8px;
-  text-align: center;  
+  text-align: center; 
 }
 
 .more-icon2 {
@@ -142,15 +141,6 @@ h1 {
     width: 24px;
   }
 }
-.scale-container {
-  display: flex;
-  gap: 16px; /* Adjust spacing between scales as needed */
-}
-
-.scale-field {
-  flex: 1;
-}
-
 
 .card-container {
   width: 90%;
@@ -202,12 +192,10 @@ h1 {
 }
 
 .step-indicator {
-  display: flex;
-  
+  display: flex;  
 }
 
-.step-indicator button {
-  
+.step-indicator button {  
   line-height: 32px;
   border-radius: 10%;
   background-color: #f0f0f0;
@@ -261,76 +249,22 @@ h1 {
   }
 }
 
-.delete-question-button{
+.delete-question-button {
   margin-left: 90%;
 }
-.header-actions {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: center; /* Centering items horizontally */
-  gap: 16px; /* Adjust spacing between header actions if needed */
-}
 
-
-
+/* Media Queries for Responsiveness */
 @media (min-width: 320px) and (max-width: 480px) {
   .settings-header {
-      width: 100%;
+    width: 100%;
   }
-
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
   .settings-header {
-      width: 100%;
-      padding: 0;
+    width: 100%;
+    padding: 0;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .settings-header {
-      width: 100%;
-      padding: 0;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1200px) {
-  .settings-header {
-      width: 100%;
-      padding: 0;
-  }
-}
-
-@media (min-width: 1201px) and (max-width: 1920px) {
-  .settings-header {
-      width: 100%;
-      padding: 0;
-  }
-  .settings{
-    text-align: center;
-    margin-left: 8%;
-  }
-
-  p {
-      text-align: center;
-  }
-
-  .content {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-  }
-
-  .image-container {
-      flex: 0 0 auto;
-  }
-
-  .story-text {
-      font-size: 20px;
-      max-width: 60%;
-      text-align: left;
-  }
-}

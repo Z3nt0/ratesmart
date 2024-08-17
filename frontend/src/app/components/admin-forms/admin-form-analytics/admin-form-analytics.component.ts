@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SidenavService } from '../../shared/sidenav/sidenav.service';
-import { ThemeService } from '../../../../services/theme.service'; // Ensure correct path
+import { ThemeService } from '../../../../services/theme.service'; 
 
 @Component({
   selector: 'app-admin-form-analytics',
@@ -8,17 +8,21 @@ import { ThemeService } from '../../../../services/theme.service'; // Ensure cor
   styleUrls: ['./admin-form-analytics.component.scss']
 })
 export class AdminFormAnalyticsComponent implements OnInit {
-  settings: any = { theme: 'light' }; // Define settings property
-  color: string = 'default'; // Define color property
+  settings: any = { theme: 'light' }; 
+  color: string = 'default'; 
+
+  // Star rating properties
+  rating: number = 0;
+  maxRating: number = 5;
 
   constructor(
     private sidenavService: SidenavService,
-    private themeService: ThemeService // Inject ThemeService
+    private themeService: ThemeService 
   ) {}
 
   ngOnInit(): void {
-    this.settings.theme = this.themeService.getTheme(); // Initialize settings
-    this.color = this.getColorForTheme(this.settings.theme); // Set color based on theme
+    this.settings.theme = this.themeService.getTheme(); 
+    this.color = this.getColorForTheme(this.settings.theme); 
   }
 
   openSidenav() {
@@ -26,7 +30,19 @@ export class AdminFormAnalyticsComponent implements OnInit {
   }
 
   private getColorForTheme(theme: string): string {
-    // Return a color or palette based on the theme
     return theme === 'dark' ? 'dark-palette' : 'light-palette';
+  }
+
+  // Star rating methods
+  setRating(value: number) {
+    this.rating = value;
+  }
+
+  isStarActive(index: number) {
+    return index < this.rating;
+  }
+
+  get stars() {
+    return Array(this.maxRating).fill(0).map((_, i) => i + 1);
   }
 }

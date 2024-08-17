@@ -3,10 +3,11 @@
 return [
     'paths' => ['api/*', 'sanctum/csrf-cookie'],
     'allowed_methods' => ['*'],
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['http://localhost:4200'],
     'allowed_origins_patterns' => [],
-    'allowed_headers' => ['*'],
+    'allowed_headers' => ['Content-Type', 'Authorization'],
     'exposed_headers' => [],
-    'max_age' => 0,
-    'supports_credentials' => false,
+    'max_age' => 0, 
+    'supports_credentials' => true,
 ];
+    

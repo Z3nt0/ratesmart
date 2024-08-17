@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->foreignUuid('user_uuid')->nullable()->index(); // Use foreignUuid for UUID foreign key
+            $table->foreignUuid('user_id')->nullable()->index(); // Updated to 'user_id'
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();
             $table->longText('payload');
@@ -21,7 +21,7 @@ return new class extends Migration
         });
 
         Schema::table('sessions', function (Blueprint $table) {
-            $table->foreign('user_uuid')->references('uuid')->on('users'); // Reference the 'uuid' column in 'users'
+            $table->foreign('user_id')->references('user_id')->on('users'); // Reference the 'user_id' column in 'users'
         });
     }
 

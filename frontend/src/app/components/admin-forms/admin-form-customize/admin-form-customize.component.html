@@ -66,11 +66,11 @@
           </mat-form-field>
           <mat-form-field class="full-width">
             <mat-label>Response Type</mat-label>
-            <mat-select [(ngModel)]="question.responseType" (selectionChange)="onResponseTypeChange($event.value, j)">
+            <mat-select [(ngModel)]="question.responseType">
               <mat-option value="stars">Stars</mat-option>
               <mat-option value="numeric rating scale">Number Rating Scale</mat-option>
               <mat-option value="text">Text</mat-option>
-              <mat-option value="Checkboxes">Checkboxes</mat-option>
+              <mat-option value="checkboxes">Checkboxes</mat-option>
               <mat-option value="dropdown">Dropdown</mat-option>
               <mat-option value="numeric input">Numeric Input</mat-option>
               <mat-option value="multiple-choice">Multiple Choice</mat-option>
@@ -78,21 +78,66 @@
               <mat-option value="chips">Chips</mat-option>
             </mat-select>
           </mat-form-field>
-          <!-- Conditionally display scales horizontally -->
-          <div *ngIf="['stars', 'numeric rating scale', 'emoji'].includes(question.responseType)" class="scale-container">
-            <mat-form-field class="scale-field">
-              <mat-label>Min Scale</mat-label>
-              <mat-select [(ngModel)]="question.minScale">
-                <mat-option *ngFor="let scale of scaleOptions" [value]="scale">{{ scale }}</mat-option>
+
+          <!-- Conditionally render multiple-choice options -->
+          <div *ngIf="question.responseType === 'multiple-choice'" class="full-width multiple-choice-container">
+            <mat-form-field class="full-width">
+              <mat-label>New Option</mat-label>
+              <input matInput [(ngModel)]="newOption" (keydown.enter)="addOption(selectedStep, j)" placeholder="Add new option">
+            </mat-form-field>
+
+            <!-- Display radio buttons for multiple-choice options -->
+            <mat-radio-group [(ngModel)]="question.selectedOption">
+              <div *ngFor="let option of question.options; let i = index" class="option-container">
+                <mat-radio-button [value]="option">{{ option }}</mat-radio-button>
+                <button mat-icon-button (click)="deleteOption(selectedStep, j, i)" class="delete-option-button">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </mat-radio-group>
+            <button mat-raised-button (click)="addOption(selectedStep, j)">Add Option</button>
+          </div>
+
+          <!-- Conditionally render other types -->
+          <div *ngIf="question.responseType === 'stars'" class="full-width star-rating-container">
+            <mat-form-field class="flex-grow">
+              <mat-label>Minimum Stars</mat-label>
+              <mat-select [(ngModel)]="question.minStars">
+                <mat-option *ngFor="let option of starOptions" [value]="option">{{ option }}</mat-option>
               </mat-select>
             </mat-form-field>
-            <mat-form-field class="scale-field">
-              <mat-label>Max Scale</mat-label>
-              <mat-select [(ngModel)]="question.maxScale">
-                <mat-option *ngFor="let scale of scaleOptions" [value]="scale">{{ scale }}</mat-option>
+            <mat-form-field class="flex-grow">
+              <mat-label>Maximum Stars</mat-label>
+              <mat-select [(ngModel)]="question.maxStars">
+                <mat-option *ngFor="let option of starOptions" [value]="option">{{ option }}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
+
+          <div *ngIf="question.responseType === 'numeric rating scale'" class="full-width numeric-rating-scale-container">
+            <mat-form-field class="flex-grow">
+              <mat-label>Minimum Rating</mat-label>
+              <mat-select [(ngModel)]="question.minRating">
+                <mat-option *ngFor="let option of ratingOptions" [value]="option">{{ option }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="flex-grow">
+              <mat-label>Maximum Rating</mat-label>
+              <mat-select [(ngModel)]="question.maxRating">
+                <mat-option *ngFor="let option of ratingOptions" [value]="option">{{ option }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field *ngIf="question.responseType === 'numeric input'" class="full-width">
+            <mat-label>Numeric Input</mat-label>
+            <input matInput type="text" [(ngModel)]="question.numericValue" placeholder="Enter a number" (input)="validateNumber($event)">
+          </mat-form-field>
+
+          <mat-form-field *ngIf="question.responseType === 'text'" class="full-width">
+            <mat-label>Text Input</mat-label>
+            <input matInput type="text" [(ngModel)]="question.textValue" placeholder="Enter text">
+          </mat-form-field>
         </div>
         <div class="add-questions">
           <button mat-raised-button (click)="addQuestion(selectedStep)">Add Question</button>
@@ -104,7 +149,6 @@
   <div class="add-section-button-container">
     <button mat-raised-button (click)="addSection()">Add Section</button>
   </div>
-
   <mat-card-actions>
     <div class="card-actions-container">
       <button mat-raised-button (click)="deleteSection(selectedStep)" class="delete-section-button">Delete</button>

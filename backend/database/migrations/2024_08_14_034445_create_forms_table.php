@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Define foreign key constraint (updated to reference 'user_id')
-            $table->foreign('user_id')->references('uuid')->on('users'); // Establish the foreign key constraint
+            $table->foreign('user_id')->references('user_id')->on('users'); // Establish the foreign key constraint
         });
     }
 

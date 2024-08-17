@@ -122,15 +122,6 @@ h1 {
     width: 24px;
   }
 }
-.scale-container {
-  display: flex;
-  gap: 16px; /* Adjust spacing between scales as needed */
-}
-
-.scale-field {
-  flex: 1;
-}
-
 
 .card-container {
   width: 100%;
@@ -240,6 +231,22 @@ h1 {
   }
 }
 
-.delete-question-button{
+.delete-question-button {
   margin-left: 90%;
+}
+
+.star-rating-container {
+  display: flex;
+  gap: 16px; 
+}
+.star-rating-container.active {
+  display: flex;
+}
+.numeric-rating-scale-container {
+  display: flex;
+  gap: 16px; 
+}
+
+.numeric-rating-scale-container.active {
+  display: flex; 
 }
